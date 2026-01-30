@@ -1,0 +1,76 @@
+/* Trust Blue & Green Theme
+   Primary: Deep Sky Blue (#007BFF)
+   Secondary/Success: Medium Green (#28A745)
+   Accent: Yellow/Orange for warnings
+   Neutral: light grey background
+*/
+:root{
+  /* Government-portal palette - muted, professional */
+  --primary: #0B3D91; /* muted navy */
+  --primary-700: #0a357f;
+  --success: #1F8A4C; /* medium green for present */
+  --warning: #F0AD4E; /* soft amber for warnings */
+  --late: #E67E22; /* orange for late */
+  --error: #D9534F; /* red for absence/errors */
+  --bg: #f0f3f7; /* very light cool grey */
+  --card-bg: #ffffff;
+  --card-border: #dde6f2; /* subtle border */
+  --text: #1f2d3d; /* deep slate for readability */
+  --muted: #6b7280; /* muted text */
+}
+
+body{
+  background: linear-gradient(180deg, var(--bg), #ffffff);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headers and primary UI elements */
+h1, .header h1 {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Buttons */
+button, .submit-btn, .login-btn, .register-btn{
+  background: linear-gradient(180deg, var(--primary), var(--primary-700));
+  border: 1px solid rgba(11,61,145,0.08);
+  color: white;
+  box-shadow: none;
+}
+
+button:hover, .submit-btn:hover, .login-btn:hover, .register-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(11,61,145,0.08);
+}
+
+/* Links */
+a, .back-link, .forgot-link{
+  color: var(--primary);
+}
+
+/* Status indicators */
+.status-present { background: var(--success); color: #fff; padding: 4px 8px; border-radius: 6px; }
+.status-absent  { background: var(--error); color: #fff; padding: 4px 8px; border-radius: 6px; }
+.status-late    { background: var(--late); color: #fff; padding: 4px 8px; border-radius: 6px; }
+.status-warning { background: var(--warning); color: #111; padding: 4px 8px; border-radius: 6px; }
+
+/* Card backgrounds and subtle borders to resemble government portals */
+.registration-container, .login-box, .form-container, .reg-box{
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+/* Form focus: accessible focus ring */
+input:focus, select:focus{
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(11,61,145,0.08);
+}
+
+/* Minor tweaks */
+.header h2, h2 { color: var(--muted); font-weight: 600; }
+
+@media (max-width: 768px){
+  :root { --primary-700: #092f73; }
+}

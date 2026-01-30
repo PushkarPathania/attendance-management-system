@@ -1,0 +1,68 @@
+/* Warm & Inviting theme (Burnt Orange primary, Charcoal headings, soft accents)
+   Primary: Burnt Orange (#E67E22)
+   Secondary / Complementary: Dark Gray / Charcoal (#4D4D4D)
+   Accent: Soft blue/green for status indicators
+   Error/Absence: Red
+*/
+:root{
+  --primary: #E67E22; /* burnt orange */
+  --primary-600: #d36d1b;
+  --charcoal: #4D4D4D;
+  --muted: #f5f3f1; /* soft background */
+  --accent: #66CDAA; /* mint/soft green */
+  --accent-2: #5DADE2; /* sky blue */
+  --error: #E74C3C; /* error / absence */
+  --success: #28A745; /* success */
+  --neutral-100: #faf9f8;
+  --text: #222222;
+}
+
+/* Generic overrides */
+body{
+  background: var(--neutral-100);
+  color: var(--text);
+}
+
+/* Headings */
+h1, .header h1 {
+  color: var(--charcoal);
+}
+
+/* Buttons */
+button, .submit-btn, .login-btn, .register-btn{
+  background: linear-gradient(135deg, var(--primary), var(--primary-600));
+  border: none;
+  color: white;
+}
+
+button:hover, .submit-btn:hover, .login-btn:hover, .register-btn:hover{
+  box-shadow: 0 8px 20px rgba(230,126,34,0.18);
+}
+
+/* Links / small accents */
+a, .back-link, .forgot-link{
+  color: var(--primary);
+}
+
+/* Status indicators */
+.status-present { background: var(--success); color: #fff; padding: 4px 8px; border-radius: 6px; }
+.status-absent  { background: var(--error); color: #fff; padding: 4px 8px; border-radius: 6px; }
+.status-late    { background: #F39C12; color: #fff; padding: 4px 8px; border-radius: 6px; }
+
+/* Card backgrounds */
+.registration-container, .login-box, .form-container, .reg-box{
+  background: linear-gradient(180deg, #ffffff, #fffdfa);
+}
+
+/* Small tweaks */
+.header h2, h2 { color: var(--charcoal); }
+
+/* Make sure forms still look good */
+input, select {
+  border-color: #e9e6e2;
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 768px){
+  :root { --primary-600: #cc6318; }
+}
