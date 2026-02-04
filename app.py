@@ -1,7 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session, send_file
 from flask_mysqldb import MySQL
 from werkzeug.security import generate_password_hash, check_password_hash
 import re
+import pandas as pd
+from io import BytesIO
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -271,6 +274,90 @@ def logout():
     session.clear()
     return redirect(url_for('index'))
 
+
+@app.route('/export_attendance', methods=['GET'])
+def export_attendance():
+    """
+    Fetch all attendance records from the database and export to Excel file.
+    Only accessible to logged-in teachers.
+    """
+    if not session.get('teacher_logged_in'):
+        flash('You must be logged in as a teacher to export attendance.', 'error')
+        return redirect(url_for('index'))
+    
+    try:
+        # Create cursor
+        cur = mysql.connection.cursor()
+        
+        # Fetch all attendance records with student and teacher info
+        cur.execute('''
+            SELECT 
+                a.id, 
+                s.full_name as student_name, 
+                s.board_roll_no, 
+                a.date, 
+                a.status, 
+                a.subject
+            FROM attendance a
+            JOIN students s ON a.student_id = s.id
+            ORDER BY a.date DESC, s.full_name
+        ''')
+        
+        # Fetch all records
+        records = cur.fetchall()
+        cur.close()
+        
+        if not records:
+            flash('No attendance records found.', 'warning')
+            return redirect(url_for('teacher_dashboard'))
+        
+        # Convert to DataFrame with proper column names
+        df = pd.DataFrame(records, columns=['Attendance ID', 'Student Name', 'Board Roll No', 'Date', 'Status', 'Subject'])
+        
+        # Format the date column
+        df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
+        
+        # Create Excel file in memory
+        output = BytesIO()
+        with pd.ExcelWriter(output, engine='openpyxl') as writer:
+            df.to_excel(writer, sheet_name='Attendance', index=False)
+            
+            # Get workbook and worksheet to format headers
+            workbook = writer.book
+            worksheet = writer.sheets['Attendance']
+            
+            # Format header row (bold, colored background)
+            from openpyxl.styles import Font, PatternFill, Alignment
+            header_fill = PatternFill(start_color='4472C4', end_color='4472C4', fill_type='solid')
+            header_font = Font(bold=True, color='FFFFFF')
+            
+            for cell in worksheet[1]:
+                cell.fill = header_fill
+                cell.font = header_font
+                cell.alignment = Alignment(horizontal='center', vertical='center')
+            
+            # Adjust column widths
+            column_widths = [15, 20, 15, 15, 12, 20]
+            for i, width in enumerate(column_widths, 1):
+                worksheet.column_dimensions[chr(64 + i)].width = width
+        
+        # Seek to the beginning of the BytesIO object
+        output.seek(0)
+        
+        # Generate filename with timestamp
+        filename = f"Attendance_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+        
+        # Send the file
+        return send_file(
+            output,
+            mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            as_attachment=True,
+            download_name=filename
+        )
+    
+    except Exception as e:
+        flash(f'Error exporting attendance: {str(e)}', 'error')
+        return redirect(url_for('teacher_dashboard'))
 
 
 if __name__ == "__main__":
