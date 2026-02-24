@@ -185,7 +185,7 @@ def login():
         cur.execute('SELECT * FROM students WHERE email = %s', [email])
         student = cur.fetchone()
 
-        if student and student[5] == password:  # Index 5 is password in the database
+        if student and student[6] == password:  # Index 6 is password in the database
             # Create session data
             session['logged_in'] = True
             session['student_id'] = student[0]
