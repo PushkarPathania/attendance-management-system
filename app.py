@@ -19,6 +19,10 @@ mysql = MySQL(app)
 
 # Secret key for session
 app.secret_key = 'pushkar2006'
+
+# Admin credentials (default)
+ADMIN_EMAIL = 'admin@admin.com'
+ADMIN_PASSWORD = 'admin123'
 @app.route('/')
 @app.route('/index.html')
 def index():
@@ -61,9 +65,45 @@ def student_registration():
         
     return render_template('student-registation.html')
 
+# ========== ADMIN ROUTES ==========
+@app.route('/admin-login', methods=['GET', 'POST'])
+def admin_login():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+
+        if email == ADMIN_EMAIL and password == ADMIN_PASSWORD:
+            session['admin_logged_in'] = True
+            session['admin_email'] = email
+            flash('Welcome Admin!', 'success')
+            return redirect(url_for('admin_dashboard'))
+        else:
+            flash('Invalid admin credentials.', 'error')
+            return render_template('admin-login.html')
+
+    return render_template('admin-login.html')
+
+
+@app.route('/admin-dashboard')
+def admin_dashboard():
+    if not session.get('admin_logged_in'):
+        flash('Please login as admin first.', 'error')
+        return redirect(url_for('admin_login'))
+
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT id, full_name, email, teacher_id, branch, semester, subject FROM teachers ORDER BY id DESC')
+    teachers = cur.fetchall()
+    cur.close()
+
+    return render_template('admin-dashboard.html', teachers=teachers)
+
 
 @app.route('/teacher-register', methods=['GET', 'POST'])
-def teacher_register():
+def admin_create_teacher():
+    if not session.get('admin_logged_in'):
+        flash('Please login as admin first.', 'error')
+        return redirect(url_for('admin_login'))
+
     if request.method == 'POST':
         # Collect form data
         full_name = request.form.get('reg-name')
@@ -81,7 +121,7 @@ def teacher_register():
         # Basic validation
         if not (full_name and email and teacher_id and password):
             flash('Please fill in the required fields.', 'error')
-            return render_template('teacher-registation.html')
+            return render_template('admin-dashboard.html')
 
         # Hash the password before storing
         hashed_pwd = generate_password_hash(password)
@@ -93,7 +133,11 @@ def teacher_register():
         if exists:
             flash('Email or Teacher ID already exists.', 'error')
             cur.close()
-            return render_template('teacher-registation.html')
+            cur = mysql.connection.cursor()
+            cur.execute('SELECT id, full_name, email, teacher_id, branch, semester, subject FROM teachers ORDER BY id DESC')
+            teachers = cur.fetchall()
+            cur.close()
+            return render_template('admin-dashboard.html', teachers=teachers)
 
         # Insert teacher record
         cur.execute('''INSERT INTO teachers (full_name, email, mobile, teacher_id, branch, semester, subject, designation, gender, dob, password)
@@ -102,21 +146,118 @@ def teacher_register():
         mysql.connection.commit()
         cur.close()
 
-        flash('Teacher registered successfully. Please login.', 'success')
-        return redirect(url_for('index'))
+        flash('Teacher registered successfully!', 'success')
+        return redirect(url_for('admin_dashboard'))
 
-    return render_template('teacher-registation.html')
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT id, full_name, email, teacher_id, branch, semester, subject FROM teachers ORDER BY id DESC')
+    teachers = cur.fetchall()
+    cur.close()
+    return render_template('admin-dashboard.html', teachers=teachers)
 
 
-@app.route('/teacher-login', methods=['POST'])
+@app.route('/admin-edit-teacher/<int:teacher_id>', methods=['GET', 'POST'])
+def admin_edit_teacher(teacher_id):
+    if not session.get('admin_logged_in'):
+        flash('Please login as admin first.', 'error')
+        return redirect(url_for('admin_login'))
+
+    cur = mysql.connection.cursor()
+
+    if request.method == 'POST':
+        # Collect form data
+        full_name = request.form.get('edit-name')
+        email = request.form.get('edit-email')
+        mobile = request.form.get('edit-mobile')
+        branch = request.form.get('edit-branch')
+        semester = request.form.get('edit-semester')
+        subject = request.form.get('edit-subject') if semester == '1' else None
+        designation = request.form.get('edit-designation')
+        gender = request.form.get('edit-gender')
+        dob = request.form.get('edit-dob')
+
+        # Update teacher record
+        cur.execute('''UPDATE teachers SET full_name = %s, email = %s, mobile = %s, branch = %s, 
+                       semester = %s, subject = %s, designation = %s, gender = %s, dob = %s 
+                       WHERE id = %s''',
+                    (full_name, email, mobile, branch, semester, subject, designation, gender, dob, teacher_id))
+        mysql.connection.commit()
+
+        flash('Teacher updated successfully!', 'success')
+        cur.close()
+        return redirect(url_for('admin_dashboard'))
+
+    # Fetch teacher details
+    cur.execute('SELECT id, full_name, email, mobile, teacher_id, branch, semester, subject, designation, gender, dob FROM teachers WHERE id = %s', (teacher_id,))
+    teacher = cur.fetchone()
+    cur.close()
+
+    if not teacher:
+        flash('Teacher not found.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    return render_template('admin-edit-teacher.html', teacher=teacher)
+
+
+@app.route('/admin-delete-teacher/<int:teacher_id>', methods=['POST'])
+def admin_delete_teacher(teacher_id):
+    if not session.get('admin_logged_in'):
+        flash('Please login as admin first.', 'error')
+        return redirect(url_for('admin_login'))
+
+    cur = mysql.connection.cursor()
+    cur.execute('DELETE FROM teachers WHERE id = %s', (teacher_id,))
+    mysql.connection.commit()
+    cur.close()
+
+    flash('Teacher deleted successfully!', 'success')
+    return redirect(url_for('admin_dashboard'))
+
+
+@app.route('/admin-reset-password/<int:teacher_id>', methods=['POST'])
+def admin_reset_password(teacher_id):
+    if not session.get('admin_logged_in'):
+        flash('Please login as admin first.', 'error')
+        return redirect(url_for('admin_login'))
+
+    new_password = request.form.get('new-password')
+
+    if not new_password:
+        flash('Password cannot be empty.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    hashed_pwd = generate_password_hash(new_password)
+
+    cur = mysql.connection.cursor()
+    cur.execute('UPDATE teachers SET password = %s WHERE id = %s', (hashed_pwd, teacher_id))
+    mysql.connection.commit()
+    cur.close()
+
+    flash('Teacher password reset successfully!', 'success')
+    return redirect(url_for('admin_dashboard'))
+
+
+@app.route('/admin-logout')
+def admin_logout():
+    session.clear()
+    flash('Admin logged out successfully.', 'success')
+    return redirect(url_for('admin_login'))
+
+
+# ========== TEACHER ROUTES ==========
+
+@app.route('/teacher-login', methods=['GET', 'POST'])
 def teacher_login():
+    if request.method == 'GET':
+        return render_template('teacher-login.html')
+    
     # Accept POST from teacher login form
     email = request.form.get('email')
     password = request.form.get('password')
 
     if not (email and password):
         flash('Please provide both email and password.', 'error')
-        return redirect(url_for('index'))
+        return render_template('teacher-login.html')
 
     cur = mysql.connection.cursor()
     # Fetch id, full_name and password hash for the given email
@@ -134,7 +275,46 @@ def teacher_login():
             return redirect(url_for('teacher_dashboard'))
 
     flash('Invalid teacher credentials.', 'error')
-    return redirect(url_for('index'))
+    return render_template('teacher-login.html')
+
+
+@app.route('/teacher-change-password', methods=['GET', 'POST'])
+def teacher_change_password():
+    if not session.get('teacher_logged_in'):
+        flash('Please login as teacher first.', 'error')
+        return redirect(url_for('index'))
+
+    if request.method == 'POST':
+        old_password = request.form.get('old-password')
+        new_password = request.form.get('new-password')
+        confirm_password = request.form.get('confirm-password')
+
+        if not (old_password and new_password and confirm_password):
+            flash('All fields are required.', 'error')
+            return redirect(url_for('teacher_dashboard'))
+
+        if new_password != confirm_password:
+            flash('New passwords do not match.', 'error')
+            return redirect(url_for('teacher_dashboard'))
+
+        cur = mysql.connection.cursor()
+        cur.execute('SELECT password FROM teachers WHERE id = %s', (session['teacher_id'],))
+        teacher = cur.fetchone()
+
+        if not teacher or not check_password_hash(teacher[0], old_password):
+            flash('Old password is incorrect.', 'error')
+            cur.close()
+            return redirect(url_for('teacher_dashboard'))
+
+        hashed_new_pwd = generate_password_hash(new_password)
+        cur.execute('UPDATE teachers SET password = %s WHERE id = %s', (hashed_new_pwd, session['teacher_id']))
+        mysql.connection.commit()
+        cur.close()
+
+        flash('Password changed successfully!', 'success')
+        return redirect(url_for('teacher_dashboard'))
+
+    return render_template('teacher-change-password.html')
 
 
 @app.route('/teacher_dashboard')
@@ -170,6 +350,40 @@ def teacher_dashboard():
         cur.close()
         return render_template('teacher_dashboard.html', teacher_name=session.get('teacher_name'), students=students, attendance_data=attendance_data, today=today, teacher_subject=teacher_subject, all_attendance=all_attendance)
     return redirect(url_for('index'))
+
+@app.route('/student-login', methods=['GET', 'POST'])
+def student_login():
+    if request.method == 'GET':
+        return render_template('student-login.html')
+    
+    # Handle POST (form submission from student-login.html)
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    if not (email and password):
+        flash('Please provide both email and password.', 'error')
+        return render_template('student-login.html')
+
+    # Create cursor
+    cur = mysql.connection.cursor()
+
+    # Get user by email
+    cur.execute('SELECT * FROM students WHERE email = %s', [email])
+    student = cur.fetchone()
+    cur.close()
+
+    if student and student[6] == password:  # Index 6 is password in the database
+        # Create session data
+        session['logged_in'] = True
+        session['student_id'] = student[0]
+        session['full_name'] = student[1]
+
+        flash('Welcome ' + student[1], 'success')
+        return redirect(url_for('student_dashboard'))
+    else:
+        flash('Invalid student credentials', 'error')
+        return render_template('student-login.html')
+
 
 @app.route('/login', methods=['POST'])
 def login():
