@@ -3,49 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Management System - Login Portal</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/trust-theme.css') }}">
+    <title>Attendance · smart portal</title>
+    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Font for extra elegance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="navbar-brand">
+            <div class="navbar-text">
+                <h1 class="navbar-system-title">Attendance Management System</h1>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
+        <!-- header with crisp icon -->
         <header class="header">
-            <h1><i class="fas fa-user-clock"></i> Attendance Management System</h1>
-            <p class="subtitle">Welcome to the Academic Portal</p>
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Government Polytechnic Kangra" class="header-logo">
+            <div class="header-text">
+                <h1>Government Polytechnic Kangra</h1>
+            </div>
         </header>
+
+        <!-- login cards: admin, teacher, student -->
         <div class="login-container">
-            <div class="login-box admin-login" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: 3px solid #667eea;">
-                <div class="login-icon" style="color: white;">
-                    <i class="fas fa-shield-alt"></i>
+            <!-- admin card -->
+            <div class="login-box admin-login">
+                <div class="login-icon admin-icon">
+                    🛡️
                 </div>
-                <h2 style="color: white;">Admin Portal</h2>
-                <p style="color: rgba(255,255,255,0.9); text-align: center; margin-bottom: 20px; font-size: 0.9rem;">Manage Teachers & System</p>
-                <a href="{{ url_for('admin_login') }}" class="login-btn" style="background: white; color: #667eea; border: none; text-decoration: none; display: inline-block; width: 100%; text-align: center;">
-                    <i class="fas fa-sign-in-alt"></i> Go to Admin Login
+                <h2>Admin</h2>
+                <p>manage teachers & system</p>
+                <a href="{{ url_for('admin_login') }}" class="login-btn">
+                    <i class="fas fa-lock-keyhole"></i> admin login
+                    <i class="fas fa-arrow-right" style="font-size: 0.9rem;"></i>
                 </a>
             </div>
-            <div class="login-box teacher-login" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: 3px solid #667eea;">
-                <div class="login-icon" style="color: white;">
-                    <i class="fas fa-chalkboard-teacher"></i>
+            <!-- teacher card -->
+            <div class="login-box teacher-login">
+                <div class="login-icon teacher-icon">
+                    👨‍🏫
                 </div>
-                <h2 style="color: white;">Teacher Portal</h2>
-                <p style="color: rgba(255,255,255,0.9); text-align: center; margin-bottom: 20px; font-size: 0.9rem;">Access your classroom</p>
-                <a href="{{ url_for('teacher_login') }}" class="login-btn" style="background: white; color: #667eea; border: none; text-decoration: none; display: inline-block; width: 100%; text-align: center;">
-                    <i class="fas fa-sign-in-alt"></i> Teacher Login
+                <h2>Teacher</h2>
+                <p>your classroom, analytics</p>
+                <a href="{{ url_for('teacher_login') }}" class="login-btn">
+                    <i class="fas fa-chalkboard-user"></i> teacher login
+                    <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
-            <div class="login-box student-login" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: 3px solid #667eea;">
-                <div class="login-icon" style="color: white;">
-                    <i class="fas fa-user-graduate"></i>
+            <!-- student card -->
+            <div class="login-box student-login">
+                <div class="login-icon student-icon">
+                    🎓
                 </div>
-                <h2 style="color: white;">Student Portal</h2>
-                <p style="color: rgba(255,255,255,0.9); text-align: center; margin-bottom: 20px; font-size: 0.9rem;">View your attendance</p>
-                <a href="{{ url_for('student_login') }}" class="login-btn" style="background: white; color: #667eea; border: none; text-decoration: none; display: inline-block; width: 100%; text-align: center;">
-                    <i class="fas fa-sign-in-alt"></i> Student Login
+                <h2>Student</h2>
+                <p>track your attendance</p>
+                <a href="{{ url_for('student_login') }}" class="login-btn">
+                    <i class="fas fa-user-pen"></i> student login
+                    <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Government Polytechnic Kangra. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

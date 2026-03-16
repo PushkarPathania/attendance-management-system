@@ -13,6 +13,10 @@
 </head>
 <body>
     <div class="dashboard-container">
+        <div class="sidebar-backdrop" onclick="toggleSidebar(event)"></div>
+        <button class="sidebar-collapse-btn" onclick="toggleSidebar(event)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
         <aside class="sidebar">
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
@@ -30,22 +34,6 @@
                 <a href="#attendance-history" onclick="showSection('attendance')">
                     <i class="fas fa-chart-bar"></i>
                     <span>Attendance</span>
-                </a>
-                <a href="#grades" onclick="showSection('grades')">
-                    <i class="fas fa-star"></i>
-                    <span>Grades</span>
-                </a>
-                <a href="#assignments" onclick="showSection('assignments')">
-                    <i class="fas fa-tasks"></i>
-                    <span>Assignments</span>
-                </a>
-                <a href="#schedule" onclick="showSection('schedule')">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Schedule</span>
-                </a>
-                <a href="#messages" onclick="showSection('messages')">
-                    <i class="fas fa-envelope"></i>
-                    <span>Messages</span>
                 </a>
                 <a href="#settings" onclick="showSection('settings')">
                     <i class="fas fa-cog"></i>
@@ -267,58 +255,6 @@
                 </div>
             </div>
 
-            <!-- Grades Section -->
-            <div id="grades" class="section">
-                <div class="card">
-                    <div class="card-header">
-                        <h2><i class="fas fa-star"></i> Your Grades</h2>
-                    </div>
-                    <div class="grades-placeholder">
-                        <i class="fas fa-inbox"></i>
-                        <p>Grade information will be available soon</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Assignments Section -->
-            <div id="assignments" class="section">
-                <div class="card">
-                    <div class="card-header">
-                        <h2><i class="fas fa-tasks"></i> Assignments</h2>
-                    </div>
-                    <div class="assignments-placeholder">
-                        <i class="fas fa-inbox"></i>
-                        <p>Check back soon for upcoming assignments</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Schedule Section -->
-            <div id="schedule" class="section">
-                <div class="card">
-                    <div class="card-header">
-                        <h2><i class="fas fa-calendar-alt"></i> Class Schedule</h2>
-                    </div>
-                    <div class="schedule-placeholder">
-                        <i class="fas fa-inbox"></i>
-                        <p>Your class schedule will appear here</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Messages Section -->
-            <div id="messages" class="section">
-                <div class="card">
-                    <div class="card-header">
-                        <h2><i class="fas fa-envelope"></i> Messages</h2>
-                    </div>
-                    <div class="messages-placeholder">
-                        <i class="fas fa-inbox"></i>
-                        <p>No new messages</p>
-                    </div>
-                </div>
-            </div>
-
             <!-- Settings Section -->
             <div id="settings" class="section">
                 <div class="card">
@@ -439,6 +375,25 @@
                 link.classList.remove('active');
             });
             event.target.closest('a').classList.add('active');
+        }
+
+        // Toggle Sidebar Slide Animation
+        function toggleSidebar(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.querySelector('.sidebar-backdrop');
+            const mainContent = document.querySelector('.main-content');
+            const toggleBtn = document.querySelector('.sidebar-collapse-btn');
+            
+            sidebar.classList.toggle('collapsed');
+            backdrop.classList.toggle('active');
+            mainContent.classList.toggle('sidebar-hidden');
+            if (toggleBtn) {
+                toggleBtn.classList.toggle('rotated');
+            }
         }
     </script>
 </body>

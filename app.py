@@ -11,14 +11,14 @@ app = Flask(__name__)
 # MySQL Configuration
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'pushkar2006'  # Enter your MySQL password here
+app.config['MYSQL_PASSWORD'] = 'priya123'  # Enter your MySQL password here
 app.config['MYSQL_DB'] = 'student_portal'
 
 # Initialize MySQL
 mysql = MySQL(app)
 
 # Secret key for session
-app.secret_key = 'pushkar2006'
+app.secret_key = 'priya123'
 
 # Admin credentials (default)
 ADMIN_EMAIL = 'admin@admin.com'
@@ -348,7 +348,7 @@ def teacher_dashboard():
         all_attendance = cur.fetchall()
 
         cur.close()
-        return render_template('teacher_dashboard.html', teacher_name=session.get('teacher_name'), students=students, attendance_data=attendance_data, today=today, teacher_subject=teacher_subject, all_attendance=all_attendance)
+        return render_template('teacher_dashboard.html', teacher_name=session.get('teacher_name'), teacher_semester=teacher_semester, students=students, attendance_data=attendance_data, today=today, teacher_subject=teacher_subject, all_attendance=all_attendance)
     return redirect(url_for('index'))
 
 @app.route('/student-login', methods=['GET', 'POST'])

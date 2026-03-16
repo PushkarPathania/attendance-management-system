@@ -6,7 +6,7 @@
 }
 
 body { 
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background: linear-gradient(135deg, #f8fafc 0%, #e8ecf1 50%, #f0e6ff 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -18,45 +18,82 @@ body {
     color: white;
     text-align: center;
     margin-bottom: 30px;
+    background: linear-gradient(135deg, #ed8936 0%, #dd6b20 50%, #c05621 100%);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(237, 137, 54, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+    border-radius: 50%;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -30px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
+    border-radius: 50%;
 }
 
 .page-header h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 800;
 }
 
 .page-header p {
     font-size: 1.2em;
-    opacity: 0.9;
+    opacity: 1;
+    font-weight: 400;
 }
 
 .form-container { 
-    background: rgba(255, 255, 255, 0.95);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(248, 250, 252, 0.95));
     max-width: 600px;
     width: 100%;
     margin: 0 auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
 }
 
 h2 { 
     text-align: center;
-    color: #1a2a6c;
+    background: linear-gradient(120deg, #ed8936, #dd6b20);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 2em;
     margin-bottom: 30px;
     position: relative;
+    font-weight: 800;
 }
 
 h2:after {
     content: '';
     display: block;
-    width: 60px;
+    width: 80px;
     height: 4px;
-    background: #b21f1f;
+    background: linear-gradient(90deg, #ed8936, #dd6b20, #c05621);
     margin: 10px auto;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .form-group {
@@ -75,16 +112,16 @@ input, select {
     width: 100%;
     padding: 12px 15px;
     margin-bottom: 15px;
-    border: 2px solid #e1e1e1;
-    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
     font-size: 1em;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus, select:focus {
     outline: none;
-    border-color: #1a2a6c;
-    box-shadow: 0 0 0 3px rgba(26,42,108,0.1);
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
 }
 
 select {
@@ -109,19 +146,24 @@ select {
 button {
     width: 100%;
     padding: 15px;
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: #fff;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1.1em;
     font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+    box-shadow: 0 12px 25px rgba(102, 126, 234, 0.3);
 }
 
 button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 18px 35px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 .toggle {
@@ -130,7 +172,7 @@ button:hover {
 }
 
 .toggle a {
-    color: #1a2a6c;
+    color: #667eea;
     text-decoration: none;
     font-weight: 500;
     display: inline-flex;
@@ -140,7 +182,7 @@ button:hover {
 }
 
 .toggle a:hover {
-    color: #b21f1f;
+    color: #5568d3;
 }
 
 .toggle a i {

@@ -1,26 +1,26 @@
-/* Trust Blue & Green Theme
-   Primary: Deep Sky Blue (#007BFF)
-   Secondary/Success: Medium Green (#28A745)
-   Accent: Yellow/Orange for warnings
-   Neutral: light grey background
+/* Trust Blue & Green Theme - Light Version
+   Primary: Soft Blue (#667EEA)
+   Secondary/Success: Soft Green (#48BB78)
+   Accent: Soft Amber for warnings
+   Neutral: Very light grey background
 */
 :root{
-  /* Government-portal palette - muted, professional */
-  --primary: #0B3D91; /* muted navy */
-  --primary-700: #0a357f;
-  --success: #1F8A4C; /* medium green for present */
-  --warning: #F0AD4E; /* soft amber for warnings */
-  --late: #E67E22; /* orange for late */
-  --error: #D9534F; /* red for absence/errors */
-  --bg: #f0f3f7; /* very light cool grey */
+  /* Professional light palette */
+  --primary: #667eea; /* soft blue */
+  --primary-700: #5568d3;
+  --success: #48bb78; /* soft green for present */
+  --warning: #ecc94b; /* soft amber for warnings */
+  --late: #ed8936; /* soft orange for late */
+  --error: #f56565; /* soft red for absence/errors */
+  --bg: #f8fafc; /* very light cool grey */
   --card-bg: #ffffff;
-  --card-border: #dde6f2; /* subtle border */
-  --text: #1f2d3d; /* deep slate for readability */
-  --muted: #6b7280; /* muted text */
+  --card-border: #e2e8f0; /* subtle border */
+  --text: #2d3748; /* slate for readability */
+  --muted: #718096; /* muted text */
 }
 
 body{
-  background: linear-gradient(180deg, var(--bg), #ffffff);
+  background: linear-gradient(135deg, var(--bg) 0%, #e8ecf1 50%, #f0e6ff 100%);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,48 +29,64 @@ body{
 /* Headers and primary UI elements */
 h1, .header h1 {
   color: var(--primary);
-  font-weight: 700;
+  font-weight: 800;
+  background: linear-gradient(120deg, var(--primary), #764ba2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Buttons */
+/* Buttons with modern styling */
 button, .submit-btn, .login-btn, .register-btn{
-  background: linear-gradient(180deg, var(--primary), var(--primary-700));
-  border: 1px solid rgba(11,61,145,0.08);
+  background: linear-gradient(135deg, var(--primary), var(--primary-700));
+  border: none;
   color: white;
-  box-shadow: none;
+  box-shadow: 0 12px 25px rgba(102, 126, 234, 0.3);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
 }
 
 button:hover, .submit-btn:hover, .login-btn:hover, .register-btn:hover{
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(11,61,145,0.08);
+  box-shadow: 0 18px 35px rgba(102, 126, 234, 0.4);
 }
 
 /* Links */
 a, .back-link, .forgot-link{
   color: var(--primary);
+  transition: all 0.3s ease;
 }
 
-/* Status indicators */
-.status-present { background: var(--success); color: #fff; padding: 4px 8px; border-radius: 6px; }
-.status-absent  { background: var(--error); color: #fff; padding: 4px 8px; border-radius: 6px; }
-.status-late    { background: var(--late); color: #fff; padding: 4px 8px; border-radius: 6px; }
-.status-warning { background: var(--warning); color: #111; padding: 4px 8px; border-radius: 6px; }
+a:hover, .back-link:hover, .forgot-link:hover {
+  color: var(--primary-700);
+}
 
-/* Card backgrounds and subtle borders to resemble government portals */
+/* Status indicators with modern look */
+.status-present { background: linear-gradient(135deg, var(--success), #38a169); color: #fff; padding: 6px 12px; border-radius: 8px; font-weight: 500; }
+.status-absent  { background: linear-gradient(135deg, var(--error), #e53e3e); color: #fff; padding: 6px 12px; border-radius: 8px; font-weight: 500; }
+.status-late    { background: linear-gradient(135deg, var(--late), #dd6b20); color: #fff; padding: 6px 12px; border-radius: 8px; font-weight: 500; }
+.status-warning { background: linear-gradient(135deg, var(--warning), #d69e2e); color: #111; padding: 6px 12px; border-radius: 8px; font-weight: 500; }
+
+/* Card backgrounds with premium styling */
 .registration-container, .login-box, .form-container, .reg-box{
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(248, 250, 252, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
 }
 
-/* Form focus: accessible focus ring */
+/* Form focus: beautiful focus ring */
 input:focus, select:focus{
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(11,61,145,0.08);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
 }
 
 /* Minor tweaks */
-.header h2, h2 { color: var(--muted); font-weight: 600; }
+.header h2, h2 { color: var(--muted); font-weight: 700; }
 
 @media (max-width: 768px){
-  :root { --primary-700: #092f73; }
+  :root { --primary-700: #5568d3; }
 }

@@ -12,6 +12,10 @@
 </head>
 <body>
     <div class="dashboard-container">
+        <div class="sidebar-backdrop" onclick="toggleSidebar(event)"></div>
+        <button class="sidebar-collapse-btn" onclick="toggleSidebar(event)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
         <aside class="sidebar">
             <div class="logo">
                 <i class="fas fa-shield-alt"></i>
@@ -454,6 +458,25 @@
             const modal = document.getElementById('resetPasswordModal');
             if (event.target == modal) {
                 modal.classList.remove('show');
+            }
+        }
+
+        // Toggle Sidebar Slide Animation
+        function toggleSidebar(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.querySelector('.sidebar-backdrop');
+            const mainContent = document.querySelector('.main-content');
+            const toggleBtn = document.querySelector('.sidebar-collapse-btn');
+            
+            sidebar.classList.toggle('collapsed');
+            backdrop.classList.toggle('active');
+            mainContent.classList.toggle('sidebar-hidden');
+            if (toggleBtn) {
+                toggleBtn.classList.toggle('rotated');
             }
         }
     </script>

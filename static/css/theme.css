@@ -1,20 +1,20 @@
-/* Warm & Inviting theme (Burnt Orange primary, Charcoal headings, soft accents)
-   Primary: Burnt Orange (#E67E22)
-   Secondary / Complementary: Dark Gray / Charcoal (#4D4D4D)
-   Accent: Soft blue/green for status indicators
-   Error/Absence: Red
+/* Warm & Inviting Light theme (Soft Blue primary, Charcoal headings, soft accents)
+   Primary: Soft Blue (#667EEA)
+   Secondary / Complementary: Dark Gray / Charcoal (#2D3748)
+   Accent: Soft pastels for status indicators
+   Error/Absence: Soft Red
 */
 :root{
-  --primary: #E67E22; /* burnt orange */
-  --primary-600: #d36d1b;
-  --charcoal: #4D4D4D;
-  --muted: #f5f3f1; /* soft background */
-  --accent: #66CDAA; /* mint/soft green */
-  --accent-2: #5DADE2; /* sky blue */
-  --error: #E74C3C; /* error / absence */
-  --success: #28A745; /* success */
-  --neutral-100: #faf9f8;
-  --text: #222222;
+  --primary: #667eea; /* soft blue */
+  --primary-600: #5568d3;
+  --charcoal: #2d3748;
+  --muted: #f5f7fa; /* light background */
+  --accent: #48bb78; /* soft green */
+  --accent-2: #4299e1; /* sky blue */
+  --error: #f56565; /* soft red / absence */
+  --success: #48bb78; /* success */
+  --neutral-100: #ffffff;
+  --text: #1a202c;
 }
 
 /* Generic overrides */
