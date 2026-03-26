@@ -247,7 +247,7 @@
             {% endwith %}
 
             <div class="info-box">
-                <strong>Note:</strong> Please use the email and password registered during registration.
+                <strong>Note:</strong> Student accounts are created by the admin. Use the credentials provided.
             </div>
 
             <form method="POST" action="{{ url_for('student_login') }}">
@@ -280,10 +280,7 @@
             </div>
 
             <div class="signup-link">
-                <p>Don't have an account?</p>
-                <a href="{{ url_for('student_registration') }}">
-                    <i class="fas fa-user-plus"></i> Register Now
-                </a>
+                <p>Need an account? Please contact the admin.</p>
             </div>
         </div>
     </div>

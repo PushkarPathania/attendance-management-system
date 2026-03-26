@@ -30,9 +30,17 @@
                     <i class="fas fa-chalkboard-user"></i>
                     <span>Manage Teachers</span>
                 </a>
+                <a href="#students" onclick="showSection('students')">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Manage Students</span>
+                </a>
                 <a href="#create" onclick="showSection('create')">
                     <i class="fas fa-plus-circle"></i>
                     <span>Add Teacher</span>
+                </a>
+                <a href="#create-student" onclick="showSection('create-student')">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Add Student</span>
                 </a>
                 <a href="#reports" onclick="showSection('reports')">
                     <i class="fas fa-chart-bar"></i>
@@ -91,11 +99,11 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon active">
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-user-graduate"></i>
                         </div>
                         <div class="stat-content">
-                            <h3>Active Teachers</h3>
-                            <p>{{ teachers|length }}</p>
+                            <h3>Total Students</h3>
+                            <p>{{ students|length }}</p>
                         </div>
                     </div>
                     <div class="stat-card">
@@ -104,7 +112,7 @@
                         </div>
                         <div class="stat-content">
                             <h3>System Users</h3>
-                            <p>{{ teachers|length + 1 }}</p>
+                            <p>{{ teachers|length + students|length + 1 }}</p>
                         </div>
                     </div>
                 </div>
@@ -119,8 +127,8 @@
                             <p style="font-size: 1.5rem; color: #2c3e50; font-weight: 600;">{{ teachers|length }}</p>
                         </div>
                         <div style="padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #28a745;">
-                            <p style="color: #999; font-size: 0.9rem; margin-bottom: 5px;"><strong>Last Updated</strong></p>
-                            <p style="font-size: 1.2rem; color: #2c3e50; font-weight: 600;">Now</p>
+                            <p style="color: #999; font-size: 0.9rem; margin-bottom: 5px;"><strong>Students</strong></p>
+                            <p style="font-size: 1.5rem; color: #2c3e50; font-weight: 600;">{{ students|length }}</p>
                         </div>
                         <div style="padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #ffc107;">
                             <p style="color: #999; font-size: 0.9rem; margin-bottom: 5px;"><strong>Status</strong></p>
@@ -166,13 +174,13 @@
                                         <td>{{ teacher[6] if teacher[6] else 'N/A' }}</td>
                                         <td>
                                             <div class="action-buttons">
-                                                <a href="{{ url_for('admin_edit_teacher', teacher_id=teacher[0]) }}" class="action-btn btn-edit">
+                                                <a href="{{ url_for('admin_edit_teacher', teacher_id=teacher[0], branch=teacher[4], semester=teacher[5]) }}" class="action-btn btn-edit">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </a>
-                                                <button type="button" class="action-btn btn-reset" onclick="openResetPasswordModal({{ teacher[0] }}, '{{ teacher[1] }}')">
+                                                <button type="button" class="action-btn btn-reset" onclick="openResetPasswordModal({{ teacher[0] }}, '{{ teacher[1] }}', '{{ teacher[4] }}', '{{ teacher[5] }}')">
                                                     <i class="fas fa-key"></i> Reset Pwd
                                                 </button>
-                                                <form method="POST" action="{{ url_for('admin_delete_teacher', teacher_id=teacher[0]) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this teacher?');">
+                                                <form method="POST" action="{{ url_for('admin_delete_teacher', teacher_id=teacher[0], branch=teacher[4], semester=teacher[5]) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this teacher?');">
                                                     <button type="submit" class="action-btn btn-delete">
                                                         <i class="fas fa-trash"></i> Delete
                                                     </button>
@@ -188,6 +196,67 @@
                         <div style="text-align: center; padding: 40px;">
                             <i class="fas fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 15px;"></i>
                             <p style="color: #999; font-size: 1.1rem;">No teachers found. <a href="#create" onclick="showSection('create')" style="color: #667eea; cursor: pointer;">Add the first teacher</a></p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Manage Students Section -->
+            <div id="students" class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-list"></i> All Students</h2>
+                        <button class="add-btn" onclick="showSection('create-student')">
+                            <i class="fas fa-plus"></i> Add Student
+                        </button>
+                    </div>
+                    {% if students %}
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Full Name</th>
+                                        <th>Email</th>
+                                        <th>Roll No</th>
+                                        <th>Branch</th>
+                                        <th>Semester</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for student in students %}
+                                    <tr>
+                                        <td>{{ student[0] }}</td>
+                                        <td>{{ student[1] }}</td>
+                                        <td>{{ student[2] }}</td>
+                                        <td>{{ student[3] }}</td>
+                                        <td>{{ student[4] }}</td>
+                                        <td>{{ student[5] }}</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <a href="{{ url_for('admin_edit_student', student_id=student[0], branch=student[4], semester=student[5]) }}" class="action-btn btn-edit">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </a>
+                                                <button type="button" class="action-btn btn-reset" onclick="openResetStudentPasswordModal({{ student[0] }}, '{{ student[1] }}', '{{ student[4] }}', '{{ student[5] }}')">
+                                                    <i class="fas fa-key"></i> Reset Pwd
+                                                </button>
+                                                <form method="POST" action="{{ url_for('admin_delete_student', student_id=student[0], branch=student[4], semester=student[5]) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this student?');">
+                                                    <button type="submit" class="action-btn btn-delete">
+                                                        <i class="fas fa-trash"></i> Delete
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <div style="text-align: center; padding: 40px;">
+                            <i class="fas fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 15px;"></i>
+                            <p style="color: #999; font-size: 1.1rem;">No students found. <a href="#create-student" onclick="showSection('create-student')" style="color: #667eea; cursor: pointer;">Add the first student</a></p>
                         </div>
                     {% endif %}
                 </div>
@@ -225,13 +294,7 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="reg-branch"><i class="fas fa-building"></i> Branch</label>
-                                <select id="reg-branch" name="reg-branch">
-                                    <option value="">Select Branch</option>
-                                    <option value="IT">Information Technology</option>
-                                    <option value="CS">Computer Science</option>
-                                    <option value="EC">Electronics</option>
-                                    <option value="EE">Electrical</option>
-                                </select>
+                                <input type="text" id="reg-branch" name="reg-branch" placeholder="Enter branch" required>
                             </div>
                             <div class="form-group">
                                 <label for="reg-semester"><i class="fas fa-book"></i> Semester</label>
@@ -241,6 +304,10 @@
                                     <option value="2">2nd Semester</option>
                                     <option value="3">3rd Semester</option>
                                     <option value="4">4th Semester</option>
+                                    <option value="5">5th Semester</option>
+                                    <option value="6">6th Semester</option>
+                                    <option value="7">7th Semester</option>
+                                    <option value="8">8th Semester</option>
                                 </select>
                             </div>
                         </div>
@@ -274,12 +341,74 @@
 
                         <div class="form-group">
                             <label for="reg-password"><i class="fas fa-lock"></i> Password</label>
-                            <input type="password" id="reg-password" name="reg-password" placeholder="Enter initial password" required>
+                            <input type="password" id="reg-password" name="reg-password" placeholder="Default: 2026" value="2026" required>
                         </div>
 
                         <div class="form-actions" style="gap: 15px;">
                             <button type="submit" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; flex: 1; padding: 12px;">
                                 <i class="fas fa-plus"></i> Create Teacher
+                            </button>
+                            <button type="reset" class="btn btn-secondary" style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px;">
+                                <i class="fas fa-times"></i> Clear
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Create Student Section -->
+            <div id="create-student" class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user-plus"></i> Create New Student</h2>
+                    </div>
+                    <form method="POST" action="{{ url_for('admin_create_student') }}">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="stu-name"><i class="fas fa-user"></i> Full Name</label>
+                                <input type="text" id="stu-name" name="stu-name" placeholder="Enter full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stu-email"><i class="fas fa-envelope"></i> Email</label>
+                                <input type="email" id="stu-email" name="stu-email" placeholder="Enter email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="stu-roll"><i class="fas fa-id-card"></i> Roll No.</label>
+                                <input type="text" id="stu-roll" name="stu-roll" placeholder="Enter roll number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stu-branch"><i class="fas fa-building"></i> Branch</label>
+                                <input type="text" id="stu-branch" name="stu-branch" placeholder="Enter branch" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="stu-semester"><i class="fas fa-book"></i> Semester</label>
+                                <select id="stu-semester" name="stu-semester" required>
+                                    <option value="">Select Semester</option>
+                                    <option value="1">1st Semester</option>
+                                    <option value="2">2nd Semester</option>
+                                    <option value="3">3rd Semester</option>
+                                    <option value="4">4th Semester</option>
+                                    <option value="5">5th Semester</option>
+                                    <option value="6">6th Semester</option>
+                                    <option value="7">7th Semester</option>
+                                    <option value="8">8th Semester</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="stu-password"><i class="fas fa-lock"></i> Password</label>
+                                <input type="password" id="stu-password" name="stu-password" placeholder="Default: 2026">
+                            </div>
+                        </div>
+
+                        <div class="form-actions" style="gap: 15px;">
+                            <button type="submit" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; flex: 1; padding: 12px;">
+                                <i class="fas fa-plus"></i> Create Student
                             </button>
                             <button type="reset" class="btn btn-secondary" style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px;">
                                 <i class="fas fa-times"></i> Clear
@@ -345,7 +474,7 @@
         </main>
     </div>
 
-    <!-- Reset Password Modal -->
+    <!-- Reset Password Modal (Teacher) -->
     <div id="resetPasswordModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -353,6 +482,8 @@
                 <button class="close-modal" onclick="closeResetPasswordModal()">&times;</button>
             </div>
             <form method="POST" id="resetPasswordForm">
+                <input type="hidden" id="teacherBranch" name="branch">
+                <input type="hidden" id="teacherSemester" name="semester">
                 <div class="form-group">
                     <label>Teacher Name</label>
                     <input type="text" id="teacherName" placeholder="Teacher Name" disabled style="background: #f0f0f0;">
@@ -370,6 +501,40 @@
                         <i class="fas fa-save"></i> Reset Password
                     </button>
                     <button type="button" class="btn btn-secondary" style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; cursor: pointer; margin-left: 10px;" onclick="closeResetPasswordModal()">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Reset Password Modal (Student) -->
+    <div id="resetStudentPasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Reset Student Password</h3>
+                <button class="close-modal" onclick="closeResetStudentPasswordModal()">&times;</button>
+            </div>
+            <form method="POST" id="resetStudentPasswordForm">
+                <input type="hidden" id="studentBranch" name="branch">
+                <input type="hidden" id="studentSemester" name="semester">
+                <div class="form-group">
+                    <label>Student Name</label>
+                    <input type="text" id="studentName" placeholder="Student Name" disabled style="background: #f0f0f0;">
+                </div>
+                <div class="form-group">
+                    <label for="new-student-password"><i class="fas fa-lock"></i> New Password</label>
+                    <input type="password" id="new-student-password" name="new-password" placeholder="Enter new password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-student-password"><i class="fas fa-lock"></i> Confirm Password</label>
+                    <input type="password" id="confirm-student-password" placeholder="Confirm password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" style="background: linear-gradient(135deg, #28a745, #20c997); color: white; flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; cursor: pointer;">
+                        <i class="fas fa-save"></i> Reset Password
+                    </button>
+                    <button type="button" class="btn btn-secondary" style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; cursor: pointer; margin-left: 10px;" onclick="closeResetStudentPasswordModal()">
                         Cancel
                     </button>
                 </div>
@@ -400,18 +565,26 @@
         }
 
         let currentTeacherId = null;
+        let currentTeacherBranch = null;
+        let currentTeacherSemester = null;
 
-        function openResetPasswordModal(teacherId, teacherName) {
+        function openResetPasswordModal(teacherId, teacherName, branch, semester) {
             currentTeacherId = teacherId;
+            currentTeacherBranch = branch;
+            currentTeacherSemester = semester;
             document.getElementById('teacherName').value = teacherName;
             document.getElementById('new-password').value = '';
             document.getElementById('confirm-password').value = '';
+            document.getElementById('teacherBranch').value = branch;
+            document.getElementById('teacherSemester').value = semester;
             document.getElementById('resetPasswordModal').classList.add('show');
         }
 
         function closeResetPasswordModal() {
             document.getElementById('resetPasswordModal').classList.remove('show');
             currentTeacherId = null;
+            currentTeacherBranch = null;
+            currentTeacherSemester = null;
         }
 
         document.getElementById('resetPasswordForm').addEventListener('submit', function(e) {
@@ -433,13 +606,66 @@
             // Create a hidden form and submit it
             const form = document.createElement('form');
             form.method = 'POST';
-            form.action = `/admin-reset-password/${currentTeacherId}`;
+            form.action = `/admin-reset-password/${currentTeacherId}?branch=${encodeURIComponent(currentTeacherBranch)}&semester=${encodeURIComponent(currentTeacherSemester)}`;
             
             const input = document.createElement('input');
             input.type = 'hidden';
             input.name = 'new-password';
             input.value = newPassword;
             
+            form.appendChild(input);
+            document.body.appendChild(form);
+            form.submit();
+        });
+
+        let currentStudentId = null;
+        let currentStudentBranch = null;
+        let currentStudentSemester = null;
+
+        function openResetStudentPasswordModal(studentId, studentName, branch, semester) {
+            currentStudentId = studentId;
+            currentStudentBranch = branch;
+            currentStudentSemester = semester;
+            document.getElementById('studentName').value = studentName;
+            document.getElementById('new-student-password').value = '';
+            document.getElementById('confirm-student-password').value = '';
+            document.getElementById('studentBranch').value = branch;
+            document.getElementById('studentSemester').value = semester;
+            document.getElementById('resetStudentPasswordModal').classList.add('show');
+        }
+
+        function closeResetStudentPasswordModal() {
+            document.getElementById('resetStudentPasswordModal').classList.remove('show');
+            currentStudentId = null;
+            currentStudentBranch = null;
+            currentStudentSemester = null;
+        }
+
+        document.getElementById('resetStudentPasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const newPassword = document.getElementById('new-student-password').value;
+            const confirmPassword = document.getElementById('confirm-student-password').value;
+
+            if (newPassword !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            if (newPassword.length < 6) {
+                alert('Password must be at least 6 characters long!');
+                return;
+            }
+
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = `/admin-reset-student-password/${currentStudentId}?branch=${encodeURIComponent(currentStudentBranch)}&semester=${encodeURIComponent(currentStudentSemester)}`;
+
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'new-password';
+            input.value = newPassword;
+
             form.appendChild(input);
             document.body.appendChild(form);
             form.submit();
@@ -456,8 +682,12 @@
         // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('resetPasswordModal');
+            const studentModal = document.getElementById('resetStudentPasswordModal');
             if (event.target == modal) {
                 modal.classList.remove('show');
+            }
+            if (event.target == studentModal) {
+                studentModal.classList.remove('show');
             }
         }
 

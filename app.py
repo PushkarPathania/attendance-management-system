@@ -8,10 +8,13 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+# Common default password for seeded/admin-created users
+DEFAULT_USER_PASSWORD = "2026"
+
 # MySQL Configuration
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'priya123'  # Enter your MySQL password here
+app.config['MYSQL_PASSWORD'] = 'pushkar2006'  # Enter your MySQL password here
 app.config['MYSQL_DB'] = 'student_portal'
 
 # Initialize MySQL
@@ -23,6 +26,263 @@ app.secret_key = 'priya123'
 # Admin credentials (default)
 ADMIN_EMAIL = 'admin@admin.com'
 ADMIN_PASSWORD = 'admin123'
+
+
+def slugify_branch(branch):
+    if not branch:
+        return ""
+    slug = re.sub(r'[^a-zA-Z0-9]+', '_', branch.strip().lower())
+    return slug.strip('_')
+
+
+def _is_safe_table_name(name):
+    return bool(re.match(r'^[a-z0-9_]+$', name or ''))
+
+
+def _class_table_names(branch_slug, semester):
+    safe_slug = slugify_branch(branch_slug)
+    sem = str(semester).strip()
+    return {
+        "students_table": f"students_{safe_slug}_sem{sem}",
+        "teachers_table": f"teachers_{safe_slug}_sem{sem}",
+        "attendance_table": f"attendance_{safe_slug}_sem{sem}",
+    }
+
+
+def ensure_meta_table():
+    cur = mysql.connection.cursor()
+    cur.execute(
+        """
+        CREATE TABLE IF NOT EXISTS class_tables (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            branch VARCHAR(100) NOT NULL,
+            semester VARCHAR(20) NOT NULL,
+            branch_slug VARCHAR(100) NOT NULL,
+            students_table VARCHAR(128) NOT NULL,
+            teachers_table VARCHAR(128) NOT NULL,
+            attendance_table VARCHAR(128) NOT NULL,
+            UNIQUE KEY uniq_branch_sem (branch, semester)
+        )
+        """
+    )
+    mysql.connection.commit()
+    cur.close()
+
+
+def _create_students_table(table_name):
+    if not _is_safe_table_name(table_name):
+        raise ValueError("Unsafe table name")
+    cur = mysql.connection.cursor()
+    cur.execute(
+        f"""
+        CREATE TABLE IF NOT EXISTS {table_name} (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            full_name VARCHAR(100) NOT NULL,
+            email VARCHAR(120) NOT NULL,
+            board_roll_no VARCHAR(40) NOT NULL,
+            branch VARCHAR(100) NOT NULL,
+            semester VARCHAR(20) NOT NULL,
+            password VARCHAR(255) NOT NULL,
+            UNIQUE KEY uniq_email (email),
+            KEY idx_roll (board_roll_no)
+        )
+        """
+    )
+    cur.close()
+
+
+def _create_teachers_table(table_name):
+    if not _is_safe_table_name(table_name):
+        raise ValueError("Unsafe table name")
+    cur = mysql.connection.cursor()
+    cur.execute(
+        f"""
+        CREATE TABLE IF NOT EXISTS {table_name} (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            full_name VARCHAR(100) NOT NULL,
+            email VARCHAR(120) NOT NULL,
+            mobile VARCHAR(30) NULL,
+            teacher_id VARCHAR(50) NULL,
+            branch VARCHAR(100) NULL,
+            semester VARCHAR(20) NULL,
+            subject VARCHAR(100) NULL,
+            designation VARCHAR(100) NULL,
+            gender VARCHAR(20) NULL,
+            dob DATE NULL,
+            password VARCHAR(255) NOT NULL,
+            UNIQUE KEY uniq_email (email),
+            KEY idx_teacher_id (teacher_id)
+        )
+        """
+    )
+    cur.close()
+
+
+def _create_attendance_table(table_name):
+    if not _is_safe_table_name(table_name):
+        raise ValueError("Unsafe table name")
+    cur = mysql.connection.cursor()
+    cur.execute(
+        f"""
+        CREATE TABLE IF NOT EXISTS {table_name} (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            student_id INT NOT NULL,
+            teacher_id INT NOT NULL,
+            date DATE NOT NULL,
+            status VARCHAR(20) NOT NULL,
+            subject VARCHAR(100) NOT NULL,
+            KEY idx_student_date (student_id, date),
+            KEY idx_teacher_date (teacher_id, date)
+        )
+        """
+    )
+    cur.close()
+
+
+def ensure_class_tables(branch, semester):
+    ensure_meta_table()
+    row = resolve_class_tables(branch, semester)
+    if row:
+        return row
+    branch_slug = slugify_branch(branch)
+    names = _class_table_names(branch_slug, semester)
+    for name in names.values():
+        if not _is_safe_table_name(name):
+            raise ValueError("Unsafe table name")
+    cur = mysql.connection.cursor()
+    cur.execute(
+        """
+        INSERT INTO class_tables (branch, semester, branch_slug, students_table, teachers_table, attendance_table)
+        VALUES (%s, %s, %s, %s, %s, %s)
+        """,
+        (branch, str(semester), branch_slug, names["students_table"], names["teachers_table"], names["attendance_table"]),
+    )
+    _create_students_table(names["students_table"])
+    _create_teachers_table(names["teachers_table"])
+    _create_attendance_table(names["attendance_table"])
+    mysql.connection.commit()
+    cur.close()
+    return resolve_class_tables(branch, semester)
+
+
+def get_class_tables():
+    ensure_meta_table()
+    cur = mysql.connection.cursor()
+    cur.execute(
+        """
+        SELECT branch, semester, branch_slug, students_table, teachers_table, attendance_table
+        FROM class_tables
+        ORDER BY branch, semester
+        """
+    )
+    rows = cur.fetchall()
+    cur.close()
+    result = []
+    for row in rows:
+        result.append(
+            {
+                "branch": row[0],
+                "semester": row[1],
+                "branch_slug": row[2],
+                "students_table": row[3],
+                "teachers_table": row[4],
+                "attendance_table": row[5],
+            }
+        )
+    return result
+
+
+def resolve_class_tables(branch, semester):
+    ensure_meta_table()
+    cur = mysql.connection.cursor()
+    cur.execute(
+        """
+        SELECT branch, semester, branch_slug, students_table, teachers_table, attendance_table
+        FROM class_tables
+        WHERE branch = %s AND semester = %s
+        """,
+        (branch, str(semester)),
+    )
+    row = cur.fetchone()
+    cur.close()
+    if not row:
+        return None
+    return {
+        "branch": row[0],
+        "semester": row[1],
+        "branch_slug": row[2],
+        "students_table": row[3],
+        "teachers_table": row[4],
+        "attendance_table": row[5],
+    }
+
+
+def _sort_semester_key(value):
+    try:
+        return int(str(value))
+    except ValueError:
+        return str(value)
+
+
+def fetch_all_teachers():
+    teachers = []
+    class_rows = get_class_tables()
+    cur = mysql.connection.cursor()
+    for row in class_rows:
+        table = row["teachers_table"]
+        if not _is_safe_table_name(table):
+            continue
+        cur.execute(
+            f"""
+            SELECT id, full_name, email, teacher_id, branch, semester, subject,
+                   mobile, designation, gender, dob
+            FROM {table}
+            ORDER BY id DESC
+            """
+        )
+        teachers.extend(cur.fetchall())
+    cur.close()
+    return teachers
+
+
+def fetch_all_students():
+    students = []
+    class_rows = get_class_tables()
+    cur = mysql.connection.cursor()
+    for row in class_rows:
+        table = row["students_table"]
+        if not _is_safe_table_name(table):
+            continue
+        cur.execute(
+            f"""
+            SELECT id, full_name, email, board_roll_no, branch, semester
+            FROM {table}
+            ORDER BY id DESC
+            """
+        )
+        students.extend(cur.fetchall())
+    cur.close()
+    return students
+
+
+def find_student_by_email(email):
+    class_rows = get_class_tables()
+    cur = mysql.connection.cursor()
+    for row in class_rows:
+        table = row["students_table"]
+        if not _is_safe_table_name(table):
+            continue
+        cur.execute(
+            f'''SELECT id, full_name, email, board_roll_no, branch, semester, password
+                FROM {table} WHERE email = %s LIMIT 1''',
+            (email,),
+        )
+        student = cur.fetchone()
+        if student:
+            cur.close()
+            return student, row
+    cur.close()
+    return None, None
 @app.route('/')
 @app.route('/index.html')
 def index():
@@ -30,40 +290,8 @@ def index():
 
 @app.route('/student-registation.html', methods=['GET', 'POST'])
 def student_registration():
-    if request.method == 'POST':
-        # Get form data
-        fullName = request.form['fullName']
-        email = request.form['email']
-        boardRollNo = request.form['boardRollNo']
-        branch = request.form['reg-branch']
-        semester = request.form['reg-semester']
-        password = request.form['password']
-        
-        # Create cursor
-        cur = mysql.connection.cursor()
-        
-        # Check if student already exists
-        cur.execute('SELECT * FROM students WHERE email = %s OR board_roll_no = %s', (email, boardRollNo))
-        student = cur.fetchone()
-        
-        if student:
-            flash('Email or Board Roll No already exists!', 'error')
-            return render_template('student-registation.html')
-        
-        # Insert new student
-        cur.execute('INSERT INTO students (full_name, email, board_roll_no, branch, semester, password) VALUES (%s, %s, %s, %s, %s, %s)',
-                   (fullName, email, boardRollNo, branch, semester, password))
-        
-        # Commit to DB
-        mysql.connection.commit()
-        
-        # Close connection
-        cur.close()
-        
-        flash('Registration successful! Please login.', 'success')
-        return redirect(url_for('index'))
-        
-    return render_template('student-registation.html')
+    flash('Student registration is handled by the admin.', 'error')
+    return redirect(url_for('index'))
 
 # ========== ADMIN ROUTES ==========
 @app.route('/admin-login', methods=['GET', 'POST'])
@@ -90,12 +318,10 @@ def admin_dashboard():
         flash('Please login as admin first.', 'error')
         return redirect(url_for('admin_login'))
 
-    cur = mysql.connection.cursor()
-    cur.execute('SELECT id, full_name, email, teacher_id, branch, semester, subject FROM teachers ORDER BY id DESC')
-    teachers = cur.fetchall()
-    cur.close()
+    teachers = fetch_all_teachers()
+    students = fetch_all_students()
 
-    return render_template('admin-dashboard.html', teachers=teachers)
+    return render_template('admin-dashboard.html', teachers=teachers, students=students)
 
 
 @app.route('/teacher-register', methods=['GET', 'POST'])
@@ -107,53 +333,111 @@ def admin_create_teacher():
     if request.method == 'POST':
         # Collect form data
         full_name = request.form.get('reg-name')
-        email = request.form.get('reg-email')
+        email = (request.form.get('reg-email') or '').lower()
         mobile = request.form.get('reg-mobile')
         teacher_id = request.form.get('reg-id')
         branch = request.form.get('reg-branch')
         semester = request.form.get('reg-semester')
-        subject = request.form.get('reg-subject') if semester == '1' else None
+        subject = request.form.get('reg-subject')
         designation = request.form.get('reg-designation')
         gender = request.form.get('reg-gender')
         dob = request.form.get('reg-dob')
-        password = request.form.get('reg-password')
+        password = request.form.get('reg-password') or DEFAULT_USER_PASSWORD
 
         # Basic validation
-        if not (full_name and email and teacher_id and password):
+        if not (full_name and email and branch and semester and subject):
             flash('Please fill in the required fields.', 'error')
-            return render_template('admin-dashboard.html')
+            return redirect(url_for('admin_dashboard'))
 
         # Hash the password before storing
         hashed_pwd = generate_password_hash(password)
 
+        class_row = ensure_class_tables(branch, semester)
+        if not class_row:
+            flash('Invalid branch or semester.', 'error')
+            return redirect(url_for('admin_dashboard'))
+
+        teachers_table = class_row["teachers_table"]
         cur = mysql.connection.cursor()
-        # Check duplicates by email or teacher id
-        cur.execute('SELECT id FROM teachers WHERE email = %s OR teacher_id = %s', (email, teacher_id))
+        # Check duplicates by email or teacher id within class
+        if teacher_id:
+            cur.execute(
+                f'SELECT id FROM {teachers_table} WHERE email = %s OR teacher_id = %s',
+                (email, teacher_id),
+            )
+        else:
+            cur.execute(
+                f'SELECT id FROM {teachers_table} WHERE email = %s',
+                (email,),
+            )
         exists = cur.fetchone()
         if exists:
-            flash('Email or Teacher ID already exists.', 'error')
+            flash('Email or Teacher ID already exists for this class.', 'error')
             cur.close()
-            cur = mysql.connection.cursor()
-            cur.execute('SELECT id, full_name, email, teacher_id, branch, semester, subject FROM teachers ORDER BY id DESC')
-            teachers = cur.fetchall()
-            cur.close()
-            return render_template('admin-dashboard.html', teachers=teachers)
+            return redirect(url_for('admin_dashboard'))
 
         # Insert teacher record
-        cur.execute('''INSERT INTO teachers (full_name, email, mobile, teacher_id, branch, semester, subject, designation, gender, dob, password)
-                       VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)''',
-                    (full_name, email, mobile, teacher_id, branch, semester, subject, designation, gender, dob, hashed_pwd))
+        cur.execute(
+            f'''INSERT INTO {teachers_table} (full_name, email, mobile, teacher_id, branch, semester, subject, designation, gender, dob, password)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)''',
+            (full_name, email, mobile, teacher_id, branch, semester, subject, designation, gender, dob, hashed_pwd),
+        )
         mysql.connection.commit()
         cur.close()
 
         flash('Teacher registered successfully!', 'success')
         return redirect(url_for('admin_dashboard'))
 
+    return redirect(url_for('admin_dashboard'))
+
+
+@app.route('/admin-create-student', methods=['POST'])
+def admin_create_student():
+    if not session.get('admin_logged_in'):
+        flash('Please login as admin first.', 'error')
+        return redirect(url_for('admin_login'))
+
+    full_name = request.form.get('stu-name')
+    email = (request.form.get('stu-email') or '').lower()
+    board_roll_no = request.form.get('stu-roll')
+    branch = request.form.get('stu-branch')
+    semester = request.form.get('stu-semester')
+    password = request.form.get('stu-password') or DEFAULT_USER_PASSWORD
+
+    if not (full_name and email and board_roll_no and branch and semester):
+        flash('Please fill in all required student fields.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    class_row = ensure_class_tables(branch, semester)
+    if not class_row:
+        flash('Invalid branch or semester.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    students_table = class_row["students_table"]
+    hashed_pwd = generate_password_hash(password)
+
     cur = mysql.connection.cursor()
-    cur.execute('SELECT id, full_name, email, teacher_id, branch, semester, subject FROM teachers ORDER BY id DESC')
-    teachers = cur.fetchall()
+    cur.execute(
+        f'SELECT id FROM {students_table} WHERE email = %s OR board_roll_no = %s',
+        (email, board_roll_no),
+    )
+    exists = cur.fetchone()
+    if exists:
+        flash('Student email or roll number already exists in this class.', 'error')
+        cur.close()
+        return redirect(url_for('admin_dashboard'))
+
+    cur.execute(
+        f'''INSERT INTO {students_table}
+            (full_name, email, board_roll_no, branch, semester, password)
+            VALUES (%s, %s, %s, %s, %s, %s)''',
+        (full_name, email, board_roll_no, branch, semester, hashed_pwd),
+    )
+    mysql.connection.commit()
     cur.close()
-    return render_template('admin-dashboard.html', teachers=teachers)
+
+    flash('Student registered successfully!', 'success')
+    return redirect(url_for('admin_dashboard'))
 
 
 @app.route('/admin-edit-teacher/<int:teacher_id>', methods=['GET', 'POST'])
@@ -162,33 +446,79 @@ def admin_edit_teacher(teacher_id):
         flash('Please login as admin first.', 'error')
         return redirect(url_for('admin_login'))
 
+    branch = request.args.get('branch') or request.form.get('edit-branch-original')
+    semester = request.args.get('semester') or request.form.get('edit-semester-original')
+    if not branch or not semester:
+        flash('Missing class information for teacher.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    class_row = resolve_class_tables(branch, semester)
+    if not class_row:
+        flash('Invalid class selection.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    teachers_table = class_row["teachers_table"]
     cur = mysql.connection.cursor()
 
     if request.method == 'POST':
         # Collect form data
         full_name = request.form.get('edit-name')
-        email = request.form.get('edit-email')
+        email = (request.form.get('edit-email') or '').lower()
         mobile = request.form.get('edit-mobile')
         branch = request.form.get('edit-branch')
         semester = request.form.get('edit-semester')
-        subject = request.form.get('edit-subject') if semester == '1' else None
+        subject = request.form.get('edit-subject')
         designation = request.form.get('edit-designation')
         gender = request.form.get('edit-gender')
         dob = request.form.get('edit-dob')
 
-        # Update teacher record
-        cur.execute('''UPDATE teachers SET full_name = %s, email = %s, mobile = %s, branch = %s, 
-                       semester = %s, subject = %s, designation = %s, gender = %s, dob = %s 
-                       WHERE id = %s''',
-                    (full_name, email, mobile, branch, semester, subject, designation, gender, dob, teacher_id))
-        mysql.connection.commit()
+        original_branch = request.form.get('edit-branch-original')
+        original_semester = request.form.get('edit-semester-original')
+        original_class = resolve_class_tables(original_branch, original_semester)
+        if not original_class:
+            flash('Invalid original class.', 'error')
+            cur.close()
+            return redirect(url_for('admin_dashboard'))
 
-        flash('Teacher updated successfully!', 'success')
+        original_table = original_class["teachers_table"]
+
+        # Fetch current password to preserve
+        cur.execute(f'SELECT password FROM {original_table} WHERE id = %s', (teacher_id,))
+        pwd_row = cur.fetchone()
+        current_password = pwd_row[0] if pwd_row else None
+
+        # If class changed, move record to new class table
+        if branch != original_branch or semester != original_semester:
+            target_class = ensure_class_tables(branch, semester)
+            target_table = target_class["teachers_table"]
+
+            cur.execute(
+                f'''INSERT INTO {target_table}
+                    (full_name, email, mobile, teacher_id, branch, semester, subject, designation, gender, dob, password)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)''',
+                (full_name, email, mobile, request.form.get('edit-id'), branch, semester, subject, designation, gender, dob, current_password),
+            )
+            cur.execute(f'DELETE FROM {original_table} WHERE id = %s', (teacher_id,))
+        else:
+            # Update teacher record in same table
+            cur.execute(
+                f'''UPDATE {original_table} SET full_name = %s, email = %s, mobile = %s, branch = %s,
+                    semester = %s, subject = %s, designation = %s, gender = %s, dob = %s
+                    WHERE id = %s''',
+                (full_name, email, mobile, branch, semester, subject, designation, gender, dob, teacher_id),
+            )
+
+        mysql.connection.commit()
         cur.close()
+        flash('Teacher updated successfully!', 'success')
         return redirect(url_for('admin_dashboard'))
 
     # Fetch teacher details
-    cur.execute('SELECT id, full_name, email, mobile, teacher_id, branch, semester, subject, designation, gender, dob FROM teachers WHERE id = %s', (teacher_id,))
+    cur.execute(
+        f'''SELECT id, full_name, email, mobile, teacher_id, branch, semester, subject, designation, gender, dob
+            FROM {teachers_table} WHERE id = %s''',
+        (teacher_id,),
+    )
     teacher = cur.fetchone()
     cur.close()
 
@@ -196,7 +526,85 @@ def admin_edit_teacher(teacher_id):
         flash('Teacher not found.', 'error')
         return redirect(url_for('admin_dashboard'))
 
-    return render_template('admin-edit-teacher.html', teacher=teacher)
+    return render_template('admin-edit-teacher.html', teacher=teacher, class_branch=branch, class_semester=semester)
+
+
+@app.route('/admin-edit-student/<int:student_id>', methods=['GET', 'POST'])
+def admin_edit_student(student_id):
+    if not session.get('admin_logged_in'):
+        flash('Please login as admin first.', 'error')
+        return redirect(url_for('admin_login'))
+
+    branch = request.args.get('branch') or request.form.get('edit-branch-original')
+    semester = request.args.get('semester') or request.form.get('edit-semester-original')
+    if not branch or not semester:
+        flash('Missing class information for student.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    class_row = resolve_class_tables(branch, semester)
+    if not class_row:
+        flash('Invalid class selection.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    students_table = class_row["students_table"]
+    cur = mysql.connection.cursor()
+
+    if request.method == 'POST':
+        full_name = request.form.get('edit-name')
+        email = (request.form.get('edit-email') or '').lower()
+        board_roll_no = request.form.get('edit-roll')
+        branch = request.form.get('edit-branch')
+        semester = request.form.get('edit-semester')
+
+        original_branch = request.form.get('edit-branch-original')
+        original_semester = request.form.get('edit-semester-original')
+        original_class = resolve_class_tables(original_branch, original_semester)
+        if not original_class:
+            flash('Invalid original class.', 'error')
+            cur.close()
+            return redirect(url_for('admin_dashboard'))
+
+        original_table = original_class["students_table"]
+        cur.execute(f'SELECT password FROM {original_table} WHERE id = %s', (student_id,))
+        pwd_row = cur.fetchone()
+        current_password = pwd_row[0] if pwd_row else None
+
+        if branch != original_branch or semester != original_semester:
+            target_class = ensure_class_tables(branch, semester)
+            target_table = target_class["students_table"]
+            cur.execute(
+                f'''INSERT INTO {target_table}
+                    (full_name, email, board_roll_no, branch, semester, password)
+                    VALUES (%s, %s, %s, %s, %s, %s)''',
+                (full_name, email, board_roll_no, branch, semester, current_password),
+            )
+            cur.execute(f'DELETE FROM {original_table} WHERE id = %s', (student_id,))
+        else:
+            cur.execute(
+                f'''UPDATE {original_table}
+                    SET full_name = %s, email = %s, board_roll_no = %s, branch = %s, semester = %s
+                    WHERE id = %s''',
+                (full_name, email, board_roll_no, branch, semester, student_id),
+            )
+
+        mysql.connection.commit()
+        cur.close()
+        flash('Student updated successfully!', 'success')
+        return redirect(url_for('admin_dashboard'))
+
+    cur.execute(
+        f'''SELECT id, full_name, email, board_roll_no, branch, semester
+            FROM {students_table} WHERE id = %s''',
+        (student_id,),
+    )
+    student = cur.fetchone()
+    cur.close()
+
+    if not student:
+        flash('Student not found.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    return render_template('admin-edit-student.html', student=student, class_branch=branch, class_semester=semester)
 
 
 @app.route('/admin-delete-teacher/<int:teacher_id>', methods=['POST'])
@@ -205,12 +613,51 @@ def admin_delete_teacher(teacher_id):
         flash('Please login as admin first.', 'error')
         return redirect(url_for('admin_login'))
 
+    branch = request.args.get('branch') or request.form.get('branch')
+    semester = request.args.get('semester') or request.form.get('semester')
+    if not branch or not semester:
+        flash('Missing class information for delete.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    class_row = resolve_class_tables(branch, semester)
+    if not class_row:
+        flash('Invalid class selection.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    teachers_table = class_row["teachers_table"]
     cur = mysql.connection.cursor()
-    cur.execute('DELETE FROM teachers WHERE id = %s', (teacher_id,))
+    cur.execute(f'DELETE FROM {teachers_table} WHERE id = %s', (teacher_id,))
     mysql.connection.commit()
     cur.close()
 
     flash('Teacher deleted successfully!', 'success')
+    return redirect(url_for('admin_dashboard'))
+
+
+@app.route('/admin-delete-student/<int:student_id>', methods=['POST'])
+def admin_delete_student(student_id):
+    if not session.get('admin_logged_in'):
+        flash('Please login as admin first.', 'error')
+        return redirect(url_for('admin_login'))
+
+    branch = request.args.get('branch') or request.form.get('branch')
+    semester = request.args.get('semester') or request.form.get('semester')
+    if not branch or not semester:
+        flash('Missing class information for delete.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    class_row = resolve_class_tables(branch, semester)
+    if not class_row:
+        flash('Invalid class selection.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    students_table = class_row["students_table"]
+    cur = mysql.connection.cursor()
+    cur.execute(f'DELETE FROM {students_table} WHERE id = %s', (student_id,))
+    mysql.connection.commit()
+    cur.close()
+
+    flash('Student deleted successfully!', 'success')
     return redirect(url_for('admin_dashboard'))
 
 
@@ -226,14 +673,63 @@ def admin_reset_password(teacher_id):
         flash('Password cannot be empty.', 'error')
         return redirect(url_for('admin_dashboard'))
 
+    branch = request.args.get('branch') or request.form.get('branch')
+    semester = request.args.get('semester') or request.form.get('semester')
+    if not branch or not semester:
+        flash('Missing class information for reset.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    class_row = resolve_class_tables(branch, semester)
+    if not class_row:
+        flash('Invalid class selection.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
     hashed_pwd = generate_password_hash(new_password)
 
     cur = mysql.connection.cursor()
-    cur.execute('UPDATE teachers SET password = %s WHERE id = %s', (hashed_pwd, teacher_id))
+    cur.execute(
+        f'UPDATE {class_row["teachers_table"]} SET password = %s WHERE id = %s',
+        (hashed_pwd, teacher_id),
+    )
     mysql.connection.commit()
     cur.close()
 
     flash('Teacher password reset successfully!', 'success')
+    return redirect(url_for('admin_dashboard'))
+
+
+@app.route('/admin-reset-student-password/<int:student_id>', methods=['POST'])
+def admin_reset_student_password(student_id):
+    if not session.get('admin_logged_in'):
+        flash('Please login as admin first.', 'error')
+        return redirect(url_for('admin_login'))
+
+    new_password = request.form.get('new-password')
+    if not new_password:
+        flash('Password cannot be empty.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    branch = request.args.get('branch') or request.form.get('branch')
+    semester = request.args.get('semester') or request.form.get('semester')
+    if not branch or not semester:
+        flash('Missing class information for reset.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    class_row = resolve_class_tables(branch, semester)
+    if not class_row:
+        flash('Invalid class selection.', 'error')
+        return redirect(url_for('admin_dashboard'))
+
+    hashed_pwd = generate_password_hash(new_password)
+    cur = mysql.connection.cursor()
+    cur.execute(
+        f'UPDATE {class_row["students_table"]} SET password = %s WHERE id = %s',
+        (hashed_pwd, student_id),
+    )
+    mysql.connection.commit()
+    cur.close()
+
+    flash('Student password reset successfully!', 'success')
     return redirect(url_for('admin_dashboard'))
 
 
@@ -248,20 +744,35 @@ def admin_logout():
 
 @app.route('/teacher-login', methods=['GET', 'POST'])
 def teacher_login():
+    class_rows = get_class_tables()
+    branches = sorted({row["branch"] for row in class_rows if row["branch"]})
+    semesters = sorted({row["semester"] for row in class_rows if row["semester"]}, key=_sort_semester_key)
+
     if request.method == 'GET':
-        return render_template('teacher-login.html')
+        return render_template('teacher-login.html', branches=branches, semesters=semesters)
     
     # Accept POST from teacher login form
-    email = request.form.get('email')
+    email = (request.form.get('email') or '').lower()
     password = request.form.get('password')
+    branch = request.form.get('branch')
+    semester = request.form.get('semester')
 
-    if not (email and password):
-        flash('Please provide both email and password.', 'error')
-        return render_template('teacher-login.html')
+    if not (email and password and branch and semester):
+        flash('Please provide email, password, branch, and semester.', 'error')
+        return render_template('teacher-login.html', branches=branches, semesters=semesters)
 
+    class_row = resolve_class_tables(branch, semester)
+    if not class_row:
+        flash('Invalid branch or semester selection.', 'error')
+        return render_template('teacher-login.html', branches=branches, semesters=semesters)
+
+    teachers_table = class_row["teachers_table"]
     cur = mysql.connection.cursor()
-    # Fetch id, full_name and password hash for the given email
-    cur.execute('SELECT id, full_name, password FROM teachers WHERE email = %s', (email,))
+    # Fetch id, full_name, password hash, subject for the given email
+    cur.execute(
+        f'SELECT id, full_name, password, subject FROM {teachers_table} WHERE email = %s',
+        (email,),
+    )
     row = cur.fetchone()
     cur.close()
 
@@ -271,11 +782,17 @@ def teacher_login():
             session['teacher_logged_in'] = True
             session['teacher_id'] = row[0]
             session['teacher_name'] = row[1]
+            session['teacher_subject'] = row[3]
+            session['teacher_branch'] = branch
+            session['teacher_semester'] = semester
+            session['teacher_table'] = teachers_table
+            session['students_table'] = class_row["students_table"]
+            session['attendance_table'] = class_row["attendance_table"]
             flash('Welcome, ' + row[1], 'success')
             return redirect(url_for('teacher_dashboard'))
 
     flash('Invalid teacher credentials.', 'error')
-    return render_template('teacher-login.html')
+    return render_template('teacher-login.html', branches=branches, semesters=semesters)
 
 
 @app.route('/teacher-change-password', methods=['GET', 'POST'])
@@ -297,8 +814,13 @@ def teacher_change_password():
             flash('New passwords do not match.', 'error')
             return redirect(url_for('teacher_dashboard'))
 
+        teacher_table = session.get('teacher_table')
+        if not teacher_table or not _is_safe_table_name(teacher_table):
+            flash('Invalid teacher session. Please login again.', 'error')
+            return redirect(url_for('teacher_login'))
+
         cur = mysql.connection.cursor()
-        cur.execute('SELECT password FROM teachers WHERE id = %s', (session['teacher_id'],))
+        cur.execute(f'SELECT password FROM {teacher_table} WHERE id = %s', (session['teacher_id'],))
         teacher = cur.fetchone()
 
         if not teacher or not check_password_hash(teacher[0], old_password):
@@ -307,7 +829,10 @@ def teacher_change_password():
             return redirect(url_for('teacher_dashboard'))
 
         hashed_new_pwd = generate_password_hash(new_password)
-        cur.execute('UPDATE teachers SET password = %s WHERE id = %s', (hashed_new_pwd, session['teacher_id']))
+        cur.execute(
+            f'UPDATE {teacher_table} SET password = %s WHERE id = %s',
+            (hashed_new_pwd, session['teacher_id']),
+        )
         mysql.connection.commit()
         cur.close()
 
@@ -317,34 +842,90 @@ def teacher_change_password():
     return render_template('teacher-change-password.html')
 
 
+@app.route('/student-change-password', methods=['GET', 'POST'])
+def student_change_password():
+    if not session.get('logged_in'):
+        flash('Please login as student first.', 'error')
+        return redirect(url_for('index'))
+
+    if request.method == 'POST':
+        old_password = request.form.get('old-password')
+        new_password = request.form.get('new-password')
+        confirm_password = request.form.get('confirm-password')
+
+        if not (old_password and new_password and confirm_password):
+            flash('All fields are required.', 'error')
+            return redirect(url_for('student_dashboard'))
+
+        if new_password != confirm_password:
+            flash('New passwords do not match.', 'error')
+            return redirect(url_for('student_dashboard'))
+
+        student_table = session.get('student_table')
+        if not student_table or not _is_safe_table_name(student_table):
+            flash('Invalid student session. Please login again.', 'error')
+            return redirect(url_for('student_login'))
+
+        cur = mysql.connection.cursor()
+        cur.execute(f'SELECT password FROM {student_table} WHERE id = %s', (session['student_id'],))
+        student = cur.fetchone()
+
+        if not student or not check_password_hash(student[0], old_password):
+            flash('Old password is incorrect.', 'error')
+            cur.close()
+            return redirect(url_for('student_dashboard'))
+
+        hashed_new_pwd = generate_password_hash(new_password)
+        cur.execute(
+            f'UPDATE {student_table} SET password = %s WHERE id = %s',
+            (hashed_new_pwd, session['student_id']),
+        )
+        mysql.connection.commit()
+        cur.close()
+
+        flash('Password changed successfully!', 'success')
+        return redirect(url_for('student_dashboard'))
+
+    return render_template('student-change-password.html')
+
+
 @app.route('/teacher_dashboard')
 def teacher_dashboard():
     if session.get('teacher_logged_in'):
-        cur = mysql.connection.cursor()
-        # Fetch teacher's subject and semester
-        cur.execute('SELECT semester, subject FROM teachers WHERE id = %s', (session['teacher_id'],))
-        teacher_info = cur.fetchone()
-        teacher_semester = teacher_info[0]
-        teacher_subject = teacher_info[1]
+        teacher_semester = session.get('teacher_semester')
+        teacher_subject = session.get('teacher_subject')
+        students_table = session.get('students_table')
+        attendance_table = session.get('attendance_table')
 
-        # Fetch students for teacher's semester
-        cur.execute('SELECT id, full_name, board_roll_no, branch FROM students WHERE semester = %s', (teacher_semester,))
+        if not students_table or not attendance_table:
+            flash('Invalid teacher session. Please login again.', 'error')
+            return redirect(url_for('teacher_login'))
+
+        cur = mysql.connection.cursor()
+        # Fetch students for teacher's class
+        cur.execute(
+            f'SELECT id, full_name, board_roll_no, branch, email FROM {students_table} ORDER BY board_roll_no',
+        )
         students = cur.fetchall()
 
         # Fetch today's attendance for teacher's subject
         from datetime import date
         today = date.today()
-        cur.execute('SELECT student_id, status FROM attendance WHERE date = %s AND subject = %s', (today, teacher_subject))
+        cur.execute(
+            f'SELECT student_id, status FROM {attendance_table} WHERE date = %s AND subject = %s',
+            (today, teacher_subject),
+        )
         attendance_data = {row[0]: row[1] for row in cur.fetchall()}
 
         # Fetch all attendance records for students in the teacher's semester
-        cur.execute('''
+        cur.execute(
+            f'''
             SELECT a.student_id, s.full_name, a.date, a.subject, a.status
-            FROM attendance a
-            JOIN students s ON a.student_id = s.id
-            WHERE s.semester = %s
+            FROM {attendance_table} a
+            JOIN {students_table} s ON a.student_id = s.id
             ORDER BY a.date DESC, s.full_name
-        ''', (teacher_semester,))
+        '''
+        )
         all_attendance = cur.fetchall()
 
         cur.close()
@@ -357,26 +938,24 @@ def student_login():
         return render_template('student-login.html')
     
     # Handle POST (form submission from student-login.html)
-    email = request.form.get('email')
+    email = (request.form.get('email') or '').lower()
     password = request.form.get('password')
 
     if not (email and password):
         flash('Please provide both email and password.', 'error')
         return render_template('student-login.html')
 
-    # Create cursor
-    cur = mysql.connection.cursor()
+    student, class_row = find_student_by_email(email)
 
-    # Get user by email
-    cur.execute('SELECT * FROM students WHERE email = %s', [email])
-    student = cur.fetchone()
-    cur.close()
-
-    if student and student[6] == password:  # Index 6 is password in the database
+    if student and check_password_hash(student[6], password):
         # Create session data
         session['logged_in'] = True
         session['student_id'] = student[0]
         session['full_name'] = student[1]
+        session['student_table'] = class_row["students_table"] if class_row else None
+        session['attendance_table'] = class_row["attendance_table"] if class_row else None
+        session['student_branch'] = student[4]
+        session['student_semester'] = student[5]
 
         flash('Welcome ' + student[1], 'success')
         return redirect(url_for('student_dashboard'))
@@ -389,21 +968,20 @@ def student_login():
 def login():
     if request.method == 'POST':
         # Get form data
-        email = request.form['email']
+        email = request.form['email'].lower()
         password = request.form['password']
 
-        # Create cursor
-        cur = mysql.connection.cursor()
+        student, class_row = find_student_by_email(email)
 
-        # Get user by email
-        cur.execute('SELECT * FROM students WHERE email = %s', [email])
-        student = cur.fetchone()
-
-        if student and student[6] == password:  # Index 6 is password in the database
+        if student and check_password_hash(student[6], password):
             # Create session data
             session['logged_in'] = True
             session['student_id'] = student[0]
             session['full_name'] = student[1]
+            session['student_table'] = class_row["students_table"] if class_row else None
+            session['attendance_table'] = class_row["attendance_table"] if class_row else None
+            session['student_branch'] = student[4]
+            session['student_semester'] = student[5]
 
             flash('Welcome ' + student[1], 'success')
             return redirect(url_for('student_dashboard'))
@@ -416,17 +994,34 @@ def login():
 @app.route('/student_dashboard')
 def student_dashboard():
     if session.get('logged_in'):
+        students_table = session.get('student_table')
+        attendance_table = session.get('attendance_table')
+        if not students_table or not attendance_table:
+            flash('Invalid student session. Please login again.', 'error')
+            return redirect(url_for('student_login'))
+
         cur = mysql.connection.cursor()
         # Fetch student details including semester
-        cur.execute('SELECT full_name, email, board_roll_no, branch, semester FROM students WHERE id = %s', (session['student_id'],))
+        cur.execute(
+            f'SELECT full_name, email, board_roll_no, branch, semester FROM {students_table} WHERE id = %s',
+            (session['student_id'],),
+        )
         student = cur.fetchone()
+        if not student:
+            cur.close()
+            flash('Student not found. Please login again.', 'error')
+            return redirect(url_for('student_login'))
 
         # Fetch attendance history
-        cur.execute('SELECT `date`, status FROM attendance WHERE student_id = %s ORDER BY `date` DESC', (session['student_id'],))
+        cur.execute(
+            f'SELECT `date`, status FROM {attendance_table} WHERE student_id = %s ORDER BY `date` DESC',
+            (session['student_id'],),
+        )
         attendance_history = cur.fetchall()
 
         subjects_data = []
-        if student[4] == 1:  # If 1st semester
+        semester_value = student[4]
+        if str(semester_value) == '1':  # If 1st semester
             subjects = [
                 'Applied Math-1',
                 'Applied Physics-1',
@@ -439,7 +1034,10 @@ def student_dashboard():
             ]
             for subject in subjects:
                 # Fetch attendance for this subject
-                cur.execute('SELECT status FROM attendance WHERE student_id = %s AND subject = %s', (session['student_id'], subject))
+                cur.execute(
+                    f'SELECT status FROM {attendance_table} WHERE student_id = %s AND subject = %s',
+                    (session['student_id'], subject),
+                )
                 subject_attendance = cur.fetchall()
                 total_lectures = len(subject_attendance)
                 presents = sum(1 for row in subject_attendance if row[0] == 'present')
@@ -461,22 +1059,49 @@ def mark_attendance():
         from datetime import date
         today = date.today()
 
-        # Get teacher's subject from session or DB
+        teacher_subject = session.get('teacher_subject')
+        attendance_table = session.get('attendance_table')
+        students_table = session.get('students_table')
+        teacher_id = session.get('teacher_id')
+
+        if not attendance_table or not students_table:
+            flash('Invalid teacher session. Please login again.', 'error')
+            return redirect(url_for('teacher_login'))
+
+        if not teacher_subject:
+            teacher_table = session.get('teacher_table')
+            if teacher_table and _is_safe_table_name(teacher_table):
+                cur = mysql.connection.cursor()
+                cur.execute(f'SELECT subject FROM {teacher_table} WHERE id = %s', (teacher_id,))
+                row = cur.fetchone()
+                teacher_subject = row[0] if row else None
+                cur.close()
+        if not teacher_subject:
+            flash('Teacher subject not set. Please contact admin.', 'error')
+            return redirect(url_for('teacher_dashboard'))
+
         cur = mysql.connection.cursor()
-        cur.execute('SELECT subject FROM teachers WHERE id = %s', (session['teacher_id'],))
-        teacher_subject = cur.fetchone()[0]
 
         for key, value in request.form.items():
             if key.startswith('status_'):
                 student_id = int(key.split('_')[1])
                 status = value
                 # Check if attendance already marked for today and subject
-                cur.execute('SELECT id FROM attendance WHERE student_id = %s AND date = %s AND subject = %s', (student_id, today, teacher_subject))
+                cur.execute(
+                    f'SELECT id FROM {attendance_table} WHERE student_id = %s AND date = %s AND subject = %s',
+                    (student_id, today, teacher_subject),
+                )
                 existing = cur.fetchone()
                 if existing:
-                    cur.execute('UPDATE attendance SET status = %s WHERE id = %s', (status, existing[0]))
+                    cur.execute(
+                        f'UPDATE {attendance_table} SET status = %s WHERE id = %s',
+                        (status, existing[0]),
+                    )
                 else:
-                    cur.execute('INSERT INTO attendance (student_id, date, status, subject) VALUES (%s, %s, %s, %s)', (student_id, today, status, teacher_subject))
+                    cur.execute(
+                        f'INSERT INTO {attendance_table} (student_id, teacher_id, date, status, subject) VALUES (%s, %s, %s, %s, %s)',
+                        (student_id, teacher_id, today, status, teacher_subject),
+                    )
         mysql.connection.commit()
         cur.close()
         flash('Attendance marked successfully!', 'success')
@@ -500,11 +1125,17 @@ def export_attendance():
         return redirect(url_for('index'))
     
     try:
+        attendance_table = session.get('attendance_table')
+        students_table = session.get('students_table')
+        if not attendance_table or not students_table:
+            flash('Invalid teacher session. Please login again.', 'error')
+            return redirect(url_for('teacher_login'))
+
         # Create cursor
         cur = mysql.connection.cursor()
-        
-        # Fetch all attendance records with student and teacher info
-        cur.execute('''
+        # Fetch all attendance records with student info for this class
+        cur.execute(
+            f'''
             SELECT 
                 a.id, 
                 s.full_name as student_name, 
@@ -512,11 +1143,12 @@ def export_attendance():
                 a.date, 
                 a.status, 
                 a.subject
-            FROM attendance a
-            JOIN students s ON a.student_id = s.id
+            FROM {attendance_table} a
+            JOIN {students_table} s ON a.student_id = s.id
             ORDER BY a.date DESC, s.full_name
-        ''')
-        
+            '''
+        )
+
         # Fetch all records
         records = cur.fetchall()
         cur.close()
