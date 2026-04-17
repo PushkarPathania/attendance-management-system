@@ -1,0 +1,679 @@
+﻿=== ALL STUDENTS ===
+{'id': 'e8c8a187-20b5-443a-aff3-5b829da7d82a', 'profile_id': 'b43be631-cb7f-4fdc-a4e7-d86c25e9dac4', 'board_roll_no': '7', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:20.033497+00:00'}
+{'id': '7b51e888-b4f8-4324-a73a-48db4bbc58bb', 'profile_id': '87dffb02-c8c7-4222-86f2-9afaecfd49cf', 'board_roll_no': '8', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:20.446464+00:00'}
+{'id': '878a0186-1179-40b9-9dec-f7458e4079f3', 'profile_id': 'fc8208ac-68d2-41a6-9c47-c68cacfd72f7', 'board_roll_no': '9', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:20.860789+00:00'}
+{'id': '1fa90d25-ae47-424e-943a-5feecedaa406', 'profile_id': '8c87331d-87d3-48b8-bd65-caffb50b5325', 'board_roll_no': '10', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:21.376775+00:00'}
+{'id': '4c3cc39f-bb25-4397-838a-97018a1e2233', 'profile_id': '12bca8e3-7662-4868-b7e2-77c8dfbebc79', 'board_roll_no': '11', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:21.685039+00:00'}
+{'id': '6733f70c-bcb5-4157-97f8-194d8876d7fa', 'profile_id': 'c7f0b06c-ffd6-4063-a32c-e3c3ad4ce886', 'board_roll_no': '12', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:21.98545+00:00'}
+{'id': 'fd7e8f3a-8be8-4cbd-bec6-b44261a1606a', 'profile_id': '0dd5b5b9-91c6-4e3b-a941-414bf043b523', 'board_roll_no': '13', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:22.290479+00:00'}
+{'id': '0443b0c2-bd4b-40d5-a964-584d31f602c6', 'profile_id': 'c4187044-cba2-4c12-938b-3c50b23606eb', 'board_roll_no': '14', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:22.599293+00:00'}
+{'id': '5419d401-2b2b-4f0a-acea-55ca0e47dd8c', 'profile_id': 'a9211cd8-b051-4304-963f-165de9501ad5', 'board_roll_no': '15', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:22.929926+00:00'}
+{'id': 'fa1ffdfb-1122-44d0-9b10-f80a38631b0f', 'profile_id': 'faf3f450-551c-4e08-b133-b02b18aa2545', 'board_roll_no': '16', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:23.229983+00:00'}
+{'id': '7b5a1e8e-c469-4add-8d3c-84fe3e341a6c', 'profile_id': '35c528a1-035a-41c4-b4a6-9943e8703d4f', 'board_roll_no': '17', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:23.621497+00:00'}
+{'id': 'e5f5934a-08e6-4c79-99ff-0b2959b3d687', 'profile_id': '4e14d21c-efba-499c-86ed-819464ec926e', 'board_roll_no': '18', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:24.030366+00:00'}
+{'id': '18d2f161-e7a4-477b-bdbd-20156b7b7111', 'profile_id': '290805cd-d71f-4047-b92a-661871c3c282', 'board_roll_no': '19', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:24.445459+00:00'}
+{'id': '3ca9a282-fa50-4026-ba9b-70b505787267', 'profile_id': '6c54a9e9-ea40-4fda-bdbe-c8eb9a2f5433', 'board_roll_no': '20', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:24.948239+00:00'}
+{'id': 'bfe8e219-bbec-4732-a5f2-fe4ac12ed5b6', 'profile_id': '6eea453d-b8e0-42ec-8d8d-bd14b0c1317d', 'board_roll_no': '21', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:25.356462+00:00'}
+{'id': '4ba6bc11-96e1-4d5d-a5f3-9ec357ee17d0', 'profile_id': '9a2ebcd0-598e-40ba-abcd-e4308aa67067', 'board_roll_no': '22', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:25.767345+00:00'}
+{'id': '0f0c48a6-4b5f-4edc-9d4b-1f807894ed9f', 'profile_id': '1ccfad28-d9c5-4242-92fd-e1b3aef54240', 'board_roll_no': '23', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:26.293502+00:00'}
+{'id': 'adc7b35c-6f5d-4b40-8ded-5a89fe7e65db', 'profile_id': 'd665ba94-b2d7-4f80-8f8b-5fcdab2e80d9', 'board_roll_no': '24', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:26.699877+00:00'}
+{'id': 'd99b30d5-285d-4222-9090-bcffe97183ce', 'profile_id': 'd2df9cbf-9c24-48a1-bd68-cd4a8f90fd0e', 'board_roll_no': '25', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:27.313982+00:00'}
+{'id': '5efdbaba-b4e8-477f-806b-faafbc02b635', 'profile_id': '6348b79d-e9df-4718-bc48-f51e86a58090', 'board_roll_no': '26', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:27.827797+00:00'}
+{'id': 'e53a24c2-3bb4-413c-9b1f-730ed957044d', 'profile_id': 'd953daa6-2a65-453f-888f-44507b87eb1a', 'board_roll_no': '27', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:28.325525+00:00'}
+{'id': 'ef8fbf74-f4fb-466d-8b99-6ca460f72b28', 'profile_id': '6e0ef714-7c63-4076-87d0-88e7cc65e316', 'board_roll_no': '28', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:28.842984+00:00'}
+{'id': 'f0734a77-8755-4fed-8e6a-a502634e4e6e', 'profile_id': '6ed58f94-31d9-433c-93a4-ee406c28a4e4', 'board_roll_no': '29', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:29.206815+00:00'}
+{'id': 'adbe36b4-db4c-4f52-801f-aefa25bd47cf', 'profile_id': 'f73351f6-eec9-4755-acc7-28da134f8164', 'board_roll_no': '30', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:29.566672+00:00'}
+{'id': 'eafaed11-78ea-46c3-9c1d-b6db96dd4d45', 'profile_id': '7b4ec758-8705-4aeb-a13b-2675de8f04ee', 'board_roll_no': '31', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:29.973791+00:00'}
+{'id': '9faecc7f-f76d-4f33-9029-a74544643e01', 'profile_id': '5ed1aa77-f5ce-4c69-b72a-55d3af386f13', 'board_roll_no': '32', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:30.391438+00:00'}
+{'id': '3bb99e8e-3f50-43c4-818a-67caf29caf47', 'profile_id': '010ff3d1-5b18-466a-8cfa-f341f3739025', 'board_roll_no': '33', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:30.808314+00:00'}
+{'id': 'b466cef4-da86-4e60-b38c-7d4408427d3d', 'profile_id': '1d7d03ea-c7d5-4771-bc19-2563e5dcac96', 'board_roll_no': '34', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:31.211649+00:00'}
+{'id': '0322a1b6-1efd-4e25-a567-634db2451cfc', 'profile_id': 'c5444f9f-58fb-488e-9be4-57555a4ec2ac', 'board_roll_no': '35', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:31.63675+00:00'}
+{'id': '5c42e3f1-df3a-49cd-8cc3-9fa8808a3372', 'profile_id': 'ef5470e9-bd8d-4896-a2cb-fbb2fda1bd67', 'board_roll_no': '36', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:31.99298+00:00'}
+{'id': 'c9cfa515-0da9-4972-8813-57a304661ca0', 'profile_id': '57018019-8138-42d8-9780-781ed0945f9d', 'board_roll_no': '37', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:32.36872+00:00'}
+{'id': '81ddf18e-7cef-4281-9b07-48cd5153dc59', 'profile_id': '05c60aa7-3524-4b2f-934a-cac0fbc919e7', 'board_roll_no': '38', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:32.746888+00:00'}
+{'id': 'a9234057-81ef-49eb-bc57-d9734ccf61e9', 'profile_id': '2cef2d14-ef08-4303-b100-075d6caa58b8', 'board_roll_no': '39', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:33.140805+00:00'}
+{'id': '900cc8bd-54d6-4c68-8a6d-d13e7e7bc8c9', 'profile_id': '241e6f8e-0da1-4cae-875d-5f9f04cc578d', 'board_roll_no': '40', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:33.638446+00:00'}
+{'id': 'b48aa33d-5969-47f0-b3eb-c8a1a6296d8b', 'profile_id': 'b4732007-3dcd-46c1-954a-a11d7d867529', 'board_roll_no': '41', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:34.285484+00:00'}
+{'id': '08bd29d1-d346-4c41-90c6-861fb6e396b8', 'profile_id': 'da1b0ad7-ee45-4df8-a936-d7fc6e30eb7d', 'board_roll_no': '42', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:34.910923+00:00'}
+{'id': '4adb317b-c22c-4fdb-8c06-50c3e034bc57', 'profile_id': '9ba325d9-9d6e-4391-9041-eba78eaeb902', 'board_roll_no': '43', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:35.466597+00:00'}
+{'id': '2b2de11a-cb9c-4307-b0c5-9df4806f2e8b', 'profile_id': '2542f31b-caca-414a-b1d4-ad05e29dc306', 'board_roll_no': '44', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:35.877837+00:00'}
+{'id': 'd65d0d38-31b3-424a-b40e-0c3f21d0ed00', 'profile_id': 'd0390801-b50c-479a-a685-ccfbc7462a05', 'board_roll_no': '45', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:36.244897+00:00'}
+{'id': 'ed715ecb-0bd1-45c0-87d9-b5cd1514ab1e', 'profile_id': 'ff10be75-73e8-494a-bc90-bc2c02a5eff3', 'board_roll_no': '46', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:36.609357+00:00'}
+{'id': '380347a9-39e9-42f2-ade9-f8e43a61cde7', 'profile_id': 'adf180d3-a4b8-4806-be97-a0c06c0b9311', 'board_roll_no': '47', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:36.978107+00:00'}
+{'id': '8f0b0342-5b4f-4523-98a0-fcec69caa30d', 'profile_id': 'b82f5073-7e72-4652-bbf6-5002d0cea581', 'board_roll_no': '1', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:51.328878+00:00'}
+{'id': 'ff16d376-63c1-4b81-87aa-a9cf8eff3fb5', 'profile_id': '511ab365-31c6-43cb-8776-aa00ea975b00', 'board_roll_no': '2', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:51.742858+00:00'}
+{'id': 'e9350bc0-221b-4053-a565-08d736deb6bb', 'profile_id': '60317048-7f0a-4813-95e6-9b26a8ae0c5f', 'board_roll_no': '3', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:52.046688+00:00'}
+{'id': '91764ca7-ce9d-461a-9240-07a278c972d1', 'profile_id': '2841f999-edd6-4666-b836-a2d09d73d95d', 'board_roll_no': '4', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:52.389264+00:00'}
+{'id': '3c3ae30c-e3e8-4fd8-98bd-5e541f15f04d', 'profile_id': 'b279a63f-bf62-465c-8774-ad6104a89431', 'board_roll_no': '5', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:52.702724+00:00'}
+{'id': '4fcbe5e9-7f0d-46cb-921e-f539d8d359d7', 'profile_id': '71f6303e-f376-44f7-889f-6dc1dc0b9460', 'board_roll_no': '6', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:53.062468+00:00'}
+{'id': 'fe471825-8d48-4205-af91-9b511b298d4a', 'profile_id': '150fd137-18a7-487b-a46d-d514ccabf710', 'board_roll_no': '1', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:17.789519+00:00'}
+{'id': '8312d8d7-17a8-47b2-a3d4-f1a133cf0437', 'profile_id': 'c93df349-ea3e-4596-9ba1-624c45a94a15', 'board_roll_no': '2', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:18.171688+00:00'}
+{'id': '8241a6eb-2103-496e-8c10-b339d4be1958', 'profile_id': 'ab661c58-9fa4-468b-b5ae-6806e127c0b2', 'board_roll_no': '3', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:18.492113+00:00'}
+{'id': '85d20ab4-7a2c-41fd-b128-9feadf459a7e', 'profile_id': 'cb983648-31eb-4127-a050-e9d9c49efd0f', 'board_roll_no': '4', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:18.825061+00:00'}
+{'id': '0d97836d-d97e-4d1e-8298-3a85eb1eb875', 'profile_id': '03a6b845-16b3-468e-8c4d-0febc42d9877', 'board_roll_no': '5', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:19.182098+00:00'}
+{'id': '70599203-5c23-436a-83df-eb2ca444122a', 'profile_id': '3a154a9d-2ab5-453f-8937-3e39f0adadf0', 'board_roll_no': '6', 'branch': 'Computer Science', 'semester': 2, 'created_at': '2026-03-26T17:32:19.620886+00:00'}
+{'id': 'b0d9d780-bcaf-4916-bcb8-4670eb1a590a', 'profile_id': 'cf143b2b-1a6b-4f27-83ed-e7261a703c5c', 'board_roll_no': '7', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:53.389989+00:00'}
+{'id': '99de5843-9229-4084-bf8f-700b2d5904ba', 'profile_id': 'afd1b2bf-1a3d-4e75-9150-8509416181c7', 'board_roll_no': '8', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:53.687088+00:00'}
+{'id': '801a6d48-a720-45fa-a6c6-8c132566385d', 'profile_id': '0734db79-1044-4511-8390-f991f709a30e', 'board_roll_no': '9', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:53.980539+00:00'}
+{'id': '71893665-85a8-4f01-84ab-2f62c4b97a89', 'profile_id': 'dddfc3bb-9282-43b5-8bcc-d77f1ea915dd', 'board_roll_no': '10', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:54.287925+00:00'}
+{'id': '97b0b006-9512-4450-8c94-0707da5869be', 'profile_id': '568bfc82-8422-45f5-96d4-92931b261244', 'board_roll_no': '11', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:54.588192+00:00'}
+{'id': '8c167c3a-f5ad-40bb-b720-688062753016', 'profile_id': 'edb6f3f9-4efd-41a4-9b6e-bf219ab6411f', 'board_roll_no': '12', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:54.881529+00:00'}
+{'id': '312e375c-0dd0-4d37-8c6a-d2deded7450a', 'profile_id': '6c7fb875-79f0-4fd3-b9f6-5978eae65cf7', 'board_roll_no': '13', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:55.1769+00:00'}
+{'id': 'd242728f-aae1-4c15-b1a4-162d7318fc03', 'profile_id': '1e62e601-5408-4405-988f-a5755ada00ea', 'board_roll_no': '14', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:55.468988+00:00'}
+{'id': '3117d50c-ca23-437e-8c8b-e23eff1a4dd2', 'profile_id': '3f342e98-121e-4b7e-8970-9544f42a0d6a', 'board_roll_no': '15', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:55.765314+00:00'}
+{'id': '885d6435-bbcb-4c1c-ae14-141b9a3e5cce', 'profile_id': '0a0f7201-3062-4767-8f36-588efe33281c', 'board_roll_no': '16', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:56.063339+00:00'}
+{'id': '5d9af60f-8dc7-4e0e-9bed-a8e715740042', 'profile_id': 'ce00d744-6b4a-4961-96d8-9033a55d3c94', 'board_roll_no': '17', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:56.360149+00:00'}
+{'id': 'b5c9b0d4-b52b-493e-a1eb-1a5f798308aa', 'profile_id': 'f397889c-4d81-4c29-9cb4-8b8a566422c3', 'board_roll_no': '18', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:56.667207+00:00'}
+{'id': 'c6b8da1c-6537-417f-bf19-448912b79e95', 'profile_id': 'c02c8f9d-ef1e-4937-909d-556ded019295', 'board_roll_no': '19', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:56.980594+00:00'}
+{'id': '72686a09-aac2-4fe3-bfee-6720183b79cb', 'profile_id': '883dd90b-4183-4931-90a8-985119b479ef', 'board_roll_no': '20', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:57.289027+00:00'}
+{'id': 'eaf3f880-9fa9-4163-8abd-802c8fad1003', 'profile_id': 'b277290b-9619-4fa8-8548-f03e62cef70c', 'board_roll_no': '21', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:57.593875+00:00'}
+{'id': '370cb29b-1b58-40fb-9727-61ae73bd73de', 'profile_id': 'e6718aee-4196-464b-8252-e37f7a89a53c', 'board_roll_no': '22', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:57.892457+00:00'}
+{'id': '8b70a3cf-66eb-4433-9ac6-02b7148327c1', 'profile_id': '0615c3df-83db-48c3-b360-c2aa67b3c3f8', 'board_roll_no': '23', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:58.196688+00:00'}
+{'id': 'ed468e9f-4b9f-4bfc-8db6-512ab35ad7c4', 'profile_id': '469b35d6-3cf9-469c-a24e-8738a11dbecc', 'board_roll_no': '24', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:58.52965+00:00'}
+{'id': '803dee4d-2ed5-43cd-8a88-ac5381e988e7', 'profile_id': 'f4fb7de7-939a-499e-9518-e1459a3fbd19', 'board_roll_no': '25', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:58.829922+00:00'}
+{'id': '238d08ad-14e9-485d-9204-6834b04c7ff1', 'profile_id': '739233ff-f681-4adb-a83d-b340706fd366', 'board_roll_no': '27', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:59.432109+00:00'}
+{'id': 'e6088d3a-f138-4ab6-af3d-6a9c32dab8e5', 'profile_id': '9923b1cc-3461-4d98-94d0-8e3fc310f47e', 'board_roll_no': '28', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:59.726999+00:00'}
+{'id': '545f4ebd-6786-4191-8214-6b685b04aad8', 'profile_id': '897295ae-8d20-4a05-baef-258173644bc3', 'board_roll_no': '29', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:00.025949+00:00'}
+{'id': '6aabf54d-9e95-4090-afdd-156adb1bf2fa', 'profile_id': 'd968e15a-c8b6-494a-b6cf-e98226ad8148', 'board_roll_no': '30', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:00.330312+00:00'}
+{'id': '4d4fc2fc-5db3-4233-9676-b5fd87af690b', 'profile_id': 'd452cc84-0025-4074-9f78-de2e94dd2021', 'board_roll_no': '31', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:00.636873+00:00'}
+{'id': '6b4d4670-6871-4859-bfb4-66f000ec53e4', 'profile_id': '98a7dc8d-0e7c-45bf-9443-73a8aaae5516', 'board_roll_no': '32', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:01.124733+00:00'}
+{'id': '7e089695-767a-4b3d-9236-c05ae68fd3d0', 'profile_id': 'c7861adb-b758-408b-9bad-ebf8c1435a20', 'board_roll_no': '33', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:01.630461+00:00'}
+{'id': '12c7a2a3-09c3-4bd3-93b8-ec8efce0200f', 'profile_id': '7958f931-c3e2-4bed-9453-208d34afef38', 'board_roll_no': '34', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:02.039227+00:00'}
+{'id': '8f9cfe34-e2d1-4f19-b7d1-84d1d5995539', 'profile_id': 'eafc4759-ca30-4faa-9730-b10aa5c0825c', 'board_roll_no': '35', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:02.45+00:00'}
+{'id': '26c72784-915c-46c2-8f5d-1535a067e80c', 'profile_id': 'fc34dbec-8e24-4988-a793-423a21ada211', 'board_roll_no': '36', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:02.865019+00:00'}
+{'id': 'f3225508-513b-4d79-9977-7df0cc550240', 'profile_id': '573b7bb3-1261-43c2-9ea5-44e0c7274426', 'board_roll_no': '37', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:03.268629+00:00'}
+{'id': '9005bb0b-d9c4-40c7-879c-1bb485eb5359', 'profile_id': 'cf91aec4-5656-4fb2-b970-ff2ff64d96d1', 'board_roll_no': '38', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:03.646224+00:00'}
+{'id': '9a434ae5-edec-4227-8ca9-3a563277e328', 'profile_id': '607be705-571f-47b9-a48a-26a1d17d0ce6', 'board_roll_no': '39', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:03.994547+00:00'}
+{'id': 'a2973e57-ba15-423b-a676-f3523457b7a7', 'profile_id': '42443250-5b07-4a1b-a753-4c24c662347d', 'board_roll_no': '40', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:04.369774+00:00'}
+{'id': 'ac70595d-ad48-4b3a-ac7f-1de48564f99a', 'profile_id': 'e52995e9-fe96-49f0-a6cf-4c30189f6e97', 'board_roll_no': '41', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:04.811516+00:00'}
+{'id': 'd57ed659-c3a0-4fa2-8e5e-3c967a8f7703', 'profile_id': '820b2727-de56-4a06-a16f-a42fa05ca5cf', 'board_roll_no': '42', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:05.212256+00:00'}
+{'id': 'bd679806-1d13-4973-bf66-6cdc2582d801', 'profile_id': 'a7a243a7-08b4-4073-b5b4-6332d39e4ffb', 'board_roll_no': '43', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:05.705296+00:00'}
+{'id': 'fd798a52-f343-4fa6-8862-aac350fc0c56', 'profile_id': 'd0c81fdf-7c04-44f8-9457-ba56b9d5d2f9', 'board_roll_no': '44', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:06.136421+00:00'}
+{'id': '074e1ff0-8bc9-4cc2-9bb4-62d57bccc732', 'profile_id': '28abbea6-fe9d-4c09-9c79-a6e314964900', 'board_roll_no': '45', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:06.499688+00:00'}
+{'id': '6a42708f-4cb9-4059-9039-9ba9f2021315', 'profile_id': '49697a62-ba3e-43f9-ac67-39b8782f338a', 'board_roll_no': '47', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:07.512951+00:00'}
+{'id': 'd445b39a-4b59-44a5-b864-9774417fa432', 'profile_id': 'fe9c5016-07e6-4782-bbd3-7a24863a8020', 'board_roll_no': '48', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:08.419065+00:00'}
+{'id': '82d454b2-0121-40f6-bf86-f90ec0d629c4', 'profile_id': 'd69d9895-53b8-4cd2-8339-67f7dffc0c77', 'board_roll_no': '49', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:08.80054+00:00'}
+{'id': '06432e6e-ac3c-41f4-8770-22b23ee523bc', 'profile_id': '3e40aa6b-29e7-40ef-8fe7-0fbc7ebaf315', 'board_roll_no': '50', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:09.316183+00:00'}
+{'id': '38134926-d589-4c40-8d24-9fb7fac2d9c1', 'profile_id': '03def680-8f0c-45ae-bae2-39bd6ca4026e', 'board_roll_no': '51', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:09.720809+00:00'}
+{'id': '5ec060cc-07e1-4d8b-b756-7c53873f5762', 'profile_id': '43ea06ef-6fdf-47e8-8627-33e7ce7dd0ad', 'board_roll_no': '52', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:10.59319+00:00'}
+{'id': '1d510b81-7c54-4ecf-95fb-c0d7c0c1ddbb', 'profile_id': 'e5db7cc4-1bd5-4ad7-9359-e5b7ba9c08ab', 'board_roll_no': '1', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:10.899729+00:00'}
+{'id': 'e22e5dfe-9180-4b86-a06e-d433387479ab', 'profile_id': 'b6957b0f-ad79-4489-97e2-8ad269c6ea26', 'board_roll_no': '2', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:11.340147+00:00'}
+{'id': 'feeeb590-6cef-402e-827f-c1f62f4b982b', 'profile_id': 'a1c5e22e-0100-4ebd-89db-3e9669c8533a', 'board_roll_no': '3', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:11.640725+00:00'}
+{'id': '46f5ad4e-1656-417e-81e7-68dc7bc876df', 'profile_id': '0264230b-90b1-4937-931d-f97f871e0f23', 'board_roll_no': '4', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:11.962763+00:00'}
+{'id': 'db3aa415-b827-4177-9db3-11f5808ff08f', 'profile_id': '4259aa5a-6873-4990-b772-3f2ba7d67b6f', 'board_roll_no': '5', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:12.275727+00:00'}
+{'id': 'a5aaecf5-fa5d-4572-a1dd-e0fec62e074d', 'profile_id': '709ad97a-a851-4b0b-ba92-cd60491e4e5f', 'board_roll_no': '6', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:12.582255+00:00'}
+{'id': 'a3ea2295-ef9c-46f4-b269-b61472acdec9', 'profile_id': '7d1b5b5f-fd06-4704-bcc9-df15c6198a25', 'board_roll_no': '7', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:12.875301+00:00'}
+{'id': '1a0ab015-b54e-4189-898e-8229166635c4', 'profile_id': 'be61403a-f458-40ae-8ec2-b64f1b30ccb2', 'board_roll_no': '8', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:13.172572+00:00'}
+{'id': 'd8521ade-592b-4aa2-996d-54734ef06c3d', 'profile_id': 'd685f976-6e0e-4922-8fc9-f7d5c12db235', 'board_roll_no': '9', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:13.471921+00:00'}
+{'id': '4bcd863e-bba2-4c45-956e-50ecbecb2c51', 'profile_id': '917e29c3-47cd-4109-90e8-ac70018118c3', 'board_roll_no': '10', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:13.777278+00:00'}
+{'id': '05fc34fc-2f54-4430-bb5d-48f47e48e5e2', 'profile_id': '64ea013e-9a61-4487-9ddb-88682a7df19f', 'board_roll_no': '11', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:14.088734+00:00'}
+{'id': '56e53039-9eab-4ac5-850c-058b40749f8b', 'profile_id': 'bf4f7c62-3771-4319-bb23-237f95d594a1', 'board_roll_no': '12', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:14.392864+00:00'}
+{'id': '2acbb57a-a78e-47bb-b7ea-b84ae0bf5722', 'profile_id': 'e78b6e15-cca0-4a21-87b4-6d75defd8eca', 'board_roll_no': '13', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:14.69341+00:00'}
+{'id': '662449d7-cfcc-4a24-938c-b3ebe8a27eee', 'profile_id': 'eefb6145-42a3-4b2a-9e15-00782de3d323', 'board_roll_no': '14', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:14.997778+00:00'}
+{'id': '860da39e-df5c-49ea-92d4-4f13a803f760', 'profile_id': '4ec61d2a-a1bf-4c44-bce0-b4ad7d339f4f', 'board_roll_no': '15', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:15.302788+00:00'}
+{'id': '0c5bca41-52c8-4aac-be8b-88be00bc6105', 'profile_id': 'ea23ce17-ae00-49a9-b313-78afa82278ac', 'board_roll_no': '16', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:15.604958+00:00'}
+{'id': '56c03828-1e12-480d-ae8a-0ef0edd8c613', 'profile_id': 'b37e5515-08b7-4534-99f3-e8db02b98970', 'board_roll_no': '18', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:16.210413+00:00'}
+{'id': 'dc070270-db61-4494-b277-027f39f2eced', 'profile_id': '28ecf667-0936-4f01-bdb8-e9a208251984', 'board_roll_no': '19', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:16.516665+00:00'}
+{'id': '8065def2-c5e3-4431-9e37-31f69b24196e', 'profile_id': '5eaac49b-515e-445b-8ede-918b19757b25', 'board_roll_no': '20', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:16.824622+00:00'}
+{'id': '5fe41cc5-8cf4-49da-8738-bb52fd73ab27', 'profile_id': '9bdc2fe8-68cf-43ed-9bc3-fd24325c7ccc', 'board_roll_no': '21', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:17.128552+00:00'}
+{'id': 'd4e7ecba-ad2d-4ceb-a990-15142a29a19b', 'profile_id': 'eec05a74-f6c6-4337-8661-d168ecc8d496', 'board_roll_no': '22', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:17.433997+00:00'}
+{'id': 'a3611f71-de32-4cb5-8702-4a1baa269833', 'profile_id': 'f96a517f-ff56-4acc-919d-489d8cb25593', 'board_roll_no': '23', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:17.728724+00:00'}
+{'id': 'd97f118c-2fb2-46ee-8c7f-5a83793023c2', 'profile_id': '70bcb6c3-cc9b-40d2-b09d-f0584d5b4bdf', 'board_roll_no': '24', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:18.03272+00:00'}
+{'id': '39305817-1492-4d3d-b844-dfd33ea30cf9', 'profile_id': '1d1c28f9-6d7a-4382-8f31-0e87eb76133d', 'board_roll_no': '25', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:18.330651+00:00'}
+{'id': '1a85a81f-4621-427e-ba58-e2c119b9412f', 'profile_id': 'e0707cb2-a05d-4608-a49b-fdf0b1eda52b', 'board_roll_no': '26', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:18.64025+00:00'}
+{'id': '05eb4869-3f0f-49e1-aaa0-e697d0e75228', 'profile_id': '43216003-05da-4b38-82f1-a0df423be162', 'board_roll_no': '27', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:18.958854+00:00'}
+{'id': '6b069ef9-3303-49ec-b189-67e2a5e35c16', 'profile_id': '5b589d4c-a950-4330-9929-837c10026e3c', 'board_roll_no': '28', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:19.260053+00:00'}
+{'id': 'f0023cfa-90ef-440b-be68-08e76c5216ed', 'profile_id': '5768a199-4adf-478a-8747-13b601d87666', 'board_roll_no': '29', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:19.596348+00:00'}
+{'id': '92a789fe-527f-41a2-8178-41ba27bded51', 'profile_id': 'e23f82c3-5ac5-4d93-9cb6-608be1a045f2', 'board_roll_no': '30', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:19.890027+00:00'}
+{'id': 'bc76923b-ea98-4967-bdb0-4105acd09e45', 'profile_id': '64a7b518-4117-4b7b-82f6-703a4f67ed4a', 'board_roll_no': '31', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:20.194515+00:00'}
+{'id': '71c1485f-36a2-4b8a-9386-9c07f271fa48', 'profile_id': '28cc42df-b59a-48fc-aeb6-fa24ea88920e', 'board_roll_no': '32', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:20.509345+00:00'}
+{'id': 'eca809d4-bb0a-4207-8abe-216b3410890b', 'profile_id': '475ad010-267b-45c7-bdc3-cc21c53b4b13', 'board_roll_no': '33', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:20.804929+00:00'}
+{'id': 'e1adbeba-f4d2-40e1-8e5e-c40969ac5716', 'profile_id': 'd04cc47c-8467-46a9-86b8-71975436cfca', 'board_roll_no': '34', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:21.106172+00:00'}
+{'id': '527079ad-9185-4d03-86d5-3b093c0529a0', 'profile_id': '7bd24be9-e6d4-4c9c-93b5-909976609539', 'board_roll_no': '35', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:21.410187+00:00'}
+{'id': '0a750355-06d4-4040-ad49-90e709fca733', 'profile_id': 'b1233aed-7715-4af0-83d3-c93c8b6b4908', 'board_roll_no': '36', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:21.718343+00:00'}
+{'id': '97c62ed8-042b-43d2-847d-c6abba142457', 'profile_id': '6f6bd266-6fc2-4449-8c34-f3c37acabe4f', 'board_roll_no': '37', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:22.025523+00:00'}
+{'id': '01c1b7af-f48c-4fa6-9faf-a481d9d81750', 'profile_id': 'b3ee394f-4b39-493e-8814-58cf9caf2daf', 'board_roll_no': '38', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:22.327225+00:00'}
+{'id': '8433e26b-2ef0-42cf-9993-fafdff2a4336', 'profile_id': '75b565bf-7a1b-4e67-b3c8-b8de78b1e88c', 'board_roll_no': '39', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:22.635401+00:00'}
+{'id': 'cc4e9d8e-8a30-4076-a21e-da6b6b276b7c', 'profile_id': 'e58be217-b08b-46a9-bb99-271b2b87d302', 'board_roll_no': '41', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:23.247487+00:00'}
+{'id': '0ff5a9c6-4efa-420d-be82-0b991b395acb', 'profile_id': '531b4281-f160-43de-baa8-14d06c8ab1b5', 'board_roll_no': '42', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:23.607653+00:00'}
+{'id': '8d430512-99f9-4e9c-a053-69b174a326a1', 'profile_id': 'a70fb9e8-8c04-4c7b-a8dd-afc5be7351de', 'board_roll_no': '43', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:23.921422+00:00'}
+{'id': 'b6a0d8e2-551d-4f44-acf9-c68673a0db56', 'profile_id': 'c19b6c36-6a57-4e2c-9747-10d39fe3e6e9', 'board_roll_no': '44', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:24.238191+00:00'}
+{'id': '615d7a58-2afb-405a-97dd-d097c1d818e9', 'profile_id': 'befd90ec-caf8-4b29-9d9d-0dba6967f58d', 'board_roll_no': '45', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:24.556716+00:00'}
+{'id': '581049d2-ca05-4ff4-832c-b36633438f94', 'profile_id': '12f0dbad-d7df-4933-a112-e0366ad37ead', 'board_roll_no': '46', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:24.860006+00:00'}
+{'id': 'c544869c-2974-4114-84fb-8b384f0514b2', 'profile_id': '9fecfd4d-36c5-492d-9f54-5dbe4f98a8da', 'board_roll_no': '47', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:25.17025+00:00'}
+{'id': 'f1f00d93-7d45-425f-836c-e566b3aa28f6', 'profile_id': 'aa56e834-bf48-4d99-ad96-18e4730870af', 'board_roll_no': '48', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:25.477704+00:00'}
+{'id': '71c39571-3fef-487d-8634-19a893ac4ddd', 'profile_id': 'dbe967f6-d5ec-4914-a92d-1823bf8e30b2', 'board_roll_no': '49', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:25.78637+00:00'}
+{'id': '42fee3d1-8f18-40df-b3fb-1d730654a5ce', 'profile_id': '985f45f4-bdb1-46eb-9ab6-ca8093874768', 'board_roll_no': '50', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:26.098731+00:00'}
+{'id': '87c6db76-89d6-4b74-a476-bc27cd83f848', 'profile_id': '95f4cb93-3fdb-4b5d-8d27-ac7ffbae8b46', 'board_roll_no': '1', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:26.40013+00:00'}
+{'id': '1135e378-32a3-4d26-b0f6-9bd11c72b5b1', 'profile_id': '4f2caf4e-909d-4263-9047-249c0d1aa298', 'board_roll_no': '2', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:26.710555+00:00'}
+{'id': '49dd798a-ca31-4a5c-bbbf-b29555dc05e5', 'profile_id': 'dfdda43d-cabb-4d70-b973-8a18f3a76bd5', 'board_roll_no': '3', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:27.017745+00:00'}
+{'id': 'b1f6316d-408f-4c2d-aa47-38d0934005cc', 'profile_id': '90d54be4-3005-402e-a1e7-e38b2c9ee0ea', 'board_roll_no': '4', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:27.325803+00:00'}
+{'id': '8b0f31ca-2555-4064-b8dc-ed607d615bca', 'profile_id': 'c9dd99a6-b88b-4a10-9fa1-0911ced648f6', 'board_roll_no': '5', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:27.627604+00:00'}
+{'id': 'cfe5fe0d-969f-4408-b578-936a93210665', 'profile_id': '8ae05990-9ab0-4326-9edb-db85fb1e5a0a', 'board_roll_no': '6', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:28.038579+00:00'}
+{'id': 'e8b17367-6817-41d8-a8c7-04c6fbd9e38e', 'profile_id': '24a9dc52-1baa-4e2e-8c1c-b80a16c1b30d', 'board_roll_no': '7', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:28.335119+00:00'}
+{'id': '1c590ba7-1d9b-4ee7-8c16-ec5c452f8946', 'profile_id': '991c36cb-7ace-422d-af81-2a321809bad2', 'board_roll_no': '8', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:28.646439+00:00'}
+{'id': '0321fef5-3329-449b-9ab1-d2ef8b7f1b7a', 'profile_id': '2e7c310f-5cb8-437f-80b2-924c96fc196d', 'board_roll_no': '9', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:28.95271+00:00'}
+{'id': '37da2bbc-bb43-4633-aac1-0e01a54726cd', 'profile_id': '9d748ffd-ae06-4861-af4f-647fe6f34821', 'board_roll_no': '10', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:29.253726+00:00'}
+{'id': 'b147280b-cbc4-4370-80c8-da256fc8469f', 'profile_id': '2bfdb320-52bd-410b-8101-a72265d96eeb', 'board_roll_no': '11', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:29.553728+00:00'}
+{'id': 'b579fb05-8704-4259-a2bf-95705d9882fc', 'profile_id': 'ad02e3e1-3ab6-4f48-b65f-220ac9bee074', 'board_roll_no': '12', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:29.863971+00:00'}
+{'id': 'ef668ccf-44e9-4a44-b9c2-c0e1ba817a51', 'profile_id': '54dfb0dd-9d15-4b09-9ae5-c2b13daa7411', 'board_roll_no': '14', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:30.501145+00:00'}
+{'id': '2e857751-19bf-441f-a1ea-8130016e8353', 'profile_id': '989ec072-559d-4d9f-89f5-0c9673e7f346', 'board_roll_no': '15', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:30.824606+00:00'}
+{'id': '4d9b6c32-77f1-414c-9855-e1f8558e0e40', 'profile_id': 'd55e9d27-6ba8-43e6-9414-08af3f359222', 'board_roll_no': '16', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:31.182167+00:00'}
+{'id': '4336d04a-b50a-4cbb-900c-44f716d14526', 'profile_id': '31b53dee-b3a4-45f2-859d-996451fb0335', 'board_roll_no': '17', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:31.500097+00:00'}
+{'id': '1e44618d-e9c4-42c0-b8be-cf9d2acc2cec', 'profile_id': '16956060-259f-45c3-a02f-ced64b52686e', 'board_roll_no': '18', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:31.840988+00:00'}
+{'id': '9cedebd1-a61c-4bd6-b264-531a78722dd6', 'profile_id': '09fff8d8-d6b6-4fc3-9b63-40d3a6ef4234', 'board_roll_no': '20', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:32.769736+00:00'}
+{'id': '55fe955e-4047-47a4-996e-ebec20c27da1', 'profile_id': '249d8398-8091-44b5-a943-cebb0a7b2720', 'board_roll_no': '21', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:33.173836+00:00'}
+{'id': '6eb9caab-08e6-4d27-8a4f-0277ed4f1a7b', 'profile_id': 'aff3d30e-b3c5-427c-abf2-a7b0fe1623a2', 'board_roll_no': '22', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:33.585439+00:00'}
+{'id': '62ade58f-a957-4bb4-afd7-930d9458e114', 'profile_id': 'bfb0cf80-2e82-4972-8a62-0b2401253216', 'board_roll_no': '23', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:33.997534+00:00'}
+{'id': '5000cc9c-34e6-4b73-9452-77c1f9f63754', 'profile_id': '9d91e6ee-e97b-4165-a8be-d2c52ba05146', 'board_roll_no': '24', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:34.325562+00:00'}
+{'id': '882c25a5-e291-40f5-b7a3-2c0df39a5d24', 'profile_id': 'bd0773fc-25d3-42a2-ba00-c39fb66a99a6', 'board_roll_no': '25', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:34.635933+00:00'}
+{'id': 'af613a63-f481-4cd1-9ad7-96639f223518', 'profile_id': 'd6a581f9-74ed-4806-af4b-babc691194b4', 'board_roll_no': '26', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:34.959011+00:00'}
+{'id': '1fa1aed3-8842-4790-99a3-67054e8a3304', 'profile_id': 'e981fd6f-1224-479f-9599-1a87c87a0d30', 'board_roll_no': '27', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:35.271039+00:00'}
+{'id': '1d21fdda-0e32-4f31-a260-3eff1e02d1d3', 'profile_id': '00653d53-33cf-4f8e-a81e-d308cbd1955e', 'board_roll_no': '28', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:35.586631+00:00'}
+{'id': 'e71f3874-043f-442d-9500-23d2921a9209', 'profile_id': '04a84d4c-6ac1-4cff-8b5b-c76f0861beca', 'board_roll_no': '29', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:35.8971+00:00'}
+{'id': '41b72611-a528-4a75-b087-b73405820232', 'profile_id': 'b4600e72-0378-45e6-aa6f-6233da3fc137', 'board_roll_no': '30', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:36.201238+00:00'}
+{'id': '653cf7d7-ab6d-42a6-836d-bccc65c2d28f', 'profile_id': 'ab4bd612-da6f-4ba5-ba04-99fa69523ef3', 'board_roll_no': '31', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:36.517706+00:00'}
+{'id': 'fb36dad9-3650-46e6-a4a9-e5ac1a3dc34b', 'profile_id': '051e1f04-d25d-4a80-a910-5d3fdc7f7522', 'board_roll_no': '32', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:36.838727+00:00'}
+{'id': '0cbbc85a-a3f9-430b-92ce-feb05d9b23d5', 'profile_id': '07471be4-4f4c-478c-ae47-a58538590419', 'board_roll_no': '33', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:37.146871+00:00'}
+{'id': '192778a8-a44a-442c-828e-0774703602c8', 'profile_id': '7c42f071-1198-4d06-83e3-0789e27f8f4a', 'board_roll_no': '34', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:37.451165+00:00'}
+{'id': '615111b5-8a65-49c2-ba34-ab4ef4eba3aa', 'profile_id': '28292e91-d370-4c5d-8028-8c997b9c8cc2', 'board_roll_no': '35', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:37.76595+00:00'}
+{'id': '55ebc4af-96fb-43e9-acc3-16bdb2db7209', 'profile_id': '43fb9efb-5ac7-45a9-908a-fa4d914006fa', 'board_roll_no': '36', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:38.064716+00:00'}
+{'id': 'ca14d21b-a776-4a2b-9aee-a9bb360299ca', 'profile_id': '8bd964c1-56b5-4475-8b94-783f34ed132e', 'board_roll_no': '37', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:38.433827+00:00'}
+{'id': '0a106c59-052f-4201-9eda-9f518d3bb3b4', 'profile_id': 'b97cd834-3c97-4716-b8f3-43ce8978b800', 'board_roll_no': '38', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:38.737033+00:00'}
+{'id': '583b76b1-c553-436e-a14a-763a43bba9c8', 'profile_id': '88e656fe-38c9-4bee-bf23-17f018158c1a', 'board_roll_no': '39', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:39.042825+00:00'}
+{'id': 'a2a3243c-bc24-4701-bb3c-7308bf3941d2', 'profile_id': '849549d1-4ab8-4651-bbc2-a146547977ed', 'board_roll_no': '41', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:39.650279+00:00'}
+{'id': '49f42a82-808d-4f2e-9398-a77396ed1c2a', 'profile_id': '2d8f9de1-3d90-4369-9a6b-ffe4c384489e', 'board_roll_no': '42', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:39.962665+00:00'}
+{'id': '7b4b72c0-b5d1-4e0d-ab29-238498a585b3', 'profile_id': '22199386-8d46-4b8a-a023-ed033e559ad4', 'board_roll_no': '43', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:40.275988+00:00'}
+{'id': 'cdd737d7-1176-4ca1-b737-9838a16a8303', 'profile_id': '6b562f60-9caf-4d4c-8209-11b3898c985a', 'board_roll_no': '44', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:40.58095+00:00'}
+{'id': 'cd1fda23-4085-4d0f-9d6b-8156dd35bdaf', 'profile_id': '3b07b742-f20c-4b39-b213-3603bde27264', 'board_roll_no': '45', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:40.967918+00:00'}
+{'id': '948bae1e-8e63-4ebd-affb-6ed5301d8935', 'profile_id': 'cacaeed1-1abd-4836-9aa4-182491d8de68', 'board_roll_no': '1', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:41.287079+00:00'}
+{'id': '9a0ce71d-4d89-4b04-9485-0a14b0a94ee9', 'profile_id': '23e74891-1e46-438d-a0c5-4431ef437d7e', 'board_roll_no': '2', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:41.610494+00:00'}
+{'id': '811dc4fb-02bc-4c56-9903-0ac14e080cb4', 'profile_id': '8394d676-0fdb-4eb8-898a-dae18053935b', 'board_roll_no': '3', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:41.933299+00:00'}
+{'id': '77a45df9-cfb2-4223-aee3-73e2dd3ed35e', 'profile_id': 'e4b5e385-0080-4b95-9d72-bc3f448fddd1', 'board_roll_no': '4', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:42.266554+00:00'}
+{'id': '3ef10a5c-19fb-4538-a21f-8c5c311ffac9', 'profile_id': '041e44d3-a633-4b36-9d15-d5609aed7e6a', 'board_roll_no': '5', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:42.579248+00:00'}
+{'id': 'b939a816-93ed-4d51-b6b8-0c471a16eff7', 'profile_id': 'faa36cbe-5f4b-4a22-a2ea-e88c22ef09a2', 'board_roll_no': '6', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:42.884052+00:00'}
+{'id': '9a37beaa-76e0-4988-b869-a96ff4764e73', 'profile_id': 'a805f20a-ca17-497c-8bca-6e875ac08811', 'board_roll_no': '7', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:43.202517+00:00'}
+{'id': 'c29c62ae-efaa-4fd2-9008-de5aa5ae1538', 'profile_id': 'cdc1ec89-7edb-4ba5-867b-b2caec3f6c50', 'board_roll_no': '8', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:43.505573+00:00'}
+{'id': 'b7ff6e7a-e6b9-413f-9311-37cc267df559', 'profile_id': '35130467-375d-463a-933f-5bf59a58567a', 'board_roll_no': '9', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:43.820299+00:00'}
+{'id': 'e7e4b9db-9408-46c3-98b1-172ed9a32bb3', 'profile_id': '59880000-057a-4bfd-8f6b-5e764bd29aaa', 'board_roll_no': '10', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:44.126015+00:00'}
+{'id': 'b89adfec-d39c-4223-a579-94f0cb93be1b', 'profile_id': 'c601b96f-8642-4576-b8a8-d239552b0986', 'board_roll_no': '11', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:44.429462+00:00'}
+{'id': '441642c2-3f85-42ff-a2aa-0051b1b74202', 'profile_id': 'b0bf92cc-ebad-4d33-baa8-b43fdae94b26', 'board_roll_no': '12', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:44.72885+00:00'}
+{'id': 'aa6fab17-5889-46ed-b1bc-21413974d5ac', 'profile_id': '8b74a5c7-f8ea-4630-89ad-232bfe2a8664', 'board_roll_no': '13', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:45.030999+00:00'}
+{'id': '68e648af-0d75-4ef8-8ff5-991af53a9a6a', 'profile_id': '59549935-0065-47f2-a614-55a0797ca388', 'board_roll_no': '14', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:45.407614+00:00'}
+{'id': 'ceb929f4-8d23-439f-ab17-6b7788ae09ce', 'profile_id': 'aa9c362c-4707-44a4-9b63-2322e0c38535', 'board_roll_no': '15', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:45.712517+00:00'}
+{'id': '03ce56b8-fcd8-4593-a0d8-cb2f5435260c', 'profile_id': '3c0b2b52-e623-4db3-8cbc-5057046d3154', 'board_roll_no': '17', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:46.335822+00:00'}
+{'id': '1d40ce51-8ccb-4016-a0e6-9b0880528715', 'profile_id': '0ef6151d-ba91-4811-a226-e8e56581f546', 'board_roll_no': '18', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:46.652812+00:00'}
+{'id': 'ce120d83-3543-4309-83fe-1d16f77207e5', 'profile_id': 'dc110feb-bb81-4703-9f8c-b9d095dd15ef', 'board_roll_no': '19', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:46.964359+00:00'}
+{'id': '8e9040f6-7331-4c5c-9ac5-5946b0b6e981', 'profile_id': 'b4d1e09a-c681-45d0-a50a-87939c939226', 'board_roll_no': '20', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:47.266443+00:00'}
+{'id': 'bc5eadca-5fda-4032-abc3-665d7713baea', 'profile_id': '24b86d88-9e11-4f17-82e4-6acd1089847f', 'board_roll_no': '21', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:47.579178+00:00'}
+{'id': 'd00e39f6-8f5b-4d2b-807c-2bc522340843', 'profile_id': '8b14d355-01f5-4e82-9e33-495baf1215be', 'board_roll_no': '22', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:47.893371+00:00'}
+{'id': '64941e68-a79e-4ce0-8f2a-c5363fddee45', 'profile_id': 'fe428a16-c664-4b5e-9024-6a1b41d5125a', 'board_roll_no': '23', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:48.202204+00:00'}
+{'id': 'c3abbab0-b566-415d-b441-915d22ad4342', 'profile_id': 'eac9a956-d328-4135-8e8a-42a6e1778817', 'board_roll_no': '24', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:48.506521+00:00'}
+{'id': '0df7a611-005f-4ad9-99f5-ebeb1acef27a', 'profile_id': 'faf3a250-d402-4d48-9bfd-f897c993c96f', 'board_roll_no': '25', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:48.812222+00:00'}
+{'id': '583c6e52-d6df-44a1-a293-b8d1258898a4', 'profile_id': 'c3ef680d-b50a-4f60-b12c-8b740cde626b', 'board_roll_no': '26', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:49.119573+00:00'}
+{'id': '62336cdd-f34d-47f5-a3cc-b12cc9a455ba', 'profile_id': '3935940c-3783-4f0f-a462-64273c1878f1', 'board_roll_no': '27', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:49.423601+00:00'}
+{'id': 'f7999fd8-4890-4e82-a1d6-726510d590b1', 'profile_id': 'a775ac0d-097f-43a2-a81c-34104d3868cf', 'board_roll_no': '28', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:49.727494+00:00'}
+{'id': '86db2250-3a32-4fbd-af68-41dbf767e7b7', 'profile_id': '3b4540c0-2301-460b-a4ac-15c5b8e5119c', 'board_roll_no': '29', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:50.036952+00:00'}
+{'id': '75e9c625-777e-4be4-bc61-d5308a0c02db', 'profile_id': '0e182aab-fbce-47eb-acf6-08b762830971', 'board_roll_no': '30', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:50.344869+00:00'}
+{'id': '2e5d26e1-1791-4ded-b4fb-3c3a72e1af7f', 'profile_id': '2207d93c-3c65-4306-b5e9-2524be5c8fea', 'board_roll_no': '31', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:50.658648+00:00'}
+{'id': '71a2ccf9-7262-4fb7-b059-739d182f6184', 'profile_id': '08a0f3d4-98cb-440a-94a1-ad1909e2697b', 'board_roll_no': '32', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:50.966915+00:00'}
+{'id': '1c50b279-bd1b-4872-a562-48c2d4e840ad', 'profile_id': '02ca1015-0d48-45a4-87bb-c18693411e2f', 'board_roll_no': '33', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:51.322233+00:00'}
+{'id': '6b7d1c56-1c96-431c-b4d4-a4fe9141f53f', 'profile_id': 'eee6dd59-7b79-4c6f-9283-63e21f54d50d', 'board_roll_no': '34', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:51.624212+00:00'}
+{'id': '4b538fdd-0106-4e74-a176-0a5c65469462', 'profile_id': '52ff557e-9441-42da-887a-6774779885aa', 'board_roll_no': '35', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:51.937185+00:00'}
+{'id': 'eefea170-c740-49c9-a107-9f1fe594308e', 'profile_id': '93d510ba-ce0a-402f-b453-7d8408118f97', 'board_roll_no': '36', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:52.268214+00:00'}
+{'id': '00cddc08-e73e-484c-860d-892553680705', 'profile_id': '4e7dbaa8-4985-4f3a-a86c-4eec4eb1768c', 'board_roll_no': '38', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:52.892616+00:00'}
+{'id': '3d58994f-f069-4960-9808-5bcfff8735aa', 'profile_id': 'a8d8757f-c43d-4ead-ade2-1699018b4c8d', 'board_roll_no': '39', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:53.199258+00:00'}
+{'id': 'cf04d4d2-a961-467c-a828-e8dbe48151a5', 'profile_id': '2dfa14d8-1f4e-473a-bbe6-e9ea96aff63c', 'board_roll_no': '40', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:53.503708+00:00'}
+{'id': '8148ae8c-373d-44da-9653-1d35ede092c5', 'profile_id': '04f03542-adc8-499a-85f7-98647c0b2ae9', 'board_roll_no': '41', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:53.812113+00:00'}
+{'id': '1929d0f9-1b0d-42ad-a0fd-39b74b32e0a6', 'profile_id': 'dc708b59-75ec-4554-b491-9887c508943a', 'board_roll_no': '42', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:54.129494+00:00'}
+{'id': 'c1a73c5f-8cca-4126-8f4d-f3f164b92173', 'profile_id': 'd7250b5a-8299-4483-aa5a-6ad25610db85', 'board_roll_no': '43', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:54.659245+00:00'}
+{'id': '69eaafaf-e682-46f7-a2d1-9b5a24ebd1cb', 'profile_id': '9353c2df-1282-4fd2-ac7f-6bdcc9035ed4', 'board_roll_no': '44', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:54.964542+00:00'}
+{'id': '7a05be59-c2c2-4c19-8429-b3edc6e4049e', 'profile_id': 'b1327525-bacf-457d-a840-0f82e5545a5e', 'board_roll_no': '45', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:55.264828+00:00'}
+{'id': '0a9f94da-bc68-4ab2-9709-dba714303ce5', 'profile_id': '5959e72f-4b8a-4c35-b52b-2f4c6c140f7e', 'board_roll_no': '46', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:55.596616+00:00'}
+{'id': 'cfd9b524-fb97-48ab-ab36-7d150fdc3511', 'profile_id': '888e8e61-5e2d-4b25-9b71-07996f86cd8e', 'board_roll_no': '47', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:56.138038+00:00'}
+{'id': 'b516dc6d-3eb0-4643-acff-61d78ed52cee', 'profile_id': 'd2527f40-963e-4109-a7d0-fe651fc5cd51', 'board_roll_no': '48', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:56.66486+00:00'}
+{'id': '42a806a4-91f6-41b5-8111-59485dbaaf1b', 'profile_id': '779e449e-8a68-4e65-964b-b9af03c5423f', 'board_roll_no': '49', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:56.972439+00:00'}
+{'id': '4be26c75-7a78-4c0a-95e9-ba66ce2e1960', 'profile_id': 'b1b0e419-32a4-4a0f-876a-6802439c5684', 'board_roll_no': '1', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:37:57.286617+00:00'}
+{'id': '3fc6c42c-8827-4992-912f-e6673fab97f6', 'profile_id': '64626e46-7fbc-406f-8b9c-cf0a464a1903', 'board_roll_no': '2', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:37:57.592547+00:00'}
+{'id': '12686369-bf43-43d4-b5f6-bac311b4ee02', 'profile_id': '24748a5f-7227-4d8a-805b-fd1541d8895b', 'board_roll_no': '3', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:37:57.907002+00:00'}
+{'id': '3447c6e1-ad0e-4e24-b3fe-214e568ec5e7', 'profile_id': 'f1634a3e-6e86-4598-90cc-82aa9444a8b5', 'board_roll_no': '4', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:37:58.219144+00:00'}
+{'id': 'c5a57bd3-eb23-4199-98b6-3c2469355efa', 'profile_id': 'aac02ae1-8985-4b91-becc-3ea4e0438b30', 'board_roll_no': '5', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:37:58.524227+00:00'}
+{'id': 'dff581ba-cde4-489b-a35a-73055c143098', 'profile_id': '55cd61b5-c673-4d93-8843-123b673fe2b0', 'board_roll_no': '6', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:37:58.83224+00:00'}
+{'id': 'd8a1aa24-918a-4d62-ad58-353fb4a09cf9', 'profile_id': '92544ce5-db36-402e-97bc-44e61a1b2808', 'board_roll_no': '7', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:37:59.12958+00:00'}
+{'id': '96f8873e-7a30-444d-9b6e-75d34275e5be', 'profile_id': '6e9161a2-48d0-4f31-9c8a-4d7d6da67f80', 'board_roll_no': '8', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:37:59.424779+00:00'}
+{'id': '991c4362-1d57-4961-ad2a-ece4133cb5d4', 'profile_id': 'e643b0f3-b716-4287-a012-7e66d14607f0', 'board_roll_no': '10', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:00.038051+00:00'}
+{'id': '72fd588e-9a7b-4760-a38d-d564cbd2ee26', 'profile_id': '636ddc8a-a415-465c-b432-ce20bff79c1a', 'board_roll_no': '11', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:00.343743+00:00'}
+{'id': 'befb2c5d-e20d-4df2-be4e-c3a073046d7e', 'profile_id': '9807a631-4c10-4597-a087-94e929da42f9', 'board_roll_no': '12', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:00.657224+00:00'}
+{'id': 'e7d9e7eb-067b-4e62-8178-1d0df0513b0a', 'profile_id': 'da176cb0-0b4a-4629-bd4f-156cb5c444e9', 'board_roll_no': '13', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:00.974481+00:00'}
+{'id': '26391179-9c49-46fd-9d1a-644d6f7b5e79', 'profile_id': 'ca664f35-c82b-4537-b5af-adea4a403982', 'board_roll_no': '14', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:01.406944+00:00'}
+{'id': '9fd38f49-8ecf-46de-9f2f-e9255680b5b0', 'profile_id': '8a333a10-f051-444e-8cb0-9f0ee40088f1', 'board_roll_no': '15', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:01.710598+00:00'}
+{'id': '97391528-f0aa-4b0b-b1e7-be03d33761d9', 'profile_id': 'ec5cfb8c-c49a-4c0b-85e6-71c6889fce61', 'board_roll_no': '17', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:02.347476+00:00'}
+{'id': '986ba26e-3b7c-4ff3-b768-b6dc65f4ef7b', 'profile_id': '9c3a2b03-3f11-49bc-89ac-13189d04799e', 'board_roll_no': '18', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:02.65835+00:00'}
+{'id': '96edd45e-92ed-40b2-be95-a4270f5d828f', 'profile_id': '022d2496-39eb-44e7-a013-5bf24aeb172a', 'board_roll_no': '19', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:02.978146+00:00'}
+{'id': 'f5e59ea3-ea64-4cbb-bd73-de0ab0fdb83a', 'profile_id': '3c83328c-6386-48dc-887d-53e0be8e7442', 'board_roll_no': '20', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:03.301522+00:00'}
+{'id': 'e7593c31-c3d1-44fd-8472-cbb5099dbe6b', 'profile_id': '9dcb5885-ef74-46dd-b039-547b8e94b698', 'board_roll_no': '21', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:03.609687+00:00'}
+{'id': 'cb71d952-cdf8-4173-91cf-fd0836ddd32c', 'profile_id': '75e16391-fcab-4554-93f9-d4a8c7e69c42', 'board_roll_no': '22', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:03.918698+00:00'}
+{'id': 'd774c0af-4a51-4929-9b13-90fdd58331b2', 'profile_id': 'dea1e6f1-2dfb-422a-9ef5-ef7c113fb5ac', 'board_roll_no': '23', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:04.224664+00:00'}
+{'id': '6ad3c788-596b-4c0c-b4b5-159f11cfe242', 'profile_id': '8272199b-457c-4ab1-807a-da183331d117', 'board_roll_no': '24', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:04.526848+00:00'}
+{'id': 'b950d10d-d068-4283-a9b3-ba0f27804fa6', 'profile_id': 'b23eede8-b83c-4c1d-bd87-e461e5b0d597', 'board_roll_no': '25', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:04.831059+00:00'}
+{'id': 'cb248e04-1f07-48f6-80d3-4dbcc67e85b5', 'profile_id': 'ddda4fa1-5910-4adb-82ec-db63325b23cd', 'board_roll_no': '26', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:05.13527+00:00'}
+{'id': '5042e917-a4dc-43e7-b760-4e35a2ea0dab', 'profile_id': '4452f0d6-9975-42c9-8d8d-2119a4d31911', 'board_roll_no': '27', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:05.447645+00:00'}
+{'id': 'dd9e77a2-04bf-4669-9bec-f3439505d177', 'profile_id': 'cb397f47-79c0-4b31-adc1-6013677ca612', 'board_roll_no': '29', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:06.146665+00:00'}
+{'id': 'fadf530a-a7ae-4880-ad2e-efa91a1b57c6', 'profile_id': 'f948bfb6-a175-4fea-8581-e1f05c32c218', 'board_roll_no': '30', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:06.56436+00:00'}
+{'id': '8f361095-ae96-434c-9c52-3cc524575c0b', 'profile_id': 'a9d7e74c-4b25-4481-b6fa-2a86790c2745', 'board_roll_no': '31', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:06.912053+00:00'}
+{'id': '8b4f3919-56c3-4728-9c60-c3a953f5c15c', 'profile_id': 'd5006177-a9d1-4684-983b-75a30238faa0', 'board_roll_no': '32', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:07.198374+00:00'}
+{'id': '0c340fa2-a4a7-4f44-8a09-43f577a52033', 'profile_id': '18a218dd-ec59-4209-bf46-1b767a6ee1f1', 'board_roll_no': '33', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:07.565562+00:00'}
+{'id': 'fef01ccc-4de4-41d6-a9cd-912d0a3be940', 'profile_id': '0f05578a-2e2e-4d64-9e54-71d32344f6fd', 'board_roll_no': '34', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:07.864191+00:00'}
+{'id': 'a42b6b00-68dc-436e-9d64-6fb8781598b0', 'profile_id': '7b466322-1230-4c9c-915b-40ef5e4a6045', 'board_roll_no': '35', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:08.162094+00:00'}
+{'id': 'c21396eb-6264-4e8b-bfec-f03cdfca9e9f', 'profile_id': '7d9ad397-7eb8-415c-8444-e6a3e5e00d67', 'board_roll_no': '36', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:08.464524+00:00'}
+{'id': '273d4af9-3f9f-41da-a2d7-a6ff9fc18c0d', 'profile_id': '16ce62c2-ec4f-4b70-8bef-7c89f1c0a124', 'board_roll_no': '37', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:08.755841+00:00'}
+{'id': '66e0dd78-94f8-4194-9f84-3a6ad82f33d7', 'profile_id': 'f5c3ca39-4509-4cdc-8af6-3b4482997e1c', 'board_roll_no': '38', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:09.05909+00:00'}
+{'id': '94ce42f0-33a4-4617-b884-2103666177f5', 'profile_id': 'af3d81ad-01e2-4700-a64f-ac691722c277', 'board_roll_no': '39', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:09.347422+00:00'}
+{'id': '3f1e7037-a414-4472-95ca-7fb065906392', 'profile_id': '829eaaae-9744-4b48-ad5a-a42267b77efe', 'board_roll_no': '40', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:09.644624+00:00'}
+{'id': 'ba945bfe-9495-4d7e-a50c-fe611f8c099e', 'profile_id': '719053ad-be35-403e-bab2-324e6b9b93a2', 'board_roll_no': '41', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:09.946403+00:00'}
+{'id': '199ad07a-fbfa-4299-bb51-e2dfcf13eb02', 'profile_id': '00219602-b38c-43f7-80ea-77c8f5ea25c2', 'board_roll_no': '42', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:10.247187+00:00'}
+{'id': '284932e0-4057-4562-87f2-776837315b67', 'profile_id': '2ace261c-d52e-4a91-aefc-1afd212cae09', 'board_roll_no': '43', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:10.55415+00:00'}
+{'id': '0055126d-0419-4fe9-8273-1b28229750bb', 'profile_id': '1e96c2dc-bfff-4efc-9dc3-83a2ca97780b', 'board_roll_no': '44', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:10.855638+00:00'}
+{'id': '409a7a9a-7ccf-4636-b35b-c2ef3d37bea4', 'profile_id': 'fbf1819d-2b41-4ee1-996c-308a68f6795b', 'board_roll_no': '45', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:11.184307+00:00'}
+{'id': 'bc1216c0-16da-43db-a8e5-c616d40b0595', 'profile_id': '9d4c45d1-5c1b-4aa1-aca6-da8e293b419f', 'board_roll_no': '46', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:11.573246+00:00'}
+{'id': 'b6ad3394-592f-41a5-8d72-ae837831c9f9', 'profile_id': '388ab4da-613d-4a54-b574-ee2232d19ace', 'board_roll_no': '47', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:12.084539+00:00'}
+{'id': 'ddb043e1-c775-4e03-8a0f-4fb1e27918e4', 'profile_id': 'c201f323-c784-4f3e-a702-6a5ac2295b7d', 'board_roll_no': '48', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:12.499006+00:00'}
+{'id': '3a75471b-3418-41e8-af86-656b28eb1ca4', 'profile_id': '2f2f858e-5ba3-4f7f-b371-b7dbfd585ac7', 'board_roll_no': '50', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:13.286546+00:00'}
+{'id': 'c0e038d0-084f-4376-8dee-94c533d54bbc', 'profile_id': '47acd70b-6f13-4773-afe1-d46947614b55', 'board_roll_no': '51', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:13.725217+00:00'}
+{'id': '1ad2ad95-b8ad-4b1b-b6a0-6cd37f186e4e', 'profile_id': 'cafe6ff5-19c1-451b-b53e-0dc82f7348cd', 'board_roll_no': '1', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:21.808157+00:00'}
+{'id': '35394f28-41d2-4d97-aa7e-5f96301ba210', 'profile_id': '93545ea7-ae33-4da8-b8fb-5d956f18562a', 'board_roll_no': '2', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:22.112476+00:00'}
+{'id': '7072a6ea-37b4-44a5-bf21-bc9ad30e6855', 'profile_id': '3ca81c74-27d5-442b-ad61-d9269ee3e266', 'board_roll_no': '3', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:22.45127+00:00'}
+{'id': '43e882c6-0c04-4b3c-a526-73504b198b0f', 'profile_id': '4e0529f9-0797-4cc8-be95-41a906dd99e2', 'board_roll_no': '4', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:22.832728+00:00'}
+{'id': '4e9b3f28-688c-43b9-af76-175e938b0d5c', 'profile_id': '55ab43a5-dfa3-4b32-aec3-bfcab83bd637', 'board_roll_no': '5', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:23.138043+00:00'}
+{'id': 'b7c54cff-be1d-4f60-818d-a7c04df8e44b', 'profile_id': '3b8f3d62-11fe-47cd-9f16-cea9698a6e9a', 'board_roll_no': '6', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:23.444975+00:00'}
+{'id': 'bb4a9bb4-7f69-4a0f-a983-67ee54e53d00', 'profile_id': 'f81a0aaa-5262-428a-94e7-518d7bf77239', 'board_roll_no': '7', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:23.736182+00:00'}
+{'id': '54800f26-2f00-465a-aa91-a5bf1583f85a', 'profile_id': '223420d2-71fa-49d3-8d87-1e630e72fa3d', 'board_roll_no': '8', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:24.031108+00:00'}
+{'id': 'e52a4516-aef4-45d4-bdd3-e7deaadc3f7b', 'profile_id': '2b72ca11-9372-4f99-94b8-6ac941a5490f', 'board_roll_no': '9', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:24.335499+00:00'}
+{'id': '2041ca8f-0b8b-42e0-8e69-b141fecd22c2', 'profile_id': 'daa08819-b4e1-49f5-9161-eee086935b3a', 'board_roll_no': '10', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:24.640275+00:00'}
+{'id': '60a1fe0f-514b-49a9-9d8b-ae106d48e48d', 'profile_id': 'cfb6b2e8-eed2-4914-a5f7-d816775ba99e', 'board_roll_no': '11', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:24.938876+00:00'}
+{'id': 'edfc9e8d-fab6-4a54-aed9-1b190c0ede71', 'profile_id': 'c1ba33e5-4239-4988-b2a3-674ab76c0721', 'board_roll_no': '12', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:25.246414+00:00'}
+{'id': '7e007894-8a88-49aa-aeae-ce8a1382dbe4', 'profile_id': '76fc79bd-fd29-45d7-bdf9-ce0f9f357e56', 'board_roll_no': '13', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:25.543307+00:00'}
+{'id': 'd189b24b-256f-4887-98f7-413f2a6a060d', 'profile_id': 'a633837f-de27-4d7a-889f-4358beaa9b89', 'board_roll_no': '14', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:25.852205+00:00'}
+{'id': '2e6d8cca-d019-497b-9017-d4b587b00ace', 'profile_id': '4d386b61-e625-425e-a5e1-796ea56ddb11', 'board_roll_no': '15', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:26.146+00:00'}
+{'id': 'dff04b13-a67a-4460-8593-451ec438b849', 'profile_id': '9ab5c3d6-e935-4018-86d0-087c1d97f9be', 'board_roll_no': '16', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:26.455663+00:00'}
+{'id': 'b0736bae-4e6b-4615-9a25-db915f33a962', 'profile_id': 'c24bbaee-d897-4edd-91e3-5387ad13b9c7', 'board_roll_no': '18', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:27.078268+00:00'}
+{'id': '0ebaf1e4-b6bc-4656-98b8-3aa589a6f2ec', 'profile_id': '691f36f6-43ab-49aa-97d0-23c6023d37eb', 'board_roll_no': '19', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:27.38062+00:00'}
+{'id': '0afac29f-2907-4ec7-bc5b-2f092461735c', 'profile_id': '71d79001-10b8-4559-bb2f-f2f33e36580c', 'board_roll_no': '20', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:27.730299+00:00'}
+{'id': '77297de5-e995-4003-953f-a488fbf2cc9b', 'profile_id': '6754e489-c86c-4786-9919-bf50cad6c950', 'board_roll_no': '21', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:28.032354+00:00'}
+{'id': 'da7609b4-01b6-4f5d-8a8a-4e17971f671d', 'profile_id': '9854b836-43b2-4947-a39d-2861f7496bbc', 'board_roll_no': '22', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:28.32753+00:00'}
+{'id': '3546c06d-8c79-430d-b661-4cd5b190b5f1', 'profile_id': '2f0c309c-f094-4df6-a421-7a3d5f125a92', 'board_roll_no': '23', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:28.611811+00:00'}
+{'id': '6876b2b9-c3d1-43fd-8cae-cd829f0113eb', 'profile_id': '24f44d3e-de2c-460f-8d3e-6958b934cda0', 'board_roll_no': '24', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:28.921065+00:00'}
+{'id': 'e6308fee-9d5c-4e25-861b-b272cf030978', 'profile_id': '307c0a71-ff20-430b-8589-42da23b3ebec', 'board_roll_no': '25', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:29.21777+00:00'}
+{'id': '2ecf1f93-525b-4ec0-b104-76267f4b99fd', 'profile_id': '44d4607e-d151-4c2c-883b-76635f4d758a', 'board_roll_no': '26', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:29.519148+00:00'}
+{'id': '66a00dfb-70ae-4b4d-95ca-9c90396db3c0', 'profile_id': '98863ece-d71f-4e0d-a62d-dfdb7d3881ec', 'board_roll_no': '27', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:29.815407+00:00'}
+{'id': '94f06a35-6589-44e6-a720-b9df9510dbb7', 'profile_id': '936baeb0-cf15-49b9-bcd7-607e7d7457c1', 'board_roll_no': '28', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:30.143127+00:00'}
+{'id': '807b0ae9-725e-428b-acd6-add59561dff8', 'profile_id': '74d21c87-4b9b-403f-8511-7c86df757c47', 'board_roll_no': '29', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:30.441207+00:00'}
+{'id': 'c681faca-70d8-4ae7-9f18-32e824735cdf', 'profile_id': '35194ffb-5106-4b7b-9ecd-bf575e149e07', 'board_roll_no': '30', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:30.745431+00:00'}
+{'id': 'c5ddc634-7888-4cbc-826a-a2e665d9ef5c', 'profile_id': '325595da-7a88-46fe-9567-b8339550e7b2', 'board_roll_no': '31', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:31.042851+00:00'}
+{'id': '3ab9666f-7adc-454b-a3c5-9d06d873970d', 'profile_id': '716e3683-ab58-4f21-8294-cd4fe7ce3818', 'board_roll_no': '32', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:31.460406+00:00'}
+{'id': '6695b1e6-bc90-4c35-ab8c-36565a93e6a0', 'profile_id': '8395de44-7d9e-4527-8d0d-64c69d027ff8', 'board_roll_no': '33', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:31.759219+00:00'}
+{'id': 'cecfb66e-4322-4fdb-aa4f-e586e9510d5a', 'profile_id': 'bcf49b49-1ad6-4ec5-86ad-5049b206bf4b', 'board_roll_no': '34', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:32.066631+00:00'}
+{'id': '6f15d95c-a14f-417a-9fc6-3502d6eba3d7', 'profile_id': '1f7821ad-58d0-4dc4-a4eb-0a574e16919b', 'board_roll_no': '35', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:32.360145+00:00'}
+{'id': '0fec86dd-c17e-4858-8f99-6fe9bc5661e2', 'profile_id': '0cfd49ec-2f90-48c5-b8f1-3bd206ec12ee', 'board_roll_no': '36', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:32.670894+00:00'}
+{'id': '33d94a99-a240-4c64-b2ec-0e93e716c704', 'profile_id': 'f9ea3a0a-b466-45b7-8413-1bb13d982c12', 'board_roll_no': '37', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:32.971925+00:00'}
+{'id': '03065c4c-afb7-407c-a54a-15ccf6dfe6db', 'profile_id': 'ca748546-953f-4b81-8da3-d33401c3a22c', 'board_roll_no': '38', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:33.287881+00:00'}
+{'id': 'af32ba7a-67c6-4511-8b37-fb78a271f0f2', 'profile_id': '4041e52f-c2ab-44fa-963c-67cb3e5e9180', 'board_roll_no': '39', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:33.58647+00:00'}
+{'id': 'a5a8096d-4e2b-46ac-a45a-8e431eafefde', 'profile_id': 'bd7a5c45-e406-4e11-84ca-cdbd645139d2', 'board_roll_no': '41', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:34.196053+00:00'}
+{'id': 'b825e845-935f-48e4-9364-5c0146a76c54', 'profile_id': '1387b993-701a-4fec-98ca-5c2d9387992c', 'board_roll_no': '42', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:34.5072+00:00'}
+{'id': '20c8650c-ef05-4bf8-925b-7807798c6d7d', 'profile_id': 'a44116f0-0a41-45f0-9eb1-59ca425dadfd', 'board_roll_no': '43', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:34.822426+00:00'}
+{'id': '3cad7fef-0f00-4f4f-848a-fae6d2b268f3', 'profile_id': '1b6ac238-879d-4c04-ab1c-8260c86fe111', 'board_roll_no': '44', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:35.126379+00:00'}
+{'id': '29688854-2ea9-45ca-8679-f81e12514d5f', 'profile_id': '261573ac-b781-4d87-b881-f8555381c7dd', 'board_roll_no': '1', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:35.426441+00:00'}
+{'id': '99e4e576-66cf-42a3-b40e-5eb71dc494e5', 'profile_id': 'd7c02b36-45bb-48f0-9996-3de3b3066c2a', 'board_roll_no': '2', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:35.724145+00:00'}
+{'id': '141df5f8-dff1-448d-8732-dbbc949d643c', 'profile_id': 'eddb9123-2856-4ad7-8077-1570c2c3baab', 'board_roll_no': '3', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:36.024243+00:00'}
+{'id': 'a1e0aebe-49b5-4ae1-842b-c4cc1c7da8e0', 'profile_id': '0a15b89e-02e6-474a-87d0-7ccd17fffb37', 'board_roll_no': '4', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:36.320235+00:00'}
+{'id': 'bfa4182f-7f3e-4832-90ad-ca552169c63b', 'profile_id': '1a8d90aa-8493-4a83-9bd2-3773f4721f81', 'board_roll_no': '5', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:36.618096+00:00'}
+{'id': 'c45bddf3-25b2-4f21-a985-44ea0892632c', 'profile_id': '6e532d55-43cf-4699-a7e4-fa5383ddcec7', 'board_roll_no': '6', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:36.927356+00:00'}
+{'id': 'ae668b39-4572-4bc5-aaeb-4e68886a4385', 'profile_id': '6d50f727-5be8-42e8-a214-17e08d133984', 'board_roll_no': '7', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:37.234122+00:00'}
+{'id': 'a9dbd7c5-98bf-4b39-9c27-b4cd28308223', 'profile_id': 'e7365e9b-dbd2-4d6b-a65f-ce36e3bfa463', 'board_roll_no': '8', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:37.536932+00:00'}
+{'id': '14314293-93b9-419a-ab3b-957030cc9625', 'profile_id': '3393368c-ee8b-421c-993e-3525391a04f2', 'board_roll_no': '9', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:37.835053+00:00'}
+{'id': '5f3cfc43-61a3-4d36-8152-cdf0cfd9d1c8', 'profile_id': 'd7dadb71-4d9f-4838-bb88-16e96461255e', 'board_roll_no': '10', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:38.151226+00:00'}
+{'id': 'c739e132-5ac3-4ed2-a30f-bfc8561c268c', 'profile_id': '2906f1d2-6657-4a0f-a1cf-ed21e534d001', 'board_roll_no': '11', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:38.457828+00:00'}
+{'id': '9be8eca4-ddad-4ba5-9d2f-08544bf2e370', 'profile_id': '1a186238-4612-4f26-85f4-6b8dd35c1c53', 'board_roll_no': '12', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:38.765059+00:00'}
+{'id': '4efec643-7f5e-4845-8592-cff728013741', 'profile_id': 'a7434f89-6bdd-4a3e-9f5d-801385a213a3', 'board_roll_no': '13', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:39.068746+00:00'}
+{'id': 'c99256c9-64ca-483e-a92b-3b71620907c1', 'profile_id': '119a5882-7849-4cbd-b489-294b68b0ca60', 'board_roll_no': '15', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:39.672442+00:00'}
+{'id': '0c28ca22-44d2-43df-a767-f637ba5a4a75', 'profile_id': '088b8eac-254b-4d04-bbd0-655ec0c314ac', 'board_roll_no': '16', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:39.978047+00:00'}
+{'id': 'dd486192-81a6-4b01-b245-6725f1f9a5d4', 'profile_id': '5ecd297b-8525-44b9-bdad-9590181cca73', 'board_roll_no': '17', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:40.278868+00:00'}
+{'id': '8a0cfec9-b8b2-4d6e-806a-df347534dd1f', 'profile_id': '5cfc45b5-cca2-4839-a16d-6524418d94d1', 'board_roll_no': '18', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:40.582801+00:00'}
+{'id': 'e737d0b8-310b-4241-bdd5-76706dd1ee6d', 'profile_id': 'd055deca-1996-49f2-92d9-25542187ae46', 'board_roll_no': '19', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:40.881535+00:00'}
+{'id': '3af18ebf-0693-4f64-8ed8-996eb3d79274', 'profile_id': '5649ab55-6085-422d-b039-b1342bef7190', 'board_roll_no': '20', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:41.197244+00:00'}
+{'id': '8c27f8ca-df4b-497a-b51f-2732d23cd129', 'profile_id': '86ffc513-f409-4db8-a725-caa7595dcd15', 'board_roll_no': '21', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:41.505616+00:00'}
+{'id': '631803c9-96b6-48d1-93bc-d801eeccea50', 'profile_id': 'c0fd0925-d937-4e72-81db-3b4f253b4fee', 'board_roll_no': '22', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:41.802999+00:00'}
+{'id': '6afb5406-1955-43f9-9202-b21ff48dc692', 'profile_id': 'b31f1e5c-49fe-4a19-b9b8-8092f5e1a229', 'board_roll_no': '23', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:42.095132+00:00'}
+{'id': '5da2e99d-8c16-4af7-af9c-236a10e00c04', 'profile_id': '5ac1a44e-ef5c-49a5-b30b-733b7b17935d', 'board_roll_no': '24', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:42.399673+00:00'}
+{'id': '6814718e-98a5-4a1d-b5c8-8460baae6312', 'profile_id': '53cf3031-0d73-41f7-ac20-3a5442de0501', 'board_roll_no': '25', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:42.708153+00:00'}
+{'id': '0f01f489-6f40-4549-9aa8-2253824c4863', 'profile_id': 'bbc4dedd-6f4a-499b-8a6c-27f8a9f7178a', 'board_roll_no': '26', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:43.006547+00:00'}
+{'id': '5202a8ce-07ff-445a-8ead-d9da9996dc58', 'profile_id': '4d1f126a-ef6e-4df4-b590-7fd63692a4e3', 'board_roll_no': '27', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:43.309752+00:00'}
+{'id': '89d55cb7-15c2-4164-b841-906e2e4b3081', 'profile_id': 'c28d4a7c-b738-49de-94f5-7f1f9cfca945', 'board_roll_no': '29', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:43.908216+00:00'}
+{'id': '6b458e14-ddbf-4121-8fb6-6934dc0c17c1', 'profile_id': 'f8e7d19b-a72c-4ea5-b9ca-ec28964a4454', 'board_roll_no': '30', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:44.206933+00:00'}
+{'id': '876928e2-f3b3-4122-a030-2dd7e93024bb', 'profile_id': '6cecbf19-6574-4439-a2d9-100802abdb92', 'board_roll_no': '31', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:44.503823+00:00'}
+{'id': '8bef825d-009e-4d6c-b6de-4b503d1fba98', 'profile_id': '039509eb-860d-41b6-9765-8725196503cb', 'board_roll_no': '32', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:44.806337+00:00'}
+{'id': '5c53996b-dfc6-4ba7-826e-40a89b49bcb5', 'profile_id': '4f708f9e-5b8b-4762-bd16-1096ae9809ca', 'board_roll_no': '33', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:45.099907+00:00'}
+{'id': 'ecf6b8c8-608e-472c-8bf0-4c101b087980', 'profile_id': 'ce8bddc8-6568-4133-aa62-21434a14bc7b', 'board_roll_no': '34', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:45.396266+00:00'}
+{'id': '2fe56a4a-2340-4373-98f4-fdd96d1a6638', 'profile_id': '9c5579b7-7544-47f5-a39c-68fff852b327', 'board_roll_no': '35', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:45.700831+00:00'}
+{'id': '6500571b-f11e-47f4-9ac3-60ee367e2b98', 'profile_id': '39f72997-e131-40d4-a86c-6b6efb8b5c25', 'board_roll_no': '36', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:46.001281+00:00'}
+{'id': '1df87f5b-0d0d-48dc-8d79-6d5166b2c3ef', 'profile_id': 'b8bbb896-001f-4ef1-a33f-74dc40506558', 'board_roll_no': '37', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:46.307575+00:00'}
+{'id': '042a9e56-d9ae-4bb1-b39f-26fdc61ad898', 'profile_id': 'c8f56a84-9cdf-48ef-9176-a5c2eb07347b', 'board_roll_no': '38', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:46.604181+00:00'}
+{'id': 'd448080a-a17a-4625-9985-e1dcaf2b4520', 'profile_id': '1b874c61-a166-48fe-a5e0-8e4ef337329f', 'board_roll_no': '1', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:46.911141+00:00'}
+{'id': 'e7206542-5e0e-4abc-a263-dea1da738e31', 'profile_id': '8d393ec1-6f85-4dd0-b200-8bb9862c1104', 'board_roll_no': '2', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:47.21062+00:00'}
+{'id': '5b9a0217-60ab-4013-bdad-8a40a55ffc93', 'profile_id': 'e6e9ee82-0a46-4401-9313-066b779573dc', 'board_roll_no': '3', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:47.517752+00:00'}
+{'id': '69fa60d0-b574-4874-8192-07ee4729189b', 'profile_id': '75d074dc-3832-4c7f-984d-31403c1dae09', 'board_roll_no': '4', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:47.825811+00:00'}
+{'id': 'a3461235-e388-4ccb-894e-ec5874ad0448', 'profile_id': 'd2eec809-e4ac-45d0-8be8-1086fd8278ac', 'board_roll_no': '5', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:48.128662+00:00'}
+{'id': 'e7e79de9-13a0-44b3-9e93-3f55bf4be5f2', 'profile_id': '4d421ad6-2fa3-4fd3-988e-3af5a2d455c2', 'board_roll_no': '6', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:48.43222+00:00'}
+{'id': '3da2352b-b915-438d-a7e5-4b2c7ce3d5d6', 'profile_id': '937a2dce-8b52-42c0-9b03-66414bdbc463', 'board_roll_no': '7', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:48.732683+00:00'}
+{'id': 'bade1653-d5b1-4b21-89ea-9c16bce0a409', 'profile_id': 'f52c6391-9b46-4027-b637-6c9dc71b18f1', 'board_roll_no': '8', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:49.034904+00:00'}
+{'id': '3f8d080f-350c-4069-be40-94ee2a25472e', 'profile_id': '1dd9735b-da69-41fc-a047-878a05b29980', 'board_roll_no': '9', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:49.344366+00:00'}
+{'id': '47957108-6de7-41e8-a16b-1ce6ec96bc6a', 'profile_id': '5719e601-3999-4a80-aa1e-f605cd4f26fa', 'board_roll_no': '10', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:49.651358+00:00'}
+{'id': '046795c3-a898-44cb-a8f5-7b23f721e451', 'profile_id': '58e7531f-bfb5-4e58-8215-9c286738fc5d', 'board_roll_no': '11', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:49.947618+00:00'}
+{'id': 'ca670b12-daf6-4b24-be6a-a178153e11a3', 'profile_id': '88155ead-42d6-4f8c-ae0b-08ca70c852c0', 'board_roll_no': '12', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:50.250034+00:00'}
+{'id': '6c34fe85-4cfc-4548-8ba6-304dd2a887cc', 'profile_id': '72d53455-5760-4b77-892c-b83ded1ea30a', 'board_roll_no': '14', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:50.860708+00:00'}
+{'id': 'e72dba27-1737-4b24-9ddb-45884efa3aed', 'profile_id': '4af67b17-c33c-436f-b70c-9025f65901aa', 'board_roll_no': '15', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:51.206357+00:00'}
+{'id': 'df74b6c3-1446-4666-a82b-cc487315b1e4', 'profile_id': 'a1d4a208-2a6d-4274-b45f-06e38d21fc96', 'board_roll_no': '16', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:51.540734+00:00'}
+{'id': 'c432ce28-5d4b-4d16-9cfe-6e2764bb6e6b', 'profile_id': '08e1cee3-87f9-4fe2-9efb-0e9be81dc5fd', 'board_roll_no': '17', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:51.916623+00:00'}
+{'id': 'a5db64ad-84bb-4b57-97e7-74c56005e0b9', 'profile_id': '0fc0cf52-4493-4801-be84-34f55bc11e0d', 'board_roll_no': '18', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:52.25436+00:00'}
+{'id': '579ebe28-1fef-4c93-9ab3-06385a61ff1d', 'profile_id': '9fd0a48b-2d81-4ff7-b3d9-05ca3253050e', 'board_roll_no': '19', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:52.59214+00:00'}
+{'id': '3fd62bba-9ef0-4170-a221-d3af76150462', 'profile_id': '08fb1626-7fa0-432f-a44b-c93b2ae0fbac', 'board_roll_no': '20', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:53.044374+00:00'}
+{'id': '9e3e8c4d-d737-4b88-93a2-e4f40d331e2e', 'profile_id': '7e9b76b5-4f13-43d6-ba22-9a95896455ab', 'board_roll_no': '21', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:53.45156+00:00'}
+{'id': '5102e7b4-7955-4050-bfaa-3795b7e534b1', 'profile_id': 'cfd3b8a3-a6e3-4bbf-bfe5-ef0e43fb3a6c', 'board_roll_no': '22', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:53.752728+00:00'}
+{'id': 'f885697f-8f6b-427d-9613-b784ec9bf452', 'profile_id': 'b5d2a2f1-010a-4edd-bf6c-56cb647bbed7', 'board_roll_no': '23', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:54.067065+00:00'}
+{'id': 'fb315c66-8bbd-42ca-b140-61312f199a9b', 'profile_id': '61d67443-ba3b-4509-aab2-b1bf3c3f5c16', 'board_roll_no': '24', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:54.365256+00:00'}
+{'id': 'bdfe3cf0-e110-4128-a54d-00a4e54292b5', 'profile_id': '2150d627-a78d-43c3-b898-93ecf8e9841c', 'board_roll_no': '25', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:54.659675+00:00'}
+{'id': 'b6593566-ad0c-4e25-a7a1-104851db6425', 'profile_id': 'be6a0ef8-b7b3-4b85-81aa-f28bd4d46152', 'board_roll_no': '26', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:54.96912+00:00'}
+{'id': '7dab42b6-4258-439b-b608-13807ce7a821', 'profile_id': 'e5cc896d-caaa-49df-93a1-408f5c6c019c', 'board_roll_no': '27', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:55.268474+00:00'}
+{'id': 'a207b39c-d0ff-40c2-a2c1-08dad8a95e95', 'profile_id': '4b070d76-610e-4ab3-b6af-ea34e10db984', 'board_roll_no': '28', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:55.644984+00:00'}
+{'id': 'd86e9cf3-673e-4c77-b7b0-a8ffe90c12f7', 'profile_id': '803d6051-921f-456a-998c-55e937197f85', 'board_roll_no': '29', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:55.958682+00:00'}
+{'id': '57e5d03e-ed9f-459e-93fb-22f6f758ff07', 'profile_id': 'cd3ceb16-ea97-4115-b9fc-07ac1b3115da', 'board_roll_no': '30', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:56.255223+00:00'}
+{'id': '50ee54f5-2083-469f-bb04-e0dfc3762b2d', 'profile_id': '7deb905a-a767-4c3a-af39-4b17c2fc4c97', 'board_roll_no': '31', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:56.558643+00:00'}
+{'id': '31b3b74a-9f32-46b9-be47-56a8e792d668', 'profile_id': '30c82422-2780-477e-9da4-782760770dc7', 'board_roll_no': '32', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:56.873082+00:00'}
+{'id': 'af165ac4-e391-40d9-bd73-db945ec9840c', 'profile_id': '527b16bc-dfff-43e3-bac5-1c6c3170534b', 'board_roll_no': '33', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:57.23852+00:00'}
+{'id': '5d0a61ec-f48a-47f3-8f58-542d0a7d855e', 'profile_id': 'b11aa7b1-bda6-4f0f-8f8a-03a55a41d1e3', 'board_roll_no': '34', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:57.616642+00:00'}
+{'id': '6587a292-21d9-4db5-b95a-ecc7eae0a59a', 'profile_id': '79dbb307-78b6-46e1-a068-bfbb63afde36', 'board_roll_no': '35', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:57.912657+00:00'}
+{'id': '74747c23-90ec-407f-b083-3388c1f9b007', 'profile_id': 'a2b25ed6-b2d6-4740-b33c-c9c04b089754', 'board_roll_no': '37', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:58.519613+00:00'}
+{'id': 'fc70a5fd-37fe-41f7-8cdc-8875bcc4093d', 'profile_id': 'f65416f3-e3e5-41e9-81c7-8b31ac101519', 'board_roll_no': '38', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:58.817506+00:00'}
+{'id': 'b7054b94-d54f-4470-bc1a-f8e44f72d5e2', 'profile_id': '6f190039-1cde-4f48-b824-1f4c1d35f1f4', 'board_roll_no': '39', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:59.118904+00:00'}
+{'id': '49a05f75-159c-470b-bcab-753b1c47eb8b', 'profile_id': '36756bfe-725f-4619-bdce-bccf2560dbf4', 'board_roll_no': '40', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:59.418196+00:00'}
+{'id': '4f2bb594-2883-4528-8e61-18c31647036a', 'profile_id': 'bd58c178-f9d7-4054-ab8c-bed89cbb6326', 'board_roll_no': '41', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:59.716833+00:00'}
+{'id': '38a189c2-cd49-457c-987c-94e87968bea0', 'profile_id': '1d93b6e5-a31a-4c93-8679-ea19f4fd26a1', 'board_roll_no': '42', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:39:00.016643+00:00'}
+{'id': '7b08a074-8cd8-43b9-9ca2-66f7e4a20fbe', 'profile_id': 'f8eb9a57-d268-4ad8-a15e-409ad1334116', 'board_roll_no': '43', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:39:00.325087+00:00'}
+{'id': '08e85155-7db1-4412-81f2-644360b9c12f', 'profile_id': 'a4c6f72a-0260-4436-b21a-0a23504d6942', 'board_roll_no': '44', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:39:00.720415+00:00'}
+{'id': 'c9d98410-50d6-4d7a-9139-25ead151e5bc', 'profile_id': 'd3337df7-25ca-4c90-b51a-2007fa3afff5', 'board_roll_no': '45', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:39:01.02784+00:00'}
+{'id': 'd4630061-37c8-41c1-9a4f-64e497d9399b', 'profile_id': '044cc811-6487-44af-a877-243d22aa2092', 'board_roll_no': '46', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:39:01.459267+00:00'}
+{'id': '7e3df5c2-5f19-4edc-be0f-a80773714d1b', 'profile_id': 'b4d7b160-37a9-4a4c-86fd-0c756e7e1112', 'board_roll_no': '47', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:39:01.76285+00:00'}
+{'id': '18db65de-6dd5-48bf-ace8-dbf1b972069c', 'profile_id': '241ede91-2f75-4281-9f24-21e0615ba450', 'board_roll_no': '48', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:39:02.073947+00:00'}
+{'id': '6548b8d1-ddc5-4f3b-8838-1c9e780be8b0', 'profile_id': 'b41a30e0-5879-42bc-a02a-ae8c9a5ba14c', 'board_roll_no': '49', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:39:02.467668+00:00'}
+{'id': 'b7ed2672-eb6f-418a-a9c5-ce9c9f9a4b62', 'profile_id': '39c5b907-fa26-4912-b8e9-30dc092532ed', 'board_roll_no': '50', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:39:02.873367+00:00'}
+{'id': '3e984e4a-c408-429e-b369-0adf2fcccc29', 'profile_id': 'ecd648ec-dd7b-40f8-b711-04ef04a5d1c2', 'board_roll_no': '1', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:03.282661+00:00'}
+{'id': 'aedbba6c-508a-439d-85e1-326c10d5b076', 'profile_id': 'f3aaac97-0a4f-43c9-9351-6c3422550cef', 'board_roll_no': '2', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:03.696358+00:00'}
+{'id': '791b13d6-ce9d-4562-9aa8-832d1b5fbe57', 'profile_id': '26011ec0-2ddb-4a73-bf9c-1ef5fbe66d79', 'board_roll_no': '3', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:04.103467+00:00'}
+{'id': 'aafa7f71-5437-4975-a988-af7b4e89839c', 'profile_id': '42ebee15-4f5c-4a55-abf7-d356fced0427', 'board_roll_no': '4', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:04.511791+00:00'}
+{'id': '481636c0-b1df-4aba-9299-b73ef46f1bfd', 'profile_id': '420f8477-ce31-40dd-89cc-677e8b260fcd', 'board_roll_no': '5', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:04.920975+00:00'}
+{'id': 'dd9f9a3a-f0ce-4610-a82a-e23975c75253', 'profile_id': 'bfc1f060-5278-4cbe-9f16-ae554f7e2e50', 'board_roll_no': '6', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:05.332559+00:00'}
+{'id': 'b216e2bc-b80d-4b36-a181-a9fb865dc5c9', 'profile_id': '8c10e38c-7e17-4774-89b6-e69865188433', 'board_roll_no': '7', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:05.750678+00:00'}
+{'id': 'd8bf8b59-85d1-4cc7-800d-a5d4225acc67', 'profile_id': 'd85df390-579a-44f4-8d6b-429f90ff80d9', 'board_roll_no': '8', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:06.152124+00:00'}
+{'id': '942e9797-8313-4f0b-9e46-6e5b0ab4b319', 'profile_id': '9028a723-9061-4529-98c4-bee9a6509801', 'board_roll_no': '10', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:06.980378+00:00'}
+{'id': '768e3ad2-6b66-48aa-82a9-81e6acfe9cbf', 'profile_id': '41fcd914-1fd6-4b95-9a1f-bd6889e359ae', 'board_roll_no': '11', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:07.390371+00:00'}
+{'id': '0ec0f6eb-6b0b-4f6a-a9af-68f49f088956', 'profile_id': 'b096ccd4-627f-4408-810b-4f63f320ec59', 'board_roll_no': '12', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:07.895336+00:00'}
+{'id': '9d584401-c490-44d2-8547-c520ea08f7ff', 'profile_id': '8d65c698-706e-4256-8c1b-d5de52d08f2d', 'board_roll_no': '13', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:08.302186+00:00'}
+{'id': '2707e1ab-393a-4b83-a3bf-626e30c875f0', 'profile_id': '897dc4ca-fba6-4a4d-b29f-0af2823f7348', 'board_roll_no': '14', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:08.721887+00:00'}
+{'id': 'b4613324-bb23-4fa5-9e18-8bb7ee92ec3d', 'profile_id': '1fd5fbfe-549d-4342-a9d0-1a8b2cdb703f', 'board_roll_no': '16', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:09.529947+00:00'}
+{'id': 'ba0c19a2-66b0-4e42-8419-716acef12dc3', 'profile_id': 'e8db3878-b03b-4a04-945c-86842f265ba6', 'board_roll_no': '17', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:09.938621+00:00'}
+{'id': '3fbb3244-f4f7-4804-8d85-f647b2eeafa4', 'profile_id': '58840342-0fbe-4919-be01-db3e78a85618', 'board_roll_no': '18', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:10.349595+00:00'}
+{'id': '98fcaf9b-52c7-4831-a059-e68e9258f330', 'profile_id': '2583c9ca-eddd-4a67-a931-6ad67827b5d1', 'board_roll_no': '19', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:10.756673+00:00'}
+{'id': 'e7330374-c596-441b-8237-32401ec3beb7', 'profile_id': '484cf582-ae47-4cdb-8fdf-fb564167e57e', 'board_roll_no': '20', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:11.269492+00:00'}
+{'id': '716538ef-6c5b-4465-9305-7e7ff6b7fc3e', 'profile_id': '7a617838-35bd-4e26-9960-0fb6de33efbc', 'board_roll_no': '21', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:11.683568+00:00'}
+{'id': 'e635265e-cb0a-4be3-8737-32de13acd8a7', 'profile_id': '3edc6c0e-0607-4657-b062-35a54af80782', 'board_roll_no': '22', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:12.051237+00:00'}
+{'id': '7217fdf5-cc03-43e6-8707-4c3b9ab4fdd2', 'profile_id': 'ff1c8884-7c54-4e8e-9610-c0474fe0bd64', 'board_roll_no': '23', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:12.496442+00:00'}
+{'id': '9498d7aa-0105-4a3b-9e32-8353a65ebfbd', 'profile_id': '0cd5e828-0240-4555-9749-14c2d7d0546e', 'board_roll_no': '24', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:12.910622+00:00'}
+{'id': 'dab25ccf-57b7-44db-9abd-0eec6f24b464', 'profile_id': '3ad1b14e-0485-44a2-8fe9-16cd680fed37', 'board_roll_no': '25', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:13.319591+00:00'}
+{'id': '76e6966a-25e3-4c38-a192-5dd117d6bbb1', 'profile_id': 'd4c71b74-fed0-4f77-9b31-f55b852cea7b', 'board_roll_no': '26', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:13.656193+00:00'}
+{'id': '04edbc40-36a7-4e35-95f0-0b03c1d766f5', 'profile_id': '9660b5b0-379a-4713-9522-e15f4c2c5429', 'board_roll_no': '27', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:14.037023+00:00'}
+{'id': '45d31360-d283-4802-a779-ac8d1cdf3392', 'profile_id': 'e613ca0c-9845-41c2-b129-730bd9fe1822', 'board_roll_no': '28', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:14.446773+00:00'}
+{'id': 'ff6a4eab-0095-4a97-86d4-f663612140ad', 'profile_id': 'af6ed72b-1565-472b-8e9b-6d8c85cd7296', 'board_roll_no': '29', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:14.864241+00:00'}
+{'id': 'fe5ec2ad-b380-449f-b50a-71dd20eff1a4', 'profile_id': 'bd0c7236-fe9f-4f92-97b1-e1fcc9651c5e', 'board_roll_no': '30', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:15.263233+00:00'}
+{'id': '00c4458f-a044-4433-945a-2866e94f5243', 'profile_id': '7f9d4c1e-57a5-4b67-b53c-a7649429eda7', 'board_roll_no': '31', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:15.681469+00:00'}
+{'id': '8396e918-bf7e-40f4-9b73-b8837103b4b5', 'profile_id': 'b54961f0-9d8a-4de2-b541-b5c4ad774e91', 'board_roll_no': '32', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:16.189485+00:00'}
+{'id': '302cb313-3bfd-423b-96a0-efe55ac7df3b', 'profile_id': 'bfa70cf9-d5e0-4d95-b05b-65481446d204', 'board_roll_no': '33', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:16.59496+00:00'}
+{'id': 'ef4d9f30-113c-4d1b-ac56-da1a843256f6', 'profile_id': 'a473e9ae-4b54-436a-8bad-50eb81759ad5', 'board_roll_no': '35', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:17.397262+00:00'}
+{'id': '547c0b71-318e-4d70-81a5-05721d80cb21', 'profile_id': 'fbe130e0-c83e-4a78-8db8-aacc00e99c39', 'board_roll_no': '36', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:17.757232+00:00'}
+{'id': '7df31f9a-ba04-447a-b316-1db6f534990f', 'profile_id': '6e842462-2e63-418e-bd3e-2a8b6d250a13', 'board_roll_no': '37', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:18.132831+00:00'}
+{'id': '8aa243d5-bca0-4f53-a65e-347dfbebc948', 'profile_id': '5a8f83e9-20d0-4982-a3bc-7a1c6478a4ab', 'board_roll_no': '38', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:18.53563+00:00'}
+{'id': 'c641819e-0702-46ad-a270-4326b60dbe27', 'profile_id': 'f7a36f97-2434-43bf-832f-1af70dfdc790', 'board_roll_no': '39', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:18.950307+00:00'}
+{'id': '7f9ce419-34db-46bd-a7b5-72fb6ed07144', 'profile_id': '06373382-02d7-4fa2-a2af-d01db785d90f', 'board_roll_no': '40', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:19.357832+00:00'}
+{'id': 'f6fe952a-fbcf-4dea-9c45-b6cc10a07412', 'profile_id': '54b542d1-ca7e-426c-9bc5-faaa5019dc59', 'board_roll_no': '1', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:19.771623+00:00'}
+{'id': 'acdc6e3a-94f7-4868-b3dc-c4d36aede1de', 'profile_id': '1d1c14ec-f8f1-4189-899b-0c34939e5962', 'board_roll_no': '2', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:20.178699+00:00'}
+{'id': '017e8593-61f3-4e7f-a4e9-5d3e72fa53b7', 'profile_id': 'd0575c88-e070-45cf-9811-2cea18e705db', 'board_roll_no': '3', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:20.555251+00:00'}
+{'id': '57d2d452-b86e-41b9-898d-9c5e8d496169', 'profile_id': '55ccd123-591a-479b-b284-09057be97da6', 'board_roll_no': '4', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:20.997808+00:00'}
+{'id': '1e2c60f1-b8ae-4bf0-8e12-ad6d33507248', 'profile_id': 'b43cb44a-1394-497f-8dc8-a55dabbcb2e4', 'board_roll_no': '5', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:21.510919+00:00'}
+{'id': 'a7751306-2cac-46b9-934f-d0617d6b6c60', 'profile_id': 'a9b40d54-ce2a-4689-933b-f59345a47ec1', 'board_roll_no': '6', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:21.833645+00:00'}
+{'id': 'e1eaf444-3b0d-483a-acc7-99ed52468754', 'profile_id': '16294906-22e1-4e66-acfc-e889bf7333d0', 'board_roll_no': '7', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:22.143167+00:00'}
+{'id': '3831aa1c-e97c-4582-9e2e-533f00d7c48c', 'profile_id': '65652d79-b8c8-4575-9fe3-336ede97dc3e', 'board_roll_no': '8', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:22.4546+00:00'}
+{'id': '6d3c79bf-39a0-4745-8d65-5dd7e2ad38d5', 'profile_id': '009def62-eed5-4d62-b9fd-3460caab214f', 'board_roll_no': '9', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:22.76775+00:00'}
+{'id': '29d68df2-4f8f-4457-b7c8-4305f6710164', 'profile_id': '3c636aa2-7c16-4a25-81e1-7a5c329081e3', 'board_roll_no': '10', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:23.075831+00:00'}
+{'id': 'c0ad9530-6088-4e15-a94a-99b6f835bf13', 'profile_id': '76c7dbdf-0093-4649-8b61-a4ba5d902545', 'board_roll_no': '11', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:23.395306+00:00'}
+{'id': '8be3d0e6-35b0-4ea2-81d9-44bdf7cc50e6', 'profile_id': '2eccab6c-b2c5-4c96-8557-8c91af7d7626', 'board_roll_no': '12', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:23.709687+00:00'}
+{'id': '2875fe56-07cc-43b5-8992-84cda3eba21b', 'profile_id': '19d2bb67-5fb5-4ce3-92bc-589a252c2e0a', 'board_roll_no': '13', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:24.013952+00:00'}
+{'id': '98ddce6d-9fe6-4f0d-9761-daa7da009763', 'profile_id': 'd345fb69-e4c4-47e0-8df1-9ceef61db655', 'board_roll_no': '14', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:24.31237+00:00'}
+{'id': '428b09fc-324c-4fcf-9d0b-2b4ac03471ad', 'profile_id': '24e94850-acb1-4e7f-85ef-d5bed37987b1', 'board_roll_no': '15', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:24.615209+00:00'}
+{'id': '5e2be311-e49d-4fa9-afc1-4a33cc3ca173', 'profile_id': '78743051-2236-4f4a-a895-2e34d15f1ddc', 'board_roll_no': '16', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:24.936482+00:00'}
+{'id': 'a7a5c519-6e14-46fe-9245-66927438f0c3', 'profile_id': 'c47ac71c-9ce1-48bd-9b8c-9be881640703', 'board_roll_no': '18', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:25.554891+00:00'}
+{'id': '36ef719c-7c6c-45e2-94ea-58510743d4fe', 'profile_id': '66283e69-8316-46d2-8dc0-8999fd29204d', 'board_roll_no': '19', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:25.877218+00:00'}
+{'id': '910b437f-0887-4ef5-800e-c34417438b59', 'profile_id': 'caed1eb1-1c4c-46dd-91fa-592a5f930e0b', 'board_roll_no': '20', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:26.212837+00:00'}
+{'id': 'cadce62c-e1ee-43c4-8611-172ce87caa1f', 'profile_id': 'ea2fa5a0-9df1-4741-afc4-ca8b44d27d71', 'board_roll_no': '21', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:26.519982+00:00'}
+{'id': '88d2fc48-eee3-4cb2-a691-e8f6e062690e', 'profile_id': '58b24c6f-4727-4af6-8fa6-141948a819e8', 'board_roll_no': '22', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:26.839012+00:00'}
+{'id': '8bcc14d3-4569-4472-9c92-b05667532125', 'profile_id': '1b4e6896-529d-4d65-96b6-539e94a7a2de', 'board_roll_no': '23', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:27.146133+00:00'}
+{'id': 'ea9a0c64-1b0e-407d-ace7-5c1e3738a40c', 'profile_id': '241ada3f-fafd-42e5-af5a-1b0980c9af62', 'board_roll_no': '24', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:27.457397+00:00'}
+{'id': 'f363fefd-177f-48e8-929a-7370c934b38b', 'profile_id': '5fe5a594-cdef-4a9e-8fdd-d7f39ed2b84f', 'board_roll_no': '25', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:27.762261+00:00'}
+{'id': 'a65c3a57-c5d6-47c0-9daa-f00953136190', 'profile_id': '54a92830-3663-49ec-a18c-2feafc736ac5', 'board_roll_no': '26', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:28.075166+00:00'}
+{'id': '047d934a-543e-4a81-8d37-c6f3c577e8e7', 'profile_id': '50fff7ca-9ecb-4ec5-bc71-6d153ba47644', 'board_roll_no': '27', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:28.380009+00:00'}
+{'id': '11bc388c-57a9-4a1a-a33d-35fe5bf3a740', 'profile_id': 'e54b0e0a-30eb-4e65-adff-a10f9e971830', 'board_roll_no': '28', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:28.689737+00:00'}
+{'id': '3d341c57-6a94-4910-92ec-3ed0eb16da0a', 'profile_id': '13798183-dc96-44c9-9aab-fb47820d0015', 'board_roll_no': '29', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:28.99884+00:00'}
+{'id': '155fe274-59b5-48cb-b245-c3fb41b0a50b', 'profile_id': '04f5b5db-b79e-4048-873f-1d2e2ada2d2c', 'board_roll_no': '30', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:29.313113+00:00'}
+{'id': 'c38fadb2-b408-45f5-97a0-d430f1d9dfa3', 'profile_id': '6318ab36-7fd5-49d4-a12f-1d969ed7ecf1', 'board_roll_no': '31', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:29.637714+00:00'}
+{'id': 'c35c52ac-b273-48d1-8233-f8deb725951c', 'profile_id': 'a12f1ad9-17a6-4e6e-879f-1bd7cbdcaa42', 'board_roll_no': '32', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:29.941721+00:00'}
+{'id': '5a6a60cf-5fa9-42ee-8ac8-8e33815aa7f4', 'profile_id': '5df961ad-1554-4362-9693-26e05e1c83f0', 'board_roll_no': '33', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:30.264198+00:00'}
+{'id': 'a4e8f6ae-7c54-475c-b579-5e4e95e93648', 'profile_id': '986ef69f-8458-45f4-a98f-ee275e1cafb5', 'board_roll_no': '34', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:30.573924+00:00'}
+{'id': '2c227bef-74d2-4808-97ac-83cdbde4a417', 'profile_id': '95c707cc-f29c-45a1-b2ea-d83090a70c0d', 'board_roll_no': '35', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:30.886471+00:00'}
+{'id': 'c9cf08ff-604b-4259-8ada-5a9ec405e261', 'profile_id': 'ed0c80b7-decd-4244-922c-6cbba0d279e3', 'board_roll_no': '36', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:31.209806+00:00'}
+{'id': '3a3f2991-2b72-4551-92c7-13967b8438ff', 'profile_id': '8e34c471-68d6-4211-8d50-8938cc4e0bbb', 'board_roll_no': '37', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:31.510596+00:00'}
+{'id': '0e52b7f7-2e14-4575-825f-7f013ea1a642', 'profile_id': '20297a52-245d-495b-a236-521cc573d084', 'board_roll_no': '38', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:31.812465+00:00'}
+{'id': 'd0d195f3-32c4-4063-97c5-9a40531cfd57', 'profile_id': '5a453c92-fab9-41ae-9b15-e434194d4558', 'board_roll_no': '39', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:32.121515+00:00'}
+{'id': 'db248d96-12ec-4a6d-b05d-c7c9c2cc5f54', 'profile_id': 'c2d9e7a8-1890-4b47-aaf9-d6220d9574db', 'board_roll_no': '41', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:32.762692+00:00'}
+{'id': '22a31bf8-778d-4d03-8731-b65819ee49df', 'profile_id': '384a9656-e092-4cec-a84e-7364b4aede4a', 'board_roll_no': '42', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:33.08978+00:00'}
+{'id': '5415ed2e-269f-4791-b74e-6d7bd94b5373', 'profile_id': '7097381c-0724-4b8e-ab77-6f07b5af896c', 'board_roll_no': '43', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:33.397143+00:00'}
+{'id': '64605f50-75fb-4380-98d6-3b2178814caa', 'profile_id': 'e37d358d-4b21-4dc2-ab9b-dcd54ca743e0', 'board_roll_no': '44', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:33.704679+00:00'}
+{'id': '024d95c7-c29a-4732-ae37-f7011518c4a3', 'profile_id': '1abb013c-5a5a-4606-961a-18520b89a5fa', 'board_roll_no': '1', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:34.013718+00:00'}
+{'id': '29a96f83-2500-49a1-93da-6c33eb1b7cf5', 'profile_id': '4828f8e0-52e7-4bc5-884a-7bd2f1d3a164', 'board_roll_no': '2', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:34.324305+00:00'}
+{'id': '00e2efb9-4e4b-4bf7-8780-775952b16cbc', 'profile_id': '253d295c-7c67-4311-9a54-877d70d57c2f', 'board_roll_no': '3', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:34.636225+00:00'}
+{'id': 'd2faf162-fef4-4a34-aeb7-434e632977f4', 'profile_id': '56a4245e-e3c2-410f-9f72-ce532c1cd9d9', 'board_roll_no': '4', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:34.941212+00:00'}
+{'id': '26a11932-6761-44ac-8b6c-af2951096ac7', 'profile_id': '1057cc6b-4381-41d1-a489-97487d039458', 'board_roll_no': '5', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:35.24769+00:00'}
+{'id': '719fa1a1-4367-4af9-9473-bdf039ebf2df', 'profile_id': 'cbbe74bf-87b7-4037-87be-8e4129c4f892', 'board_roll_no': '6', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:35.559832+00:00'}
+{'id': '29499fc6-8c84-4208-aff9-95db3d65cbe0', 'profile_id': '46b2753a-483f-4b8b-a74a-40b20b013818', 'board_roll_no': '7', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:35.897001+00:00'}
+{'id': '0040978f-565c-4233-b9e3-afe435ecb3f7', 'profile_id': 'cb248eda-9562-4a4f-8773-06aa6e679da3', 'board_roll_no': '8', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:36.207796+00:00'}
+{'id': '87e17318-8b53-4832-9e37-02d7f6253bd7', 'profile_id': '7aff3296-cb7b-4875-aa24-78ac04f4785b', 'board_roll_no': '9', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:36.532964+00:00'}
+{'id': '15b12cfb-7062-48be-b814-d68ebfa2144d', 'profile_id': '73ac9eb9-e729-4aa8-ad4d-fe96d3f84f3a', 'board_roll_no': '10', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:37.007243+00:00'}
+{'id': '355eeb3a-1d81-4e2f-9c7c-5affbb572248', 'profile_id': 'b90e9531-591d-4ea3-8e21-66ef04bbf87a', 'board_roll_no': '11', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:37.320061+00:00'}
+{'id': '7a104878-553d-4bfd-bd96-4fb4c4c9f984', 'profile_id': 'c309a2c9-be7d-4f88-b013-2bbc7b7bcf32', 'board_roll_no': '12', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:37.638029+00:00'}
+{'id': '864f2e7b-b435-4fe6-a040-603c23027c6f', 'profile_id': 'c784aa5d-b2eb-4202-b4e3-d05d3d922a7e', 'board_roll_no': '13', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:37.939616+00:00'}
+{'id': '30deaf47-4580-48e7-b128-7dba58b2dc7b', 'profile_id': '019456c3-b881-4a1b-8c4d-ddfc1f3fe731', 'board_roll_no': '14', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:38.245931+00:00'}
+{'id': '199ba780-cb08-48dc-94c5-3b5ce8952c1d', 'profile_id': 'a2cf0ed1-ba4e-4e21-abbf-d2eca677f766', 'board_roll_no': '15', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:38.56554+00:00'}
+{'id': '0ac3cd07-8694-43eb-9ff7-58ecb5412605', 'profile_id': 'fc5fe802-eac3-4e91-a691-84e53c43167d', 'board_roll_no': '16', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:38.880493+00:00'}
+{'id': '081bf6f1-7c13-4502-adc5-efd4a6d48cd0', 'profile_id': '6f2a9ffb-3946-4e20-b7e3-892d1321c6ac', 'board_roll_no': '17', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:39.188113+00:00'}
+{'id': '53caf7da-9c98-46f6-82c9-300a74fb27e9', 'profile_id': '3c97ed25-61af-4ab0-8b23-b451d30bf172', 'board_roll_no': '18', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:39.507738+00:00'}
+{'id': 'cc4432b6-e0bb-47e8-adb8-d744d1addc22', 'profile_id': 'f1fa6e59-0774-4532-9641-cfdd9580add5', 'board_roll_no': '26', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:36:59.128611+00:00'}
+{'id': '793497f9-c9e0-402c-8dae-3d7be57e5c57', 'profile_id': '9adc205d-020c-41d5-8cf9-0484b3990e18', 'board_roll_no': '46', 'branch': 'Computer Science', 'semester': 4, 'created_at': '2026-03-26T17:37:07.174345+00:00'}
+{'id': 'dbb8fdbd-ffd4-47ac-bcce-ea1ae91d7360', 'profile_id': 'd0cd7110-aca9-45cc-9646-aeabcbab8e4b', 'board_roll_no': '17', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:15.908207+00:00'}
+{'id': 'd3d7f288-0e41-404e-852b-f7e40ec32317', 'profile_id': 'b2cc3ec6-d30a-452d-a7ef-466c57244983', 'board_roll_no': '40', 'branch': 'Computer Science', 'semester': 6, 'created_at': '2026-03-26T17:37:22.943086+00:00'}
+{'id': '036b24b4-dd41-40fb-ba48-45d81a058291', 'profile_id': '218e397c-6db5-43ef-8d2d-ce655f29060c', 'board_roll_no': '13', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:30.169548+00:00'}
+{'id': 'f28ca37c-f584-4deb-849e-a381b48f4584', 'profile_id': '0620f3a4-1a70-4290-946c-b7d7544f9835', 'board_roll_no': '19', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:32.366291+00:00'}
+{'id': '54f19f14-4562-414a-baa3-51fa2d529517', 'profile_id': '04670e59-9855-408f-bc73-5a04a7fbd987', 'board_roll_no': '40', 'branch': 'Electrical', 'semester': 2, 'created_at': '2026-03-26T17:37:39.346573+00:00'}
+{'id': '96b9121b-0296-453d-92ef-a9cac613ff2e', 'profile_id': '2cfa5919-499f-46e9-b76c-5ae838395363', 'board_roll_no': '16', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:46.028623+00:00'}
+{'id': '0c105db3-886b-4290-bcf4-a4294d0d6812', 'profile_id': 'ad8d780d-0053-41ce-a674-0786e7438126', 'board_roll_no': '37', 'branch': 'Electrical', 'semester': 4, 'created_at': '2026-03-26T17:37:52.586174+00:00'}
+{'id': '203e440d-488c-45f0-9367-e5dcf7df7df3', 'profile_id': '0bb0e59b-0c58-4cf3-929d-bfb5dc8dbf38', 'board_roll_no': '9', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:37:59.731534+00:00'}
+{'id': '443e9365-9769-48ef-8b88-f22345b1c9e4', 'profile_id': 'a57fa019-b1dd-4e27-906b-a18888be1c25', 'board_roll_no': '16', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:02.024772+00:00'}
+{'id': 'd27c19b5-f05e-46f9-ae76-cbbaa3430cc8', 'profile_id': 'ea10ac23-34a1-46af-b050-234348d0c2aa', 'board_roll_no': '28', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:05.744912+00:00'}
+{'id': '06bc4e95-2def-4dcf-8030-36622b35ba80', 'profile_id': '99756a6a-9102-41de-b3ad-3d90b1e63ad3', 'board_roll_no': '49', 'branch': 'Electrical', 'semester': 6, 'created_at': '2026-03-26T17:38:12.920029+00:00'}
+{'id': '6abf8c23-9116-43f2-a705-ef736213ce10', 'profile_id': '62768b11-4591-47a4-a435-80aa6a2d4f45', 'board_roll_no': '17', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:26.762704+00:00'}
+{'id': 'afd60f0b-15e1-474f-b2c9-9578123e2d2a', 'profile_id': '4bb0753c-31ff-4a8a-8e37-d39388175f08', 'board_roll_no': '40', 'branch': 'Electronics', 'semester': 4, 'created_at': '2026-03-26T17:38:33.887778+00:00'}
+{'id': '4fd7c012-5907-4d70-9081-3f4f265a79f6', 'profile_id': 'c932cd81-3cb4-4548-b208-2e1979b7d3bb', 'board_roll_no': '14', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:39.377771+00:00'}
+{'id': '7e1067ee-df62-4965-adbb-ff303643edf3', 'profile_id': '3935da4c-9d0d-45b8-aecb-2a015096ceb8', 'board_roll_no': '28', 'branch': 'Electronics', 'semester': 6, 'created_at': '2026-03-26T17:38:43.610283+00:00'}
+{'id': '4b48973d-51f3-4e92-8f4a-1a2ed7ccdf12', 'profile_id': 'f914b674-9b0c-4ae3-bc71-465dd92b9af0', 'board_roll_no': '13', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:50.555382+00:00'}
+{'id': 'db4630cd-0a53-4aa3-b2bf-7f763eff0445', 'profile_id': '4b198127-0b8a-47dd-b560-24a44057f273', 'board_roll_no': '36', 'branch': 'Electronics', 'semester': 2, 'created_at': '2026-03-26T17:38:58.21919+00:00'}
+{'id': 'e14a0b79-1937-4f48-b47f-363b97a75a29', 'profile_id': 'f1eec467-2225-4507-ab22-74d3ca034410', 'board_roll_no': '9', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:06.549609+00:00'}
+{'id': '3d0dfb64-7114-4e98-9b9f-92d77b81bc5a', 'profile_id': 'd0844e78-4a7b-4e94-9c47-1e0326899154', 'board_roll_no': '15', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:09.123372+00:00'}
+{'id': 'dd90c457-4321-4649-87e6-122909d9e35c', 'profile_id': '1c0a4a3e-b900-4f16-9438-e5a5bc565e4c', 'board_roll_no': '34', 'branch': 'Instrumentation', 'semester': 2, 'created_at': '2026-03-26T17:39:17.002429+00:00'}
+{'id': '575ab101-91d8-406e-8270-55873bb01c24', 'profile_id': '302a9f07-ce9f-4041-abef-ecd8d0478000', 'board_roll_no': '17', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:25.240772+00:00'}
+{'id': 'f7bffced-2224-4867-abe9-291f6e199e4a', 'profile_id': 'e651a2a0-397f-4f5f-a82a-bc3028cc0261', 'board_roll_no': '40', 'branch': 'Instrumentation', 'semester': 4, 'created_at': '2026-03-26T17:39:32.45277+00:00'}
+{'id': '4873beea-352e-4a6e-a3c0-f6b51163662c', 'profile_id': '6ca87d06-0baf-44fb-bab5-534b365e539b', 'board_roll_no': '19', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:39.95022+00:00'}
+{'id': 'd834c6e1-89a6-4f5c-9980-0bf74c2c8d6f', 'profile_id': 'fb68ec98-3e22-4e84-b8e6-3f9fc3d343e3', 'board_roll_no': '20', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:40.272466+00:00'}
+{'id': '40251e36-c007-4eb9-9b85-f5c200dc1276', 'profile_id': '53abf368-706d-467b-9355-a6f1382194c2', 'board_roll_no': '21', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:40.569075+00:00'}
+{'id': '36709a46-2246-4a5b-a125-a3fbbbbe9545', 'profile_id': '89b45831-d3bf-4a90-b0d0-2bb2c5db65c4', 'board_roll_no': '22', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:40.873811+00:00'}
+{'id': '05167515-5f46-4aa2-80d0-0f32c3977265', 'profile_id': 'bc373b8f-2ea4-4028-be35-2965ea0c761a', 'board_roll_no': '23', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:41.209023+00:00'}
+{'id': '3b468080-a347-4468-8c57-8085b5f98499', 'profile_id': '090fef6a-e328-4709-b071-06a7b07f2e27', 'board_roll_no': '24', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:41.514769+00:00'}
+{'id': '0a35a2ed-d76f-4bc0-a42a-f83e465c3f25', 'profile_id': 'd727b2a9-be10-4d6b-9998-3e257bb5f3cb', 'board_roll_no': '25', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:41.823377+00:00'}
+{'id': '33f0bb34-de85-4129-8542-93dd06cb4fc6', 'profile_id': '4d3c8f73-95d7-4a9c-8356-5166bbe3d48f', 'board_roll_no': '26', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:42.137927+00:00'}
+{'id': '3a4d981b-bf98-4b9d-b3a8-a8b5f5b84cf0', 'profile_id': 'fde6365f-45f9-41d9-88d4-ea35c5dfdf83', 'board_roll_no': '27', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:42.440357+00:00'}
+{'id': '4fef63e4-3d01-4319-a660-37c99f0c83d0', 'profile_id': '26e577f1-3f9f-4b02-a3f8-4235ccfb0a9f', 'board_roll_no': '28', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:42.742576+00:00'}
+{'id': '1e8cd1c4-ccda-40c1-8bb5-d3bf06096fdc', 'profile_id': 'b5bb77fd-84ba-4dec-a7ea-765ca8144c78', 'board_roll_no': '29', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:43.047035+00:00'}
+{'id': 'abc1ad61-9ea4-457e-943f-f288957ca568', 'profile_id': '5a210c91-7ce9-4a70-a848-bf352dafad7e', 'board_roll_no': '30', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:43.356194+00:00'}
+{'id': '88c104af-0d93-43fd-8591-f611a0428c41', 'profile_id': '5aad6699-a383-4969-941d-e9fb70f5933a', 'board_roll_no': '31', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:43.703288+00:00'}
+{'id': '3c799738-1dc0-4ee1-80df-ed0b3590a928', 'profile_id': '37a9b00a-e08e-4637-a8f1-915d38e9ec36', 'board_roll_no': '32', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:44.142896+00:00'}
+{'id': '807a2179-1c0f-45a6-b617-45f468dcb7f0', 'profile_id': 'ed36da89-dae5-45ed-972e-5f67b2c02e28', 'board_roll_no': '33', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:44.550711+00:00'}
+{'id': 'ebdb7677-1201-4c02-9c1e-15fd3bb2d1de', 'profile_id': '94c58c2a-227a-4697-a798-b6b973440878', 'board_roll_no': '34', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:44.968409+00:00'}
+{'id': '3b296c9c-f03d-4428-b936-cbd9f5316fc8', 'profile_id': 'b2309959-80ce-43e1-aadc-f6c69cb8b5de', 'board_roll_no': '35', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:45.368771+00:00'}
+{'id': '1335ef64-9326-4f87-8ddc-c54d01295ae9', 'profile_id': '2a4ed778-924b-433b-8cf6-69741bd15b16', 'board_roll_no': '36', 'branch': 'Instrumentation', 'semester': 6, 'created_at': '2026-03-26T17:39:45.778637+00:00'}
+{'id': 'b483d486-b378-40cc-bd0c-20a2f1c4fb70', 'profile_id': 'b9432f22-7841-4fa3-a951-4e1ba7f6a540', 'board_roll_no': '01', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:46.196837+00:00'}
+{'id': '76d3deba-e376-442c-93bc-73ee86d461b4', 'profile_id': 'd66d863c-443c-462f-b440-25071cd0a1ae', 'board_roll_no': '02', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:46.597414+00:00'}
+{'id': '12daa928-9b05-4f50-ae3a-ca14effb183a', 'profile_id': '5ff92c5b-91bf-444b-91fe-6c3ae333a264', 'board_roll_no': '03/2', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:47.00539+00:00'}
+{'id': 'd3205bb0-c624-4967-b84c-097fb328c41c', 'profile_id': 'ed54554c-028c-4bf9-b751-02c6a7f5808a', 'board_roll_no': '04', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:47.413907+00:00'}
+{'id': 'ac630f54-2730-490c-bd7d-2ed442c4247e', 'profile_id': '3e34d050-439b-4a21-a7e0-99d2aaf6c212', 'board_roll_no': '05', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:47.818031+00:00'}
+{'id': '4d6bab74-2e3d-4f5d-bb31-c6e63211f1ea', 'profile_id': 'd568b0ad-ef60-4e68-914b-33c5c85ab46b', 'board_roll_no': '06', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:48.244207+00:00'}
+{'id': 'a39967d5-9ae0-480d-8865-ef68a110dbf2', 'profile_id': '20cbf3da-d30d-4932-bbe1-5a3aa934902d', 'board_roll_no': '07', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:48.631716+00:00'}
+{'id': 'd5c591b6-8354-417b-8208-8bd3babff0ff', 'profile_id': '9e6c3e91-4d6a-4f6a-a964-94e5d2a00392', 'board_roll_no': '08', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:49.026546+00:00'}
+{'id': '23aaf541-771f-4f3e-9eb6-044241914888', 'profile_id': '0a10e99e-0bcc-483c-928c-ad1a13b4738c', 'board_roll_no': '09', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:49.465727+00:00'}
+{'id': '5e2ae0e8-2beb-48df-8359-993f0f257383', 'profile_id': '8d2caa18-d70e-45a9-ac88-d0bd4cb5e31c', 'board_roll_no': '10', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:49.866286+00:00'}
+{'id': '6e582f96-6501-4810-acbe-a599d82d5936', 'profile_id': 'c04ce74e-b3f2-4cef-b7fb-f74324b4f205', 'board_roll_no': '11', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:50.284816+00:00'}
+{'id': '7d5c3905-5d8e-4a67-9071-00c876b2ae2c', 'profile_id': 'cd48ecfe-40dd-4315-a401-bbbcb7980312', 'board_roll_no': '12', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:50.79988+00:00'}
+{'id': 'b948a3b6-1a4b-46bb-b765-beae91187d1d', 'profile_id': '77289974-51e8-48d9-a488-9c814fa18f36', 'board_roll_no': '13', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:51.212459+00:00'}
+{'id': '5ed7c55f-93c9-4320-8dc9-827e263c2de5', 'profile_id': 'ba0886a0-a2b9-4d13-b141-11544aff6c4b', 'board_roll_no': '14', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:51.627369+00:00'}
+{'id': 'f67e35f1-fef6-4b93-9bc9-3863b998b056', 'profile_id': '3bed3fdc-1e5b-47b3-8fa7-be67e9001224', 'board_roll_no': '15', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:52.015617+00:00'}
+{'id': 'c576116d-f363-4cf3-b004-6d1dcb6f640e', 'profile_id': 'c1417510-9967-435f-9e0f-1e370751315a', 'board_roll_no': '16', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:52.390083+00:00'}
+{'id': 'd846f5f5-2864-4385-9add-9a4298939047', 'profile_id': '26a2c695-124b-4425-b7ae-f0102b97571f', 'board_roll_no': '17', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:52.702436+00:00'}
+{'id': '217a546b-633e-4bef-a6f3-f20a6a98d054', 'profile_id': 'aa0f3b52-48b9-47cb-a3c0-69f198441f92', 'board_roll_no': '18', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:53.007115+00:00'}
+{'id': 'cc82b0d8-0a0c-4062-8f17-eb8ae31953fe', 'profile_id': '545ed00d-cfd5-4a22-98ff-4b3755e24e11', 'board_roll_no': '19', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:53.334629+00:00'}
+{'id': 'da8e5c17-9f24-4c40-8bc0-a21360e0c7c5', 'profile_id': '7d8f4079-78fb-4d72-ab94-8faaa8bc5bd4', 'board_roll_no': '20', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:53.651152+00:00'}
+{'id': '47a58d9b-c1a7-4075-af51-681dc9eebd96', 'profile_id': '474e7c49-ec0c-47b7-b24f-517900f504c6', 'board_roll_no': '21', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:53.952609+00:00'}
+{'id': '5bf4c9df-9b81-444c-b15c-05d5810b344f', 'profile_id': '234b3c8c-e033-4e62-a47c-4dae50bbeccb', 'board_roll_no': '22', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:54.240895+00:00'}
+{'id': 'c129a0e3-9c05-44aa-84ec-f5a7c7b9c477', 'profile_id': '75344dac-abed-4a07-a4df-eaabcdd1c7f7', 'board_roll_no': '23', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:54.531829+00:00'}
+{'id': '0bc29993-e69f-4152-8b4d-5091db590f7b', 'profile_id': '05b698a1-7a8d-49e3-8f19-71c0507254ed', 'board_roll_no': '24', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:54.826042+00:00'}
+{'id': 'f76178ff-ab6b-4560-8927-f3ee5d4ab93f', 'profile_id': '4997128b-20c5-4ff8-8691-a43a6f8c1a88', 'board_roll_no': '25', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:55.130855+00:00'}
+{'id': '2ffa83b5-7ef0-4f8c-ae39-f71ac0374111', 'profile_id': '41ecca81-d501-4ba8-98ba-d5031a4d4780', 'board_roll_no': '26', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:55.446875+00:00'}
+{'id': '02cf196e-6df3-4678-af76-69ed5c2637b7', 'profile_id': 'cbc8c755-5400-4a65-a82f-33a7be17aeb3', 'board_roll_no': '27', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:55.793757+00:00'}
+{'id': 'caf746a2-9927-475b-b202-ae6cb5e4197a', 'profile_id': 'c73f816f-5d86-49f3-ad9b-3c8e020b10d5', 'board_roll_no': '28', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:56.22544+00:00'}
+{'id': 'dbf515de-2334-487b-baf0-3a4e1f3a0b90', 'profile_id': '009b8a6c-cea5-48e4-a25f-a786dc78ca87', 'board_roll_no': '29', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:56.632093+00:00'}
+{'id': 'f28e5945-d4e2-4c94-9e3a-7615ca55e973', 'profile_id': '597d47b9-bcca-48cc-9b20-800034449571', 'board_roll_no': '30', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:57.01355+00:00'}
+{'id': 'e63cbfed-b652-4e48-85c1-feb838a4c255', 'profile_id': 'c7511625-8c8e-4631-88f0-829195181b36', 'board_roll_no': '31', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:57.448367+00:00'}
+{'id': 'aa71f7e4-bf02-49bb-b7d5-b21441051e60', 'profile_id': 'a8eaae36-e321-45c8-a2dd-a39fd8c0b474', 'board_roll_no': '32', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:57.869606+00:00'}
+{'id': 'efe6e8e1-b8aa-4ed4-88ae-f70ec2ab3bc3', 'profile_id': 'b2945cc4-3717-46fe-b3a0-6f998aeb6177', 'board_roll_no': '33', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:58.274369+00:00'}
+{'id': '16c8ae2f-6be0-42c8-b9e8-54586e3f6fbb', 'profile_id': '5eced793-58fb-4617-9633-01a1bd8a5034', 'board_roll_no': '34', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:58.656464+00:00'}
+{'id': 'fbefb2ae-bc85-4aa6-942a-8faf24102c52', 'profile_id': 'eeb261ff-47fa-4683-bcd8-fc25bdeb92a6', 'board_roll_no': '35', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:59.000678+00:00'}
+{'id': '4ede9102-2a2d-48ce-a052-90ad0f956879', 'profile_id': '652f7b74-3520-4bd3-bafc-3a6a0aef949d', 'board_roll_no': '36', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:59.501879+00:00'}
+{'id': 'a6dff9dc-cb01-4058-9843-839800c5aa39', 'profile_id': '6ed22fa2-87d9-4535-8069-de2e670d5e13', 'board_roll_no': '37', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:39:59.913129+00:00'}
+{'id': '9af41afe-4e98-48d1-bfd1-97cf6f002d9e', 'profile_id': '7947ace5-b912-4eb5-bab7-c8455da5f05e', 'board_roll_no': '38', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:40:00.310946+00:00'}
+{'id': '7b95d0c7-3261-4d57-9949-ee1c3baeb27b', 'profile_id': 'e112e7ba-5d79-47f9-8960-2277887682c6', 'board_roll_no': '39', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:40:00.729553+00:00'}
+{'id': '808858c5-d868-47b5-82f4-980253cb849d', 'profile_id': '9732ba85-1ffb-4aff-ad66-38da8cd4cf26', 'board_roll_no': '40', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:40:01.261578+00:00'}
+{'id': 'c5bf931f-407a-4191-8ad9-0d0f2cc25b97', 'profile_id': 'b1a21d86-371d-4362-ad38-a1c7719c42b7', 'board_roll_no': '41', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:40:01.652338+00:00'}
+{'id': '286b0862-020e-467f-b91a-f428f8a50831', 'profile_id': 'e76e0a02-2e5e-4907-945c-192ad99d6dbf', 'board_roll_no': '42', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:40:02.059131+00:00'}
+{'id': '413d3dfa-e58e-4f5b-bbbc-0118bc901795', 'profile_id': 'a089951c-a5fe-4203-9bc2-bb6cc037916b', 'board_roll_no': '43', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:40:02.506089+00:00'}
+{'id': '3f80bb09-ac91-4589-a64d-871ea7fa2f17', 'profile_id': '50b4e01e-407c-455a-ac80-253aac323224', 'board_roll_no': '44', 'branch': 'Mechanical', 'semester': 6, 'created_at': '2026-03-26T17:40:02.877502+00:00'}
+
+=== TEACHERS (79) ===
+Rajesh Sharma | rsharma72@gmail.com | dept=Electrical
+Pawan Chandel | pawanchandel13@gmail.com | dept=Instrumentation
+Ina Gupta | guptaina24@gmail.com | dept=EE
+Sachin Sehota | sachin.sehota@gmail.com | dept=ECE
+Nishant Kaushal | nishant.1987@gmail.com | dept=ECE
+Hari Singh Thakur | hsthakur09@gmail.com | dept=ECE
+Naresh Kumar | nareshkumarspch@gmail.com | dept=CS
+Varun | varunkrr72@gmail.com | dept=IE
+Sameer Sharma | sameer30132@gmail.com | dept=ME
+Saroop Chand | saroop2388@gmail.com | dept=CS
+Santosh Kumar | kumarsantosh9606@gmail.com | dept=ME
+Sudhir Dhiman | sudhir.dhiman85@gmail.com | dept=CS
+Kamlesh Chand | kchand78@gmail.com | dept=AS&H
+Vijay Thakur | thakurviju454@gmail.com | dept=Physics
+Mohan Lal | mohanpathania6747@gmail.com | dept=ME
+Ritika Sharma | ritika30purohit30@gmail.com | dept=IE
+Subash Chand | swastiksneha@gmail.com | dept=ME
+Jagdeep Singh | jagdeep9906@gmail.com | dept=CS
+Raman Kumar | ramankumar89@gmail.com | dept=ECE
+Talvinder Singh | talvinder.m@gmail.com | dept=CS
+Iela Bharti | iela.b89@gmail.com | dept=EE
+Vikal Sharma | vikal.in.sharma@gmail.com | dept=IE
+Karan Singh Thakur | karansingh.thakur89@gmail.com | dept=IE
+Richa Sharma | richathakur121@gmail.com | dept=English
+Satbir Singh | satbirsuru@gmail.com | dept=ME
+Rohit Kumar | rohit06d@gmail.com | dept=ECE
+Rajeev Kumar | rajeev.kumar357@gmail.com | dept=ECE
+Kamlesh Chand | Kchand78@gmail.com | dept=Applied Sciences & Humanities
+Saroop Chand | Saroop2388@gmail.com | dept=Applied Sciences & Humanities
+Richa Sharma | Richathakur121@gmail.com | dept=Applied Sciences & Humanities
+Kumari Indu | kumariindu@gmail.com | dept=Applied Sciences & Humanities
+Reema Choudhary | reemachoudhary@gmail.com | dept=Applied Sciences & Humanities
+Vijay Thakur | Thakurviju454@gmail.com | dept=Applied Sciences & Humanities
+Anil Kumar | prashanil77@gmail.com | dept=Applied Sciences & Humanities
+Pritam Chand | pritam777018@gmail.com | dept=Applied Sciences & Humanities
+N.K. Sapehia | nareshshkumarsapehia@gmail.com | dept=Computer Engineering
+Talvinder Singh | Talvinder.mr@gmail.com | dept=Computer Engineering
+Surbhi Sharma | Surbhisharma.jmi@gmail.com | dept=Computer Engineering
+Avinash Sharma | Avinash.acet@yahoo.com | dept=Computer Engineering
+Rajeev Kumar | Rajeev.kumar357@gmail.com | dept=Computer Engineering
+Tamanna Chitra | Er.tamanna14@gmail.com | dept=Computer Engineering
+Aashima Sharma | aashimasharma@gmail.com | dept=Computer Engineering
+Bhupender Kumar | bhupenderkumar@gmail.com | dept=Computer Engineering
+Shweta Dhiman | Shweta.neetu@gmail.com | dept=Computer Engineering
+Dinesh Minhas | Dineshsingh744@gmail.com | dept=Computer Engineering
+Rajesh Sharma | rdshan72@gmail.com | dept=Electrical Engineering
+Sudhir Dhiman | Sudhir.dhiman85@gmail.com | dept=Electrical Engineering
+Ina Gupta | Guptaina24@gmail.com | dept=Electrical Engineering
+Iela Bharti | jela.b89@gmail.com | dept=Electrical Engineering
+Aditya Saklani | adityasaklani@gmail.com | dept=Electrical Engineering
+Hari Singh Thakur | Hsthakur0928@gmail.com | dept=Electronics & Communication Engineering
+Jagdeep Singh | jagdeep9900@gmail.com | dept=Electronics & Communication Engineering
+Nishant Kaushal | nishant125@gmail.com | dept=Electronics & Communication Engineering
+Sachin Sehota | sachin.sehotas@gmail.com | dept=Electronics & Communication Engineering
+Rohit Kumar | Rohit06@gmail.com | dept=Electronics & Communication Engineering
+Jaswinder Kumar | Jaswinder70477@gmail.com | dept=Electronics & Communication Engineering
+Sanjeev Naryal | sanjeevnaryal@gmail.com | dept=Electronics & Communication Engineering
+Pawan Chandel | Pawanchandel13@gmail.com | dept=Instrumentation Engineering
+Karan Singh Thakur | Karansingh.thakur89@gmail.com | dept=Instrumentation Engineering
+Vikal Sharma | vikal.in@gmail.com | dept=Instrumentation Engineering
+Varun | Varunknr72@gmail.com | dept=Instrumentation Engineering
+Ritika Sharma | Ritika30purohit@gmail.com | dept=Instrumentation Engineering
+Munish Kumar | munishsharma198@gmail.com | dept=Instrumentation Engineering
+Amandeep Sharma | amandeepsharma@gmail.com | dept=Mechanical Engineering
+Onkar Singh | onkar.singh26970@gmail.com | dept=Mechanical Engineering
+Santosh Kumar | Kumarsantosh9606@gmail.com | dept=Mechanical Engineering
+Satbir Singh | satbirguru@gmail.com | dept=Mechanical Engineering
+Prag Sharma | pragsharma@gmail.com | dept=Mechanical Engineering
+Subash Chand | swastiksneh@gmail.com | dept=Mechanical Engineering
+N.C. Kaul | Narinderkaul68@gmail.com | dept=Mechanical Engineering
+Vikas Kandoria | vikash40at1579@gmail.com | dept=Workshop
+Ishwar Dass | Ishwardas15051968@gmail.com | dept=Workshop
+Pawan Kumar | Pawankumar64399@gmail.com | dept=Workshop
+Varinder Kumar | Varinderkumar723@gmail.com | dept=Workshop
+Sanjay Kumar | Sanjaykapilsanjaykapil1@gmail.com | dept=Workshop
+Aneesh Kumar | Aneeshmalhotra45@gmail.com | dept=Workshop
+Shivam Bhatia | Shiyambhatia2003@gmail.com | dept=Workshop
+Manish Thakur | Thakurmanish993@gmail.com | dept=Workshop
+Workshop Staff | workshopstaff@gpkangra.edu.in | dept=Workshop
+
+=== TEACHER FULL VIEW ===
+{'teacher_id': '3da90cc6-8b16-4e26-9a53-09fec9af896e', 'full_name': 'Naresh Kumar', 'email': 'nareshkumarspch@gmail.com', 'mobile': None, 'designation': None, 'qualification': None, 'department': 'CS', 'is_workshop_staff': False, 'assignment_id': 'c68bb442-07a1-4634-b455-f82c01a0c4a1', 'branch': 'Computer Science', 'semester': 2, 'subject_code': 'Computer Engineering', 'subject_name': 'Computer Engineering'}
+{'teacher_id': '3da90cc6-8b16-4e26-9a53-09fec9af896e', 'full_name': 'Naresh Kumar', 'email': 'nareshkumarspch@gmail.com', 'mobile': None, 'designation': None, 'qualification': None, 'department': 'CS', 'is_workshop_staff': False, 'assignment_id': 'fba92255-aa23-4fd5-a109-2cc05346069c', 'branch': 'Computer Science', 'semester': 4, 'subject_code': 'Computer Engineering', 'subject_name': 'Computer Engineering'}
+{'teacher_id': '3da90cc6-8b16-4e26-9a53-09fec9af896e', 'full_name': 'Naresh Kumar', 'email': 'nareshkumarspch@gmail.com', 'mobile': None, 'designation': None, 'qualification': None, 'department': 'CS', 'is_workshop_staff': False, 'assignment_id': '77c0aa8a-2be2-44d5-aa6d-fe9a5a569898', 'branch': 'Computer Science', 'semester': 6, 'subject_code': 'Computer Engineering', 'subject_name': 'Computer Engineering'}
+{'teacher_id': '06ade1e4-529c-4942-ae53-f6f357387eb3', 'full_name': 'Rajesh Sharma', 'email': 'rsharma72@gmail.com', 'mobile': None, 'designation': None, 'qualification': None, 'department': 'Electrical', 'is_workshop_staff': False, 'assignment_id': 'ee1bec48-8be9-484d-b2f3-aa2a70bbf497', 'branch': 'Electrical', 'semester': 2, 'subject_code': 'Electrical Engineering', 'subject_name': 'Electrical Engineering'}
+{'teacher_id': '06ade1e4-529c-4942-ae53-f6f357387eb3', 'full_name': 'Rajesh Sharma', 'email': 'rsharma72@gmail.com', 'mobile': None, 'designation': None, 'qualification': None, 'department': 'Electrical', 'is_workshop_staff': False, 'assignment_id': 'c7a2ee0b-767b-4b72-b9af-5c4d1cb869ed', 'branch': 'Electrical', 'semester': 4, 'subject_code': 'Electrical Engineering', 'subject_name': 'Electrical Engineering'}

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap');
 
         body {
             display: flex;
@@ -15,20 +15,64 @@
             justify-content: center;
             min-height: 100vh;
             padding: 2rem;
-            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            margin: 0;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            animation: float 10s infinite alternate;
+        }
+
+        body::before {
+            background: rgba(249, 115, 22, 0.3);
+            top: -100px;
+            left: -100px;
+        }
+
+        body::after {
+            background: rgba(59, 130, 246, 0.2);
+            bottom: -100px;
+            right: -100px;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
         }
 
         .login-container {
             width: 100%;
-            max-width: 500px;
+            max-width: 460px;
+            position: relative;
+            z-index: 10;
         }
 
         .login-card {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            border-radius: 15px;
-            padding: 3rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .login-header {
@@ -37,182 +81,270 @@
         }
 
         .teacher-logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
-            border-radius: 50%;
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 1.2rem;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             color: white;
-            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+            transform: rotate(-5deg);
+            transition: transform 0.3s ease;
         }
+
+        .teacher-logo:hover { transform: rotate(0deg) scale(1.05); }
 
         .login-header h1 {
             font-size: 1.8rem;
-            color: #f97316;
+            color: #ffffff;
             margin: 0;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
         }
 
         .login-header p {
-            color: #999;
+            color: #94a3b8;
             font-size: 0.95rem;
             margin: 0.5rem 0 0 0;
         }
 
-        .info-box {
-            background: #fff5f0;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 4px solid #f97316;
-            font-size: 0.9rem;
-            color: #333;
-        }
-
-        .info-box strong {
-            color: #f97316;
+        .step-badge {
+            display: inline-block;
+            background: rgba(249, 115, 22, 0.15);
+            color: #fb923c;
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 20px;
+            padding: 5px 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
+            position: relative;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.7rem;
-            color: #374151;
-            font-weight: 600;
-            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            color: #e2e8f0;
+            font-weight: 500;
+            font-size: 0.9rem;
         }
 
-        .form-group label i {
-            margin-right: 0.5rem;
-        }
-
-        .form-group input {
+        .form-group input,
+        .form-group select {
             width: 100%;
-            padding: 0.95rem 1.2rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
+            padding: 0.85rem 1rem 0.85rem 2.8rem;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
             font-size: 0.95rem;
-            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
             transition: all 0.3s ease;
             box-sizing: border-box;
         }
 
         .form-group select {
-            width: 100%;
-            padding: 0.95rem 1.2rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-family: 'Poppins', sans-serif;
-            background: white;
-            transition: all 0.3s ease;
-            box-sizing: border-box;
+            appearance: none;
+            cursor: pointer;
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        .form-group select option {
+            background: #1e293b;
+            color: #fff;
         }
 
-        .form-group input:focus {
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 2.3rem;
+            color: #64748b;
+            font-size: 1rem;
+            pointer-events: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
             outline: none;
             border-color: #f97316;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+            background: rgba(15, 23, 42, 0.85);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+        }
+
+        /* Assignment card list */
+        .assignment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 1.2rem;
+        }
+
+        .assignment-card {
+            display: block;
+            cursor: pointer;
+        }
+
+        .assignment-card input[type="radio"] {
+            display: none;
+        }
+
+        .assignment-card-inner {
+            padding: 14px 16px;
+            border: 1.5px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            background: rgba(15, 23, 42, 0.5);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .assignment-card input[type="radio"]:checked + .assignment-card-inner {
+            border-color: #f97316;
+            background: rgba(249, 115, 22, 0.12);
+        }
+
+        .assignment-card-inner:hover {
+            border-color: rgba(249, 115, 22, 0.4);
+            background: rgba(249, 115, 22, 0.07);
+        }
+
+        .assignment-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+            color: white;
+        }
+
+        .assignment-info h4 {
+            margin: 0 0 3px 0;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+
+        .assignment-info p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .assignment-check {
+            margin-left: auto;
+            color: #f97316;
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .assignment-card input[type="radio"]:checked + .assignment-card-inner .assignment-check {
+            opacity: 1;
         }
 
         .login-btn {
             width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            padding: 0.9rem;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 600;
             font-size: 1rem;
+            font-family: 'Outfit', sans-serif;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-family: 'Poppins', sans-serif;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: skewX(-20deg);
+        }
+
+        .login-btn:hover::after {
+            left: 150%;
+            transition: 0.7s ease;
         }
 
         .login-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
-        }
-
-        .login-footer {
-            text-align: center;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-            display: flex;
-            justify-content: space-around;
-            gap: 15px;
-        }
-
-        .login-footer a {
-            color: #f97316;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .login-footer a:hover {
-            color: #fb923c;
+            box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
         }
 
         .alert {
             padding: 12px 15px;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-bottom: 20px;
             font-size: 0.9rem;
             animation: slideDown 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .alert-error {
-            background: #fee;
-            color: #c33;
-            border-left: 4px solid #c33;
+            background: rgba(220, 38, 38, 0.1);
+            color: #fca5a5;
+            border: 1px solid rgba(220, 38, 38, 0.3);
         }
 
         .alert-success {
-            background: #efe;
-            color: #3c3;
-            border-left: 4px solid #3c3;
+            background: rgba(34, 197, 94, 0.1);
+            color: #86efac;
+            border: 1px solid rgba(34, 197, 94, 0.3);
         }
 
-        @media (max-width: 480px) {
-            .login-card {
-                padding: 2rem 1.5rem;
-            }
+        .login-footer {
+            text-align: center;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
 
-            .login-header h1 {
-                font-size: 1.5rem;
-            }
+        .login-footer a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
 
-            .form-row {
-                grid-template-columns: 1fr;
-            }
+        .login-footer a:hover { color: #f97316; }
+
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+            margin: 1.5rem 0;
         }
     </style>
 </head>
@@ -224,77 +356,112 @@
                     <i class="fas fa-chalkboard-user"></i>
                 </div>
                 <h1>Teacher Portal</h1>
-                <p>Access your classroom dashboard</p>
+                <p>
+                    {% if show_assignments %}
+                        Select your subject for today's session
+                    {% else %}
+                        Welcome back! Secure access to your classes.
+                    {% endif %}
+                </p>
             </div>
 
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     {% for category, message in messages %}
                         <div class="alert alert-{{ category }}">
+                            <i class="fas fa-{% if category == 'error' %}exclamation-circle{% else %}check-circle{% endif %}"></i>
                             {{ message }}
                         </div>
                     {% endfor %}
                 {% endif %}
             {% endwith %}
 
-            <div class="info-box">
-                <strong>Note:</strong> Please enter your email, password, branch, and semester provided by the admin.
-            </div>
-
-            <form method="POST" action="{{ url_for('teacher_login') }}">
-                <div class="form-group">
-                    <label for="email">
-                        <i class="fas fa-envelope"></i> Email Address
-                    </label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            {% if show_assignments %}
+                <!-- Step 2: Subject Assignment Selection -->
+                <div class="step-badge">
+                    <i class="fas fa-book-open"></i>&nbsp; Step 2 of 2 — Choose Your Subject
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="branch">
-                            <i class="fas fa-building"></i> Branch
+                <form method="POST" action="{{ url_for('web_bp.teacher_login') }}">
+                    <input type="hidden" name="email" value="{{ prefilled_email }}">
+                    <input type="hidden" name="password" value="{{ prefilled_password }}">
+
+                    <div class="assignment-list">
+                        {% for a in assignments %}
+                        <label class="assignment-card">
+                            <input type="radio" name="assignment_id" value="{{ a.id }}"
+                                {% if loop.first %}checked{% endif %}>
+                            <div class="assignment-card-inner">
+                                <div class="assignment-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="assignment-info">
+                                    <h4>{{ a.subject_name }}</h4>
+                                    <p>{{ a.branch }} &bull; Semester {{ a.semester }}</p>
+                                </div>
+                                <i class="fas fa-check-circle assignment-check"></i>
+                            </div>
                         </label>
-                        <select id="branch" name="branch" required>
-                            <option value="">Select Branch</option>
-                            {% for b in branches %}
-                                <option value="{{ b }}">{{ b }}</option>
-                            {% endfor %}
-                        </select>
+                        {% endfor %}
                     </div>
+
+                    <button type="submit" class="login-btn">
+                        <i class="fas fa-door-open"></i>&nbsp; Enter Classroom
+                    </button>
+                </form>
+
+                <div class="divider"></div>
+                <div class="login-footer">
+                    <a href="{{ url_for('teacher_login') }}">
+                        <i class="fas fa-arrow-left"></i> Back to Login
+                    </a>
+                </div>
+
+            {% else %}
+                <!-- Step 1: Credentials -->
+                <form method="POST" action="{{ url_for('web_bp.teacher_login') }}">
                     <div class="form-group">
-                        <label for="semester">
-                            <i class="fas fa-book"></i> Semester
-                        </label>
-                        <select id="semester" name="semester" required>
-                            <option value="">Select Semester</option>
-                            {% for s in semesters %}
-                                <option value="{{ s }}">{{ s }}</option>
-                            {% endfor %}
-                        </select>
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="Enter your email"
+                               required autocomplete="email">
+                        <i class="fas fa-envelope input-icon"></i>
                     </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password"
+                               placeholder="Enter your password"
+                               required autocomplete="current-password" style="padding-right: 2.5rem;">
+                        <i class="fas fa-lock input-icon"></i>
+                        <i class="fas fa-eye toggle-password" onclick="togglePassword('password', this)" style="position: absolute; right: 1rem; top: 2.4rem; color: #64748b; cursor: pointer;"></i>
+                    </div>
+
+                    <button type="submit" class="login-btn">
+                        <i class="fas fa-sign-in-alt"></i>&nbsp; Login
+                    </button>
+                </form>
+
+                <div class="login-footer">
+                    <a href="{{ url_for('web_bp.index') }}">
+                        <i class="fas fa-arrow-left"></i> Home
+                    </a>
                 </div>
-
-                <div class="form-group">
-                    <label for="password">
-                        <i class="fas fa-lock"></i> Password
-                    </label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                </div>
-
-                <button type="submit" class="login-btn">
-                    <i class="fas fa-sign-in-alt"></i> Login as Teacher
-                </button>
-            </form>
-
-            <div class="login-footer">
-                <a href="{{ url_for('index') }}">
-                    <i class="fas fa-arrow-left"></i> Back to Home
-                </a>
-                <a href="#" onclick="alert('Please contact admin to reset password')">
-                    <i class="fas fa-key"></i> Reset Password
-                </a>
-            </div>
+            {% endif %}
         </div>
     </div>
+
+    <script>
+        function togglePassword(inputId, iconElement) {
+            const input = document.getElementById(inputId);
+            if (input.type === "password") {
+                input.type = "text";
+                iconElement.classList.replace("fa-eye", "fa-eye-slash");
+            } else {
+                input.type = "password";
+                iconElement.classList.replace("fa-eye-slash", "fa-eye");
+            }
+        }
+    </script>
 </body>
 </html>

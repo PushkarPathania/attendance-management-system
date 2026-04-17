@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +10,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        /* Filter Styles */
+        .filter-section {
+            padding: 15px 20px;
+            background: #fff;
+            border-bottom: 1px solid #edf2f7;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .filter-title {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .filter-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .filter-box {
+            padding: 8px 16px;
+            background: #f1f5f9;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            color: #475569;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .filter-box:hover {
+            background: #e2e8f0;
+        }
+        .filter-box.active {
+            background: #e0e7ff;
+            border-color: #6366f1;
+            color: #4f46e5;
+        }
+        .filter-box.all-data {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .filter-box.all-data.active {
+            border-color: #f59e0b;
+        }
     </style>
 </head>
 <body>
@@ -148,6 +199,21 @@
                         </button>
                     </div>
                     {% if teachers %}
+                        <div class="filter-section" id="teacher-filters">
+                            <div class="filter-title">Select Branch</div>
+                            <div class="filter-boxes" id="teacher-branch-boxes">
+                                <div class="filter-box all-data active" onclick="filterData('teacher', 'all', null)">All Branches</div>
+                                <!-- dynamic branch boxes -->
+                            </div>
+                            
+                            <div id="teacher-semester-container" style="display: none;">
+                                <div class="filter-title">Select Semester</div>
+                                <div class="filter-boxes" id="teacher-semester-boxes">
+                                    <!-- dynamic semester boxes -->
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="table-responsive">
                             <table>
                                 <thead>
@@ -162,9 +228,9 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="teacher-table-body">
                                     {% for teacher in teachers %}
-                                    <tr>
+                                    <tr class="data-row teacher-row" data-branch="{{ teacher[4] }}" data-semester="{{ teacher[5] }}">
                                         <td>{{ teacher[0] }}</td>
                                         <td>{{ teacher[1] }}</td>
                                         <td>{{ teacher[2] }}</td>
@@ -177,7 +243,12 @@
                                                 <a href="{{ url_for('admin_edit_teacher', teacher_id=teacher[0], branch=teacher[4], semester=teacher[5]) }}" class="action-btn btn-edit">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </a>
-                                                <button type="button" class="action-btn btn-reset" onclick="openResetPasswordModal({{ teacher[0] }}, '{{ teacher[1] }}', '{{ teacher[4] }}', '{{ teacher[5] }}')">
+                                                <button type="button" class="action-btn btn-reset"
+                                                    data-id="{{ teacher[0] }}"
+                                                    data-name="{{ teacher[1] | e }}"
+                                                    data-branch="{{ teacher[4] | e }}"
+                                                    data-semester="{{ teacher[5] }}"
+                                                    onclick="openResetPasswordModalFromBtn(this)">
                                                     <i class="fas fa-key"></i> Reset Pwd
                                                 </button>
                                                 <form method="POST" action="{{ url_for('admin_delete_teacher', teacher_id=teacher[0], branch=teacher[4], semester=teacher[5]) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this teacher?');">
@@ -211,6 +282,21 @@
                         </button>
                     </div>
                     {% if students %}
+                        <div class="filter-section" id="student-filters">
+                            <div class="filter-title">Select Branch</div>
+                            <div class="filter-boxes" id="student-branch-boxes">
+                                <div class="filter-box all-data active" onclick="filterData('student', 'all', null)">All Branches</div>
+                                <!-- dynamic branch boxes -->
+                            </div>
+                            
+                            <div id="student-semester-container" style="display: none;">
+                                <div class="filter-title">Select Semester</div>
+                                <div class="filter-boxes" id="student-semester-boxes">
+                                    <!-- dynamic semester boxes -->
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="table-responsive">
                             <table>
                                 <thead>
@@ -224,9 +310,9 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="student-table-body">
                                     {% for student in students %}
-                                    <tr>
+                                    <tr class="data-row student-row" data-branch="{{ student[4] }}" data-semester="{{ student[5] }}">
                                         <td>{{ student[0] }}</td>
                                         <td>{{ student[1] }}</td>
                                         <td>{{ student[2] }}</td>
@@ -238,7 +324,12 @@
                                                 <a href="{{ url_for('admin_edit_student', student_id=student[0], branch=student[4], semester=student[5]) }}" class="action-btn btn-edit">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </a>
-                                                <button type="button" class="action-btn btn-reset" onclick="openResetStudentPasswordModal({{ student[0] }}, '{{ student[1] }}', '{{ student[4] }}', '{{ student[5] }}')">
+                                                <button type="button" class="action-btn btn-reset"
+                                                    data-id="{{ student[0] }}"
+                                                    data-name="{{ student[1] | e }}"
+                                                    data-branch="{{ student[4] | e }}"
+                                                    data-semester="{{ student[5] }}"
+                                                    onclick="openResetStudentPasswordModalFromBtn(this)">
                                                     <i class="fas fa-key"></i> Reset Pwd
                                                 </button>
                                                 <form method="POST" action="{{ url_for('admin_delete_student', student_id=student[0], branch=student[4], semester=student[5]) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this student?');">
@@ -341,7 +432,7 @@
 
                         <div class="form-group">
                             <label for="reg-password"><i class="fas fa-lock"></i> Password</label>
-                            <input type="password" id="reg-password" name="reg-password" placeholder="Default: 2026" value="2026" required>
+                            <input type="password" id="reg-password" name="reg-password" placeholder="Default: ChangeMe@123" value="ChangeMe@123" required>
                         </div>
 
                         <div class="form-actions" style="gap: 15px;">
@@ -402,7 +493,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="stu-password"><i class="fas fa-lock"></i> Password</label>
-                                <input type="password" id="stu-password" name="stu-password" placeholder="Default: 2026">
+                                <input type="password" id="stu-password" name="stu-password" placeholder="Default: ChangeMe@123">
                             </div>
                         </div>
 
@@ -580,6 +671,25 @@
             document.getElementById('resetPasswordModal').classList.add('show');
         }
 
+        // Wrapper called from data-* attribute buttons (avoids Jinja in onclick)
+        function openResetPasswordModalFromBtn(btn) {
+            openResetPasswordModal(
+                btn.dataset.id,
+                btn.dataset.name,
+                btn.dataset.branch,
+                btn.dataset.semester
+            );
+        }
+
+        function openResetStudentPasswordModalFromBtn(btn) {
+            openResetStudentPasswordModal(
+                btn.dataset.id,
+                btn.dataset.name,
+                btn.dataset.branch,
+                btn.dataset.semester
+            );
+        }
+
         function closeResetPasswordModal() {
             document.getElementById('resetPasswordModal').classList.remove('show');
             currentTeacherId = null;
@@ -709,6 +819,134 @@
                 toggleBtn.classList.toggle('rotated');
             }
         }
+
+        // ============================================
+        // JavaScript for Dynamic Branch / Semester Filters
+        // ============================================
+        
+        function initFilters() {
+            initSectionFilters('teacher');
+            initSectionFilters('student');
+        }
+        
+        function initSectionFilters(type) {
+            const rows = document.querySelectorAll(`.${type}-row`);
+            if (!rows.length) return;
+            
+            // Collect unique branches and semesters for each branch
+            const filterMap = {}; 
+            
+            rows.forEach(row => {
+                const b = row.getAttribute('data-branch') || "";
+                const s = row.getAttribute('data-semester') || "";
+                if (b) {
+                    if (!filterMap[b]) filterMap[b] = new Set();
+                    if (s) filterMap[b].add(s);
+                }
+            });
+            
+            // Build Branch UI
+            const branchContainer = document.getElementById(`${type}-branch-boxes`);
+            if (!branchContainer) return;
+
+            Object.keys(filterMap).sort().forEach(branch => {
+                const box = document.createElement('div');
+                box.className = `filter-box ${type}-branch-btn`;
+                box.innerText = branch;
+                box.onclick = () => filterData(type, branch, null);
+                branchContainer.appendChild(box);
+            });
+            
+            // Attach map to container for later
+            branchContainer.dataset.map = JSON.stringify(
+                Object.fromEntries(
+                    Object.entries(filterMap).map(([k, v]) => [k, Array.from(v)])
+                )
+            );
+        }
+
+        function filterData(type, branch, semester) {
+            // Update Active States for Branch
+            if (!semester) {
+                const branchBtns = document.querySelectorAll(`#${type}-branch-boxes .filter-box`);
+                branchBtns.forEach(btn => {
+                    const isAll = branch === 'all' && btn.classList.contains('all-data');
+                    const isMatch = btn.innerText === branch && !btn.classList.contains('all-data');
+                    if (isAll || isMatch) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+
+            const semesterContainerWrapper = document.getElementById(`${type}-semester-container`);
+            const semesterContainer = document.getElementById(`${type}-semester-boxes`);
+            const rows = document.querySelectorAll(`.${type}-row`);
+            
+            // If ALl branches
+            if (branch === 'all') {
+                if (semesterContainerWrapper) semesterContainerWrapper.style.display = 'none';
+                rows.forEach(r => r.style.display = '');
+                return;
+            }
+
+            // Show semesters for this branch if we just clicked a branch
+            if (!semester) {
+                if (semesterContainerWrapper) semesterContainerWrapper.style.display = 'block';
+                semesterContainer.innerHTML = '';
+                
+                const mapStr = document.getElementById(`${type}-branch-boxes`).dataset.map;
+                const filterMap = JSON.parse(mapStr);
+                const sems = (filterMap[branch] || []).sort((a,b) => parseInt(a) - parseInt(b));
+                
+                // Add "All Semesters" button
+                const allSemBtn = document.createElement('div');
+                allSemBtn.className = 'filter-box all-data active';
+                allSemBtn.innerText = `All Semesters in ${branch}`;
+                allSemBtn.onclick = () => {
+                    // Make this button active
+                    Array.from(semesterContainer.children).forEach(c => c.classList.remove('active'));
+                    allSemBtn.classList.add('active');
+                    filterData(type, branch, 'all');
+                };
+                semesterContainer.appendChild(allSemBtn);
+
+                sems.forEach(s => {
+                    const box = document.createElement('div');
+                    box.className = 'filter-box';
+                    box.innerText = `Semester ${s}`;
+                    box.onclick = () => {
+                        Array.from(semesterContainer.children).forEach(c => c.classList.remove('active'));
+                        box.classList.add('active');
+                        filterData(type, branch, s);
+                    };
+                    semesterContainer.appendChild(box);
+                });
+                
+                // Automatically display all for this branch
+                rows.forEach(r => {
+                    const rb = r.getAttribute('data-branch');
+                    r.style.display = (rb === branch) ? '' : 'none';
+                });
+                return;
+            }
+
+            // Filtering by semester
+            rows.forEach(r => {
+                const rb = r.getAttribute('data-branch');
+                const rs = r.getAttribute('data-semester');
+                if (semester === 'all') {
+                    r.style.display = (rb === branch) ? '' : 'none';
+                } else {
+                    r.style.display = (rb === branch && rs === semester) ? '' : 'none';
+                }
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initFilters);
+
     </script>
 </body>
 </html>

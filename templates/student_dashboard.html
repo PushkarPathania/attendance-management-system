@@ -7,20 +7,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/student_dashboard.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-    </style>
 </head>
 <body>
     <div class="dashboard-container">
-        <div class="sidebar-backdrop" onclick="toggleSidebar(event)"></div>
-        <button class="sidebar-collapse-btn" onclick="toggleSidebar(event)">
-            <i class="fas fa-chevron-left"></i>
-        </button>
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
                 <i class="fas fa-graduation-cap"></i>
-                <span>Student Portal</span>
+                <span>Attend·Flow</span>
             </div>
             <nav class="nav-links">
                 <a href="#dashboard" class="active" onclick="showSection('dashboard')">
@@ -31,136 +25,150 @@
                     <i class="fas fa-book"></i>
                     <span>Courses</span>
                 </a>
-                <a href="#attendance-history" onclick="showSection('attendance')">
+                <a href="#attendance" onclick="showSection('attendance')">
                     <i class="fas fa-chart-bar"></i>
-                    <span>Attendance</span>
+                    <span>History</span>
                 </a>
                 <a href="#settings" onclick="showSection('settings')">
                     <i class="fas fa-cog"></i>
                     <span>Settings</span>
                 </a>
-                <a href="{{ url_for('logout') }}" class="logout-btn">
+                <a href="{{ url_for('web_bp.logout') }}" class="logout-btn">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
             </nav>
         </aside>
 
+        <!-- Main Content -->
         <main class="main-content">
             <header class="main-header">
                 <div class="header-left">
                     <h1>Welcome, <span class="student-name">{{ student[0] }}</span>!</h1>
-                    <p class="header-subtitle">Here's your academic progress</p>
+                    <p class="header-subtitle">Your academic progression overview</p>
                 </div>
                 <div class="header-right">
                     <div class="user-profile">
-                        <div class="profile-avatar">{{ student[0]|first }}</div>
+                        <div class="profile-avatar">{{ student[0]|first | upper }}</div>
                         <div class="user-info">
-                            <p class="user-name">{{ student[0] }}</p>
-                            <p class="user-email">{{ student[1] }}</p>
+                            <span class="user-name" style="font-weight: 600; color: white;">{{ student[0] }}</span>
                         </div>
                     </div>
                 </div>
             </header>
 
-            <!-- Dashboard Section -->
-            <div id="dashboard" class="section active">
-                <section class="student-info">
-                    <div class="card info-card">
-                        <div class="card-header">
-                            <h2><i class="fas fa-id-card"></i> Student Details</h2>
+            <div class="page-content">
+                <!-- Dashboard Section -->
+                <div id="dashboard" class="section active">
+                    
+                    <!-- Stats Overview -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon present">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Total Present</h3>
+                                <p id="present-days-stat">0</p>
+                            </div>
                         </div>
-                        <div class="info-grid">
-                            <div class="info-item">
-                                <span class="label">Name:</span>
-                                <span class="value">{{ student[0] }}</span>
+                        <div class="stat-card">
+                            <div class="stat-icon percentage">
+                                <i class="fas fa-chart-pie"></i>
                             </div>
-                            <div class="info-item">
-                                <span class="label">Email:</span>
-                                <span class="value">{{ student[1] }}</span>
+                            <div class="stat-content">
+                                <h3>Overall Attendance</h3>
+                                <p id="attendance-percentage-stat">0%</p>
                             </div>
-                            <div class="info-item">
-                                <span class="label">Roll No:</span>
-                                <span class="value">{{ student[2] }}</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon percentage" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                                <i class="fas fa-clock"></i>
                             </div>
-                            <div class="info-item">
-                                <span class="label">Branch:</span>
-                                <span class="value">{{ student[3] }}</span>
+                            <div class="stat-content">
+                                <h3>Late Arrivals</h3>
+                                <p id="late-days-stat">0</p>
                             </div>
-                            <div class="info-item">
-                                <span class="label">Semester:</span>
-                                <span class="value">{{ student[4] }}</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon absent">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3>Total Absent</h3>
+                                <p id="absent-days-stat">0</p>
                             </div>
                         </div>
                     </div>
-                </section>
 
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon present">
-                            <i class="fas fa-check-circle"></i>
+                    <!-- Details and Chart -->
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                        <div class="card" style="margin-bottom: 0;">
+                            <div class="card-header">
+                                <h2><i class="fas fa-id-badge"></i> Academic Profile</h2>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="label">Registration / Roll No</span>
+                                    <span class="value">{{ student[2] }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Branch</span>
+                                    <span class="value">{{ student[3] }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Semester</span>
+                                    <span class="value">{{ student[4] }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Email Address</span>
+                                    <span class="value">{{ student[1] }}</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stat-content">
-                            <h3>Present Days</h3>
-                            <p id="present-days-stat">0</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon absent">
-                            <i class="fas fa-times-circle"></i>
-                        </div>
-                        <div class="stat-content">
-                            <h3>Absent Days</h3>
-                            <p id="absent-days-stat">0</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon late">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="stat-content">
-                            <h3>Late Arrivals</h3>
-                            <p id="late-days-stat">0</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon percentage">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
-                        <div class="stat-content">
-                            <h3>Attendance %</h3>
-                            <p id="attendance-percentage-stat">0%</p>
-                        </div>
-                    </div>
-                </div>
 
-                {% if subjects_data %}
-                <section class="subjects-attendance">
+                        <div class="card" style="margin-bottom: 0;">
+                            <div class="card-header">
+                                <h2><i class="fas fa-chart-doughnut"></i> Summary</h2>
+                            </div>
+                            <div style="position: relative; height: 200px;">
+                                <canvas id="attendanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if subjects_data %}
+                    <!-- Quick Subject Overview -->
                     <div class="card">
                         <div class="card-header">
-                            <h2><i class="fas fa-book-open"></i> Subject-wise Attendance</h2>
+                            <h2><i class="fas fa-layer-group"></i> Course Attendance Overview</h2>
                         </div>
                         <div class="table-responsive">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Subject</th>
-                                        <th>Total Lectures</th>
-                                        <th>Present</th>
-                                        <th>Absent</th>
+                                        <th>Subject Name</th>
+                                        <th>Total Classes</th>
+                                        <th>Presents</th>
+                                        <th>Latings</th>
+                                        <th>Absents</th>
                                         <th>Percentage</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {% for subject in subjects_data %}
                                     <tr>
-                                        <td>{{ subject.name }}</td>
+                                        <td style="font-weight: 500;">{{ subject.name }}</td>
                                         <td>{{ subject.total_lectures }}</td>
                                         <td><span class="badge present">{{ subject.presents }}</span></td>
+                                        <td><span class="badge late">{{ subject.late }}</span></td>
                                         <td><span class="badge absent">{{ subject.absents }}</span></td>
                                         <td>
-                                            {% set percentage = (subject.presents / subject.total_lectures * 100) if subject.total_lectures > 0 else 0 %}
-                                            <span class="percentage-badge">{{ "%.1f" | format(percentage) }}%</span>
+                                            {% set t = subject.total_lectures %}
+                                            {% set p = subject.presents %}
+                                            {% set l = subject.late %}
+                                            {% set percentage = ((p + l) / t * 100) if t > 0 else 0 %}
+                                            <span class="badge" style="background: rgba(99,102,241,0.2); color: #818cf8;">{{ "%.1f" | format(percentage) }}%</span>
                                         </td>
                                     </tr>
                                     {% endfor %}
@@ -168,41 +176,35 @@
                             </table>
                         </div>
                     </div>
-                </section>
-                {% endif %}
+                    {% endif %}
+                </div>
 
-                <section class="attendance-summary">
+                <!-- History Section -->
+                <div id="attendance" class="section" style="display: none;">
                     <div class="card">
                         <div class="card-header">
-                            <h2><i class="fas fa-chart-line"></i> Attendance Summary</h2>
+                            <h2><i class="fas fa-history"></i> Detailed History</h2>
                         </div>
-                        <div class="chart-container">
-                            <canvas id="attendanceChart"></canvas>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Attendance Section -->
-            <div id="attendance" class="section">
-                <section class="attendance-history">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2><i class="fas fa-history"></i> Attendance History</h2>
-                        </div>
-                        <div class="filter-container">
-                            <label for="start-date">Start Date:</label>
-                            <input type="date" id="start-date">
-                            <label for="end-date">End Date:</label>
-                            <input type="date" id="end-date">
-                            <button id="filter-btn"><i class="fas fa-search"></i> Filter</button>
-                            <button id="clear-filter-btn"><i class="fas fa-redo"></i> Clear</button>
+                        <div style="margin-bottom: 20px; display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                            <div style="display: flex; flex-direction: column; gap: 5px;">
+                                <label style="font-size: 0.85rem; color: #94a3b8;">Start Date</label>
+                                <input type="date" id="start-date" style="background: rgba(15,23,42,0.5); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 8px; border-radius: 6px;">
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 5px;">
+                                <label style="font-size: 0.85rem; color: #94a3b8;">End Date</label>
+                                <input type="date" id="end-date" style="background: rgba(15,23,42,0.5); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 8px; border-radius: 6px;">
+                            </div>
+                            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                                <button id="filter-btn" style="background: #38bdf8; color: #0f172a; font-weight: 600; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer;">Apply Filter</button>
+                                <button id="clear-filter-btn" style="background: transparent; color: #e2e8f0; border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 6px; cursor: pointer;">Clear</button>
+                            </div>
                         </div>
                         <div class="table-responsive">
                             <table>
                                 <thead>
                                     <tr>
                                         <th>Date</th>
+                                        <th>Subject</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
@@ -210,9 +212,15 @@
                                     {% for record in attendance_history %}
                                     <tr data-date="{{ record[0] }}">
                                         <td>{{ record[0] }}</td>
-                                        <td class="status {{ record[1] }}">
-                                            <i class="fas fa-{% if record[1] == 'present' %}check-circle{% elif record[1] == 'absent' %}times-circle{% else %}clock{% endif %}"></i>
-                                            {{ record[1].capitalize() }}
+                                        <td>{{ record[2] }}</td>
+                                        <td>
+                                            {% if record[1] == 'present' %}
+                                            <span class="badge present"><i class="fas fa-check-circle"></i> Present</span>
+                                            {% elif record[1] == 'absent' %}
+                                            <span class="badge absent"><i class="fas fa-times-circle"></i> Absent</span>
+                                            {% else %}
+                                            <span class="badge late"><i class="fas fa-clock"></i> Late</span>
+                                            {% endif %}
                                         </td>
                                     </tr>
                                     {% endfor %}
@@ -220,111 +228,108 @@
                             </table>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
 
-            <!-- Courses Section -->
-            <div id="courses" class="section">
-                <div class="card">
-                    <div class="card-header">
-                        <h2><i class="fas fa-book"></i> My Courses</h2>
+                <!-- Courses Section -->
+                <div id="courses" class="section" style="display: none;">
+                    <div class="card" style="background: transparent; border: none; padding: 0; box-shadow: none;">
+                        <h2 style="font-family: Outfit; font-size: 1.5rem; margin-bottom: 20px;"><i class="fas fa-book"></i> Enrolled Courses</h2>
+                        <div class="courses-grid">
+                            {% if subjects_data %}
+                                {% for subject in subjects_data %}
+                                <div class="course-card">
+                                    <div class="course-header">
+                                        <h3>{{ subject.name }}</h3>
+                                    </div>
+                                    <div class="course-stats">
+                                        <p><span>Total Lectures</span> <span style="font-weight: 600; color: white;">{{ subject.total_lectures }}</span></p>
+                                        <p><span>Attended</span> <span style="color: #34d399; font-weight: 600;">{{ subject.presents + subject.late }}</span></p>
+                                        <p><span>Missed</span> <span style="color: #f87171; font-weight: 600;">{{ subject.absents }}</span></p>
+                                        <div style="margin-top: 15px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden;">
+                                            {% set pct = ((subject.presents + subject.late) / subject.total_lectures * 100) if subject.total_lectures > 0 else 0 %}
+                                            <div style="height: 100%; width: {{ pct }}%; background: linear-gradient(90deg, #38bdf8, #818cf8); border-radius: 10px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            {% else %}
+                            <p>No courses assigned yet.</p>
+                            {% endif %}
+                        </div>
                     </div>
-                    <div class="courses-grid">
-                        {% if subjects_data %}
-                            {% for subject in subjects_data %}
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <h3>{{ subject.name }}</h3>
-                                    <span class="course-status">Active</span>
+                </div>
+
+                <!-- Settings Section -->
+                <div id="settings" class="section" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-cog"></i> Account Settings</h2>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 10px;">
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Change Password</h4>
+                                    <p style="font-size: 0.85rem; color: #94a3b8;">Ensure your account is using a long, random password to stay secure.</p>
                                 </div>
-                                <div class="course-stats">
-                                    <p><strong>Lectures:</strong> {{ subject.total_lectures }}</p>
-                                    <p><strong>Attended:</strong> {{ subject.presents }}</p>
-                                    <p><strong>Missed:</strong> {{ subject.absents }}</p>
-                                </div>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: 75%;"></div>
-                                </div>
-                                <p class="course-percentage">75% Attendance</p>
+                                <a href="{{ url_for('web_bp.student_change_password') }}" style="background: #6366f1; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 500;">Update</a>
                             </div>
-                            {% endfor %}
-                        {% else %}
-                        <p>No courses assigned yet.</p>
-                        {% endif %}
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Settings Section -->
-            <div id="settings" class="section">
-                <div class="card">
-                    <div class="card-header">
-                        <h2><i class="fas fa-cog"></i> Settings</h2>
-                    </div>
-                    <div class="settings-form">
-                        <div class="setting-group">
-                            <label><i class="fas fa-key"></i> Change Password</label>
-                            <a href="{{ url_for('student_change_password') }}" class="btn btn-primary btn-small" style="text-decoration: none; display: inline-block;">Update</a>
-                        </div>
-                        <div class="setting-group">
-                            <label><i class="fas fa-bell"></i> Email Notifications</label>
-                            <input type="checkbox" checked>
-                        </div>
-                        <div class="setting-group">
-                            <label><i class="fas fa-moon"></i> Dark Mode</label>
-                            <input type="checkbox">
-                        </div>
-                        <div class="setting-group">
-                            <label><i class="fas fa-envelope"></i> Attendance Alerts</label>
-                            <input type="checkbox" checked>
-                        </div>
-                    </div>
-                </div>
             </div>
         </main>
     </div>
 
+    <!-- Data passed to JS securely -->
     <script type="application/json" id="attendance-data">{{ attendance_history | tojson }}</script>
 
     <script>
-        // Attendance data from Jinja template
         const attendanceHistory = JSON.parse(document.getElementById('attendance-data').textContent);
 
-        // Calculate summary stats
         let totalDays = attendanceHistory.length;
         let presentDays = attendanceHistory.filter(r => r[1] === 'present').length;
         let absentDays = attendanceHistory.filter(r => r[1] === 'absent').length;
         let lateDays = attendanceHistory.filter(r => r[1] === 'late').length;
-        let attendancePercentage = totalDays > 0 ? Math.round((presentDays / totalDays) * 100) : 0;
+        // Late counts as attended in terms of percentage usually, or half. Let's count it fully for the progress.
+        let attended = presentDays + lateDays;
+        let attendancePercentage = totalDays > 0 ? Math.round((attended / totalDays) * 100) : 0;
 
-        // Update summary stats
         document.getElementById('present-days-stat').textContent = presentDays;
         document.getElementById('absent-days-stat').textContent = absentDays;
         document.getElementById('late-days-stat').textContent = lateDays;
         document.getElementById('attendance-percentage-stat').textContent = attendancePercentage + '%';
 
-        // Create chart
+        Chart.defaults.color = '#cbd5e1';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+
         const ctx = document.getElementById('attendanceChart').getContext('2d');
         new Chart(ctx, {
             type: 'doughnut',
             data: {
-                labels: ['Present', 'Absent', 'Late'],
+                labels: ['Present', 'Late', 'Absent'],
                 datasets: [{
-                    label: 'Attendance Count',
-                    data: [presentDays, absentDays, lateDays],
-                    backgroundColor: ['#28a745', '#dc3545', '#ffc107'],
-                    borderColor: ['#fff', '#fff', '#fff'],
-                    borderWidth: 2
+                    data: [presentDays, lateDays, absentDays],
+                    backgroundColor: ['#10b981', '#f59e0b', '#ef4444'],
+                    borderColor: ['rgba(30, 41, 59, 1)', 'rgba(30, 41, 59, 1)', 'rgba(30, 41, 59, 1)'],
+                    borderWidth: 2,
+                    hoverOffset: 4
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: true,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        position: 'bottom'
+                        position: 'right',
+                        labels: {
+                            color: '#cbd5e1',
+                            usePointStyle: true,
+                            padding: 20
+                        }
                     }
-                }
+                },
+                cutout: '75%'
             }
         });
 
@@ -357,47 +362,25 @@
         clearFilterBtn.addEventListener('click', () => {
             startDateInput.value = '';
             endDateInput.value = '';
-            const rows = tableBody.querySelectorAll('tr');
-            rows.forEach(row => row.style.display = '');
+            tableBody.querySelectorAll('tr').forEach(r => r.style.display = '');
         });
 
-        // Navigation section switching
         function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
+            document.querySelectorAll('.section').forEach(s => {
+                s.style.display = 'none';
+                s.classList.remove('active');
             });
-
-            // Show selected section
             const section = document.getElementById(sectionId);
             if (section) {
+                section.style.display = 'block';
+                // Trigger reflow then add class for animation
+                void section.offsetWidth;
                 section.classList.add('active');
             }
-
-            // Update active nav link
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.classList.remove('active');
             });
-            event.target.closest('a').classList.add('active');
-        }
-
-        // Toggle Sidebar Slide Animation
-        function toggleSidebar(event) {
-            if (event) {
-                event.stopPropagation();
-            }
-            
-            const sidebar = document.querySelector('.sidebar');
-            const backdrop = document.querySelector('.sidebar-backdrop');
-            const mainContent = document.querySelector('.main-content');
-            const toggleBtn = document.querySelector('.sidebar-collapse-btn');
-            
-            sidebar.classList.toggle('collapsed');
-            backdrop.classList.toggle('active');
-            mainContent.classList.toggle('sidebar-hidden');
-            if (toggleBtn) {
-                toggleBtn.classList.toggle('rotated');
-            }
+            event.currentTarget.classList.add('active');
         }
     </script>
 </body>
