@@ -65,21 +65,39 @@ def _fetch_all_students_tuples(sb):
 
 def _fetch_all_teachers_tuples(sb):
     """Return teachers as list of tuples matching template format:
-       (assignment_id, full_name, email, teacher_code, branch, semester, subject_name)
+       (teacher_id, full_name, email, teacher_code, branch, semester, subject_name)
     """
-    rows = sb.table("teacher_full_view").select("*").execute().data or []
+    teachers_data = sb.table("teachers").select("*").execute().data or []
+    assignments_data = sb.table("teacher_assignments").select("*").execute().data or []
+    
+    from collections import defaultdict
+    ta_map = defaultdict(list)
+    for a in assignments_data:
+        ta_map[a["teacher_id"]].append(a)
+        
     result = []
-    for r in rows:
+    for t in teachers_data:
+        t_id = t["id"]
+        t_assignments = ta_map.get(t_id, [])
+        
+        branches = list(set(a["branch"] for a in t_assignments if a.get("branch")))
+        semesters = list(set(str(a["semester"]) for a in t_assignments if a.get("semester")))
+        subjects = list(set(a["subject_name"] for a in t_assignments if a.get("subject_name")))
+        
+        branch_str = ", ".join(branches) if branches else "N/A"
+        semester_str = ", ".join(semesters) if semesters else "N/A"
+        subject_str = ", ".join(subjects) if subjects else "N/A"
+        
         result.append((
-            r.get("assignment_id", r.get("teacher_id", "")),
-            r.get("full_name", "Unknown"),
-            r.get("email", ""),
-            r.get("department", ""),
-            r.get("branch", ""),
-            str(r.get("semester", "")),
-            r.get("subject_name", ""),
-            r.get("mobile", ""),
-            r.get("designation", ""),
+            t_id,
+            t.get("full_name", "Unknown"),
+            t.get("email", ""),
+            t.get("teacher_code", ""),
+            branch_str,
+            semester_str,
+            subject_str,
+            t.get("mobile", ""),
+            t.get("designation", ""),
             None,  # gender placeholder
             None,  # dob placeholder
         ))
@@ -227,10 +245,20 @@ def admin_delete_teacher(teacher_id):
         return redirect(url_for("admin_login"))
     try:
         sb = get_supabase_admin()
-        # teacher_id here is actually assignment_id (UUID)
-        # Try to delete assignment first
-        sb.table("teacher_assignments").delete().eq("id", teacher_id).execute()
-        flash("Teacher assignment deleted successfully!", "success")
+        # Find email to delete auth user and profile
+        teachers = sb.table("teachers").select("email").eq("id", teacher_id).limit(1).execute().data or []
+        if teachers:
+            email = teachers[0]["email"]
+            profiles = sb.table("profiles").select("id").eq("email", email).limit(1).execute().data or []
+            if profiles:
+                p_id = profiles[0]["id"]
+                sb.table("profiles").delete().eq("id", p_id).execute()
+                try:
+                    sb.auth.admin.delete_user(p_id)
+                except Exception:
+                    pass
+        sb.table("teachers").delete().eq("id", teacher_id).execute()
+        flash("Teacher deleted successfully!", "success")
     except Exception as exc:
         flash(f"Error deleting teacher: {exc}", "error")
     return redirect(url_for("admin_dashboard"))
@@ -245,65 +273,51 @@ def admin_edit_teacher(teacher_id):
     sb = get_supabase_admin()
 
     if request.method == "POST":
-        subject = (request.form.get("edit-subject") or "").strip()
-        branch = (request.form.get("edit-branch") or "").strip()
-        semester_str = (request.form.get("edit-semester") or "").strip()
         full_name = (request.form.get("edit-name") or "").strip()
         email = (request.form.get("edit-email") or "").strip().lower()
         mobile = (request.form.get("edit-mobile") or "").strip()
         designation = (request.form.get("edit-designation") or "").strip()
 
         try:
-            # Update the assignment
-            update_data = {}
-            if subject:
-                update_data["subject_name"] = subject
-                update_data["subject_code"] = subject[:20]
-            if branch:
-                update_data["branch"] = branch
-            if semester_str:
-                update_data["semester"] = int(semester_str)
-
-            if update_data:
-                sb.table("teacher_assignments").update(update_data).eq("id", teacher_id).execute()
-
-            # Also update teacher personal info if email provided
-            if email:
-                teacher_row = sb.table("teachers").select("id").eq("email", email).limit(1).execute().data or []
-                if teacher_row:
-                    t_id = teacher_row[0]["id"]
-                    upd = {}
-                    if full_name:
-                        upd["full_name"] = full_name
-                    if mobile:
-                        upd["mobile"] = mobile
-                    if designation:
-                        upd["designation"] = designation
-                    if upd:
-                        sb.table("teachers").update(upd).eq("id", t_id).execute()
+            upd = {}
+            if full_name: upd["full_name"] = full_name
+            if mobile: upd["mobile"] = mobile
+            if designation: upd["designation"] = designation
+            if email: upd["email"] = email
+            
+            if upd:
+                sb.table("teachers").update(upd).eq("id", teacher_id).execute()
+                
+            # Also update profile full_name if necessary
+            if full_name or email:
+                profiles = sb.table("profiles").select("id").eq("email", email).limit(1).execute().data or []
+                if profiles:
+                    p_upd = {}
+                    if full_name: p_upd["full_name"] = full_name
+                    if email: p_upd["email"] = email
+                    sb.table("profiles").update(p_upd).eq("id", profiles[0]["id"]).execute()
 
             flash("Teacher updated successfully!", "success")
         except Exception as exc:
             flash(f"Error updating teacher: {exc}", "error")
         return redirect(url_for("admin_dashboard"))
 
-    # GET — fetch assignment details for edit form
+    # GET — fetch teacher for edit form
     try:
-        rows = sb.table("teacher_full_view").select("*").eq("assignment_id", teacher_id).limit(1).execute().data or []
+        rows = sb.table("teachers").select("*").eq("id", teacher_id).limit(1).execute().data or []
         if not rows:
-            flash("Teacher assignment not found.", "error")
+            flash("Teacher not found.", "error")
             return redirect(url_for("admin_dashboard"))
         row = rows[0]
-        # Build a tuple compatible with admin-edit-teacher template
         teacher = (
             teacher_id,
             row.get("full_name", ""),
             row.get("email", ""),
             row.get("mobile", ""),
-            None,  # teacher_code
-            row.get("branch", ""),
-            str(row.get("semester", "")),
-            row.get("subject_name", ""),
+            row.get("teacher_code", ""),
+            "", # branch
+            "", # semester
+            "", # subject
             row.get("designation", ""),
             None,  # gender
             None,  # dob
@@ -311,8 +325,8 @@ def admin_edit_teacher(teacher_id):
         return render_template(
             "admin-edit-teacher.html",
             teacher=teacher,
-            class_branch=row.get("branch", ""),
-            class_semester=str(row.get("semester", "")),
+            class_branch="",
+            class_semester="",
         )
     except Exception as exc:
         flash(f"Error loading teacher: {exc}", "error")
@@ -332,13 +346,12 @@ def admin_reset_password(teacher_id):
 
     try:
         sb = get_supabase_admin()
-        # teacher_id is assignment_id, need to look up teacher email
-        rows = sb.table("teacher_full_view").select("email").eq("assignment_id", teacher_id).limit(1).execute().data or []
+        # teacher_id is now the actual teacher id
+        rows = sb.table("teachers").select("email").eq("id", teacher_id).limit(1).execute().data or []
         if not rows:
             flash("Teacher not found.", "error")
             return redirect(url_for("admin_dashboard"))
         email = rows[0]["email"]
-        # Find auth user
         profiles = sb.table("profiles").select("id").eq("email", email).limit(1).execute().data or []
         if profiles:
             user_id = profiles[0]["id"]
@@ -656,10 +669,13 @@ def student_dashboard():
         .data or []
     )
 
+    # Deduplicate subjects (multiple teachers may teach the same subject)
+    seen_subjects = set()
     subjects = {}
     for ta in all_assignments:
         subject_name = ta.get("subject_name") or "General"
-        if subject_name not in subjects:
+        if subject_name not in seen_subjects:
+            seen_subjects.add(subject_name)
             subjects[subject_name] = {
                 "name": subject_name,
                 "total_lectures": 0,
@@ -778,11 +794,13 @@ def teacher_login():
         teacher_rows = sb_admin.table("teachers").select("id").ilike("email", email).limit(1).execute().data or []
         if not teacher_rows:
             try:
+                import uuid as _uuid
+                _tc = "TC_" + _uuid.uuid4().hex[:6].upper()
                 ins = sb_admin.table("teachers").insert({
                     "full_name": profile.get("full_name", "Unknown"),
                     "email": email,
                     "department": "General",
-                    "teacher_code": "N/A",
+                    "teacher_code": _tc,
                 }).execute()
                 teacher_db_id = ins.data[0]["id"]
             except Exception as exc:

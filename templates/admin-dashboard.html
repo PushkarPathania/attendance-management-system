@@ -837,12 +837,15 @@
             const filterMap = {}; 
             
             rows.forEach(row => {
-                const b = row.getAttribute('data-branch') || "";
-                const s = row.getAttribute('data-semester') || "";
-                if (b) {
+                const bStr = row.getAttribute('data-branch') || "";
+                const sStr = row.getAttribute('data-semester') || "";
+                const branches = bStr.split(',').map(x => x.trim()).filter(x => x);
+                const semesters = sStr.split(',').map(x => x.trim()).filter(x => x);
+
+                branches.forEach(b => {
                     if (!filterMap[b]) filterMap[b] = new Set();
-                    if (s) filterMap[b].add(s);
-                }
+                    semesters.forEach(s => filterMap[b].add(s));
+                });
             });
             
             // Build Branch UI
@@ -926,20 +929,24 @@
                 
                 // Automatically display all for this branch
                 rows.forEach(r => {
-                    const rb = r.getAttribute('data-branch');
-                    r.style.display = (rb === branch) ? '' : 'none';
+                    const rbStr = r.getAttribute('data-branch') || "";
+                    const rbs = rbStr.split(',').map(x => x.trim());
+                    r.style.display = (rbs.includes(branch)) ? '' : 'none';
                 });
                 return;
             }
 
             // Filtering by semester
             rows.forEach(r => {
-                const rb = r.getAttribute('data-branch');
-                const rs = r.getAttribute('data-semester');
+                const rbStr = r.getAttribute('data-branch') || "";
+                const rsStr = r.getAttribute('data-semester') || "";
+                const rbs = rbStr.split(',').map(x => x.trim());
+                const rss = rsStr.split(',').map(x => x.trim());
+                
                 if (semester === 'all') {
-                    r.style.display = (rb === branch) ? '' : 'none';
+                    r.style.display = (rbs.includes(branch)) ? '' : 'none';
                 } else {
-                    r.style.display = (rb === branch && rs === semester) ? '' : 'none';
+                    r.style.display = (rbs.includes(branch) && rss.includes(semester)) ? '' : 'none';
                 }
             });
         }
