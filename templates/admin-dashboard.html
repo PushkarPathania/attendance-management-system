@@ -2,6 +2,7 @@
 <html lang="en">
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
+
         /* Filter Styles */
         .filter-section {
             padding: 15px 20px;
@@ -18,8 +19,9 @@
             border-bottom: 1px solid #edf2f7;
             margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
+
         .filter-title {
             font-size: 0.95rem;
             color: #64748b;
@@ -28,12 +30,14 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
         .filter-boxes {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 15px;
         }
+
         .filter-box {
             padding: 8px 16px;
             background: #f1f5f9;
@@ -44,23 +48,28 @@
             font-weight: 500;
             transition: all 0.2s ease;
         }
+
         .filter-box:hover {
             background: #e2e8f0;
         }
+
         .filter-box.active {
             background: #e0e7ff;
             border-color: #6366f1;
             color: #4f46e5;
         }
+
         .filter-box.all-data {
             background: #fef3c7;
             color: #d97706;
         }
+
         .filter-box.all-data.active {
             border-color: #f59e0b;
         }
     </style>
 </head>
+
 <body>
     <div class="dashboard-container">
         <div class="sidebar-backdrop" onclick="toggleSidebar(event)"></div>
@@ -94,7 +103,7 @@
                     <span>Add Student</span>
                 </a>
                 <a href="#reports" onclick="showSection('reports')">
-                    <i class="fas fa-chart-bar"></i>
+                    <i class="fas fa-chart-pie"></i>
                     <span>Reports</span>
                 </a>
                 <a href="#settings" onclick="showSection('settings')">
@@ -126,14 +135,15 @@
             </header>
 
             {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }}">
-                            <i class="fas fa-{% if category == 'success' %}check-circle{% elif category == 'error' %}exclamation-circle{% else %}info-circle{% endif %}"></i>
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                <i
+                    class="fas fa-{% if category == 'success' %}check-circle{% elif category == 'error' %}exclamation-circle{% else %}info-circle{% endif %}"></i>
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
             {% endwith %}
 
             <!-- Dashboard Section -->
@@ -172,16 +182,20 @@
                     <div class="card-header">
                         <h2><i class="fas fa-info-circle"></i> System Overview</h2>
                     </div>
-                    <div class="info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                        <div style="padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
+                    <div class="info-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div
+                            style="padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
                             <p style="color: #999; font-size: 0.9rem; margin-bottom: 5px;"><strong>Teachers</strong></p>
                             <p style="font-size: 1.5rem; color: #2c3e50; font-weight: 600;">{{ teachers|length }}</p>
                         </div>
-                        <div style="padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #28a745;">
+                        <div
+                            style="padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #28a745;">
                             <p style="color: #999; font-size: 0.9rem; margin-bottom: 5px;"><strong>Students</strong></p>
                             <p style="font-size: 1.5rem; color: #2c3e50; font-weight: 600;">{{ students|length }}</p>
                         </div>
-                        <div style="padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #ffc107;">
+                        <div
+                            style="padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #ffc107;">
                             <p style="color: #999; font-size: 0.9rem; margin-bottom: 5px;"><strong>Status</strong></p>
                             <p style="font-size: 1.2rem; color: #2c3e50; font-weight: 600;">Active</p>
                         </div>
@@ -199,75 +213,81 @@
                         </button>
                     </div>
                     {% if teachers %}
-                        <div class="filter-section" id="teacher-filters">
-                            <div class="filter-title">Select Branch</div>
-                            <div class="filter-boxes" id="teacher-branch-boxes">
-                                <div class="filter-box all-data active" onclick="filterData('teacher', 'all', null)">All Branches</div>
-                                <!-- dynamic branch boxes -->
-                            </div>
-                            
-                            <div id="teacher-semester-container" style="display: none;">
-                                <div class="filter-title">Select Semester</div>
-                                <div class="filter-boxes" id="teacher-semester-boxes">
-                                    <!-- dynamic semester boxes -->
-                                </div>
-                            </div>
+                    <div class="filter-section" id="teacher-filters">
+                        <div class="filter-title">Select Branch</div>
+                        <div class="filter-boxes" id="teacher-branch-boxes">
+                            <div class="filter-box all-data active" onclick="filterData('teacher', 'all', null)">All
+                                Branches</div>
+                            <!-- dynamic branch boxes -->
                         </div>
 
-                        <div class="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Full Name</th>
-                                        <th>Email</th>
-                                        <th>Teacher ID</th>
-                                        <th>Branch</th>
-                                        <th>Semester</th>
-                                        <th>Subject</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="teacher-table-body">
-                                    {% for teacher in teachers %}
-                                    <tr class="data-row teacher-row" data-branch="{{ teacher[4] }}" data-semester="{{ teacher[5] }}">
-                                        <td>{{ teacher[0] }}</td>
-                                        <td>{{ teacher[1] }}</td>
-                                        <td>{{ teacher[2] }}</td>
-                                        <td>{{ teacher[3] }}</td>
-                                        <td>{{ teacher[4] }}</td>
-                                        <td>{{ teacher[5] }}</td>
-                                        <td>{{ teacher[6] if teacher[6] else 'N/A' }}</td>
-                                        <td>
-                                            <div class="action-buttons">
-                                                <a href="{{ url_for('admin_edit_teacher', teacher_id=teacher[0], branch=teacher[4], semester=teacher[5]) }}" class="action-btn btn-edit">
-                                                    <i class="fas fa-edit"></i> Edit
-                                                </a>
-                                                <button type="button" class="action-btn btn-reset"
-                                                    data-id="{{ teacher[0] }}"
-                                                    data-name="{{ teacher[1] | e }}"
-                                                    data-branch="{{ teacher[4] | e }}"
-                                                    data-semester="{{ teacher[5] }}"
-                                                    onclick="openResetPasswordModalFromBtn(this)">
-                                                    <i class="fas fa-key"></i> Reset Pwd
+                        <div id="teacher-semester-container" style="display: none;">
+                            <div class="filter-title">Select Semester</div>
+                            <div class="filter-boxes" id="teacher-semester-boxes">
+                                <!-- dynamic semester boxes -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Teacher ID</th>
+                                    <th>Branch</th>
+                                    <th>Semester</th>
+                                    <th>Subject</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teacher-table-body">
+                                {% for teacher in teachers %}
+                                <tr class="data-row teacher-row" data-branch="{{ teacher[4] }}"
+                                    data-semester="{{ teacher[5] }}">
+                                    <td>{{ teacher[0] }}</td>
+                                    <td>{{ teacher[1] }}</td>
+                                    <td>{{ teacher[2] }}</td>
+                                    <td>{{ teacher[3] }}</td>
+                                    <td>{{ teacher[4] }}</td>
+                                    <td>{{ teacher[5] }}</td>
+                                    <td>{{ teacher[6] if teacher[6] else 'N/A' }}</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="{{ url_for('admin_edit_teacher', teacher_id=teacher[0], branch=teacher[4], semester=teacher[5]) }}"
+                                                class="action-btn btn-edit">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </a>
+                                            <button type="button" class="action-btn btn-reset"
+                                                data-id="{{ teacher[0] }}" data-name="{{ teacher[1] | e }}"
+                                                data-branch="{{ teacher[4] | e }}" data-semester="{{ teacher[5] }}"
+                                                onclick="openResetPasswordModalFromBtn(this)">
+                                                <i class="fas fa-key"></i> Reset Pwd
+                                            </button>
+                                            <form method="POST"
+                                                action="{{ url_for('admin_delete_teacher', teacher_id=teacher[0], branch=teacher[4], semester=teacher[5]) }}"
+                                                style="display: inline;"
+                                                onsubmit="return confirm('Are you sure you want to delete this teacher?');">
+                                                <button type="submit" class="action-btn btn-delete">
+                                                    <i class="fas fa-trash"></i> Delete
                                                 </button>
-                                                <form method="POST" action="{{ url_for('admin_delete_teacher', teacher_id=teacher[0], branch=teacher[4], semester=teacher[5]) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this teacher?');">
-                                                    <button type="submit" class="action-btn btn-delete">
-                                                        <i class="fas fa-trash"></i> Delete
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                     {% else %}
-                        <div style="text-align: center; padding: 40px;">
-                            <i class="fas fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 15px;"></i>
-                            <p style="color: #999; font-size: 1.1rem;">No teachers found. <a href="#create" onclick="showSection('create')" style="color: #667eea; cursor: pointer;">Add the first teacher</a></p>
-                        </div>
+                    <div style="text-align: center; padding: 40px;">
+                        <i class="fas fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 15px;"></i>
+                        <p style="color: #999; font-size: 1.1rem;">No teachers found. <a href="#create"
+                                onclick="showSection('create')" style="color: #667eea; cursor: pointer;">Add the first
+                                teacher</a></p>
+                    </div>
                     {% endif %}
                 </div>
             </div>
@@ -282,73 +302,79 @@
                         </button>
                     </div>
                     {% if students %}
-                        <div class="filter-section" id="student-filters">
-                            <div class="filter-title">Select Branch</div>
-                            <div class="filter-boxes" id="student-branch-boxes">
-                                <div class="filter-box all-data active" onclick="filterData('student', 'all', null)">All Branches</div>
-                                <!-- dynamic branch boxes -->
-                            </div>
-                            
-                            <div id="student-semester-container" style="display: none;">
-                                <div class="filter-title">Select Semester</div>
-                                <div class="filter-boxes" id="student-semester-boxes">
-                                    <!-- dynamic semester boxes -->
-                                </div>
-                            </div>
+                    <div class="filter-section" id="student-filters">
+                        <div class="filter-title">Select Branch</div>
+                        <div class="filter-boxes" id="student-branch-boxes">
+                            <div class="filter-box all-data active" onclick="filterData('student', 'all', null)">All
+                                Branches</div>
+                            <!-- dynamic branch boxes -->
                         </div>
 
-                        <div class="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Full Name</th>
-                                        <th>Email</th>
-                                        <th>Roll No</th>
-                                        <th>Branch</th>
-                                        <th>Semester</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="student-table-body">
-                                    {% for student in students %}
-                                    <tr class="data-row student-row" data-branch="{{ student[4] }}" data-semester="{{ student[5] }}">
-                                        <td>{{ student[0] }}</td>
-                                        <td>{{ student[1] }}</td>
-                                        <td>{{ student[2] }}</td>
-                                        <td>{{ student[3] }}</td>
-                                        <td>{{ student[4] }}</td>
-                                        <td>{{ student[5] }}</td>
-                                        <td>
-                                            <div class="action-buttons">
-                                                <a href="{{ url_for('admin_edit_student', student_id=student[0], branch=student[4], semester=student[5]) }}" class="action-btn btn-edit">
-                                                    <i class="fas fa-edit"></i> Edit
-                                                </a>
-                                                <button type="button" class="action-btn btn-reset"
-                                                    data-id="{{ student[0] }}"
-                                                    data-name="{{ student[1] | e }}"
-                                                    data-branch="{{ student[4] | e }}"
-                                                    data-semester="{{ student[5] }}"
-                                                    onclick="openResetStudentPasswordModalFromBtn(this)">
-                                                    <i class="fas fa-key"></i> Reset Pwd
+                        <div id="student-semester-container" style="display: none;">
+                            <div class="filter-title">Select Semester</div>
+                            <div class="filter-boxes" id="student-semester-boxes">
+                                <!-- dynamic semester boxes -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Roll No</th>
+                                    <th>Branch</th>
+                                    <th>Semester</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="student-table-body">
+                                {% for student in students %}
+                                <tr class="data-row student-row" data-branch="{{ student[4] }}"
+                                    data-semester="{{ student[5] }}">
+                                    <td>{{ student[0] }}</td>
+                                    <td>{{ student[1] }}</td>
+                                    <td>{{ student[2] }}</td>
+                                    <td>{{ student[3] }}</td>
+                                    <td>{{ student[4] }}</td>
+                                    <td>{{ student[5] }}</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a href="{{ url_for('admin_edit_student', student_id=student[0], branch=student[4], semester=student[5]) }}"
+                                                class="action-btn btn-edit">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </a>
+                                            <button type="button" class="action-btn btn-reset"
+                                                data-id="{{ student[0] }}" data-name="{{ student[1] | e }}"
+                                                data-branch="{{ student[4] | e }}" data-semester="{{ student[5] }}"
+                                                onclick="openResetStudentPasswordModalFromBtn(this)">
+                                                <i class="fas fa-key"></i> Reset Pwd
+                                            </button>
+                                            <form method="POST"
+                                                action="{{ url_for('admin_delete_student', student_id=student[0], branch=student[4], semester=student[5]) }}"
+                                                style="display: inline;"
+                                                onsubmit="return confirm('Are you sure you want to delete this student?');">
+                                                <button type="submit" class="action-btn btn-delete">
+                                                    <i class="fas fa-trash"></i> Delete
                                                 </button>
-                                                <form method="POST" action="{{ url_for('admin_delete_student', student_id=student[0], branch=student[4], semester=student[5]) }}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this student?');">
-                                                    <button type="submit" class="action-btn btn-delete">
-                                                        <i class="fas fa-trash"></i> Delete
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                     {% else %}
-                        <div style="text-align: center; padding: 40px;">
-                            <i class="fas fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 15px;"></i>
-                            <p style="color: #999; font-size: 1.1rem;">No students found. <a href="#create-student" onclick="showSection('create-student')" style="color: #667eea; cursor: pointer;">Add the first student</a></p>
-                        </div>
+                    <div style="text-align: center; padding: 40px;">
+                        <i class="fas fa-inbox" style="font-size: 3rem; color: #ccc; margin-bottom: 15px;"></i>
+                        <p style="color: #999; font-size: 1.1rem;">No students found. <a href="#create-student"
+                                onclick="showSection('create-student')" style="color: #667eea; cursor: pointer;">Add the
+                                first student</a></p>
+                    </div>
                     {% endif %}
                 </div>
             </div>
@@ -385,7 +411,8 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="reg-branch"><i class="fas fa-building"></i> Branch</label>
-                                <input type="text" id="reg-branch" name="reg-branch" placeholder="Enter branch" required>
+                                <input type="text" id="reg-branch" name="reg-branch" placeholder="Enter branch"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="reg-semester"><i class="fas fa-book"></i> Semester</label>
@@ -410,7 +437,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="reg-designation"><i class="fas fa-briefcase"></i> Designation</label>
-                                <input type="text" id="reg-designation" name="reg-designation" placeholder="Enter designation">
+                                <input type="text" id="reg-designation" name="reg-designation"
+                                    placeholder="Enter designation">
                             </div>
                         </div>
 
@@ -432,14 +460,17 @@
 
                         <div class="form-group">
                             <label for="reg-password"><i class="fas fa-lock"></i> Password</label>
-                            <input type="password" id="reg-password" name="reg-password" placeholder="Default: ChangeMe@123" value="ChangeMe@123" required>
+                            <input type="password" id="reg-password" name="reg-password"
+                                placeholder="Default: ChangeMe@123" value="ChangeMe@123" required>
                         </div>
 
                         <div class="form-actions" style="gap: 15px;">
-                            <button type="submit" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; flex: 1; padding: 12px;">
+                            <button type="submit" class="btn btn-primary"
+                                style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; flex: 1; padding: 12px;">
                                 <i class="fas fa-plus"></i> Create Teacher
                             </button>
-                            <button type="reset" class="btn btn-secondary" style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px;">
+                            <button type="reset" class="btn btn-secondary"
+                                style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px;">
                                 <i class="fas fa-times"></i> Clear
                             </button>
                         </div>
@@ -468,11 +499,13 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="stu-roll"><i class="fas fa-id-card"></i> Roll No.</label>
-                                <input type="text" id="stu-roll" name="stu-roll" placeholder="Enter roll number" required>
+                                <input type="text" id="stu-roll" name="stu-roll" placeholder="Enter roll number"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label for="stu-branch"><i class="fas fa-building"></i> Branch</label>
-                                <input type="text" id="stu-branch" name="stu-branch" placeholder="Enter branch" required>
+                                <input type="text" id="stu-branch" name="stu-branch" placeholder="Enter branch"
+                                    required>
                             </div>
                         </div>
 
@@ -493,15 +526,18 @@
                             </div>
                             <div class="form-group">
                                 <label for="stu-password"><i class="fas fa-lock"></i> Password</label>
-                                <input type="password" id="stu-password" name="stu-password" placeholder="Default: ChangeMe@123">
+                                <input type="password" id="stu-password" name="stu-password"
+                                    placeholder="Default: ChangeMe@123">
                             </div>
                         </div>
 
                         <div class="form-actions" style="gap: 15px;">
-                            <button type="submit" class="btn btn-primary" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; flex: 1; padding: 12px;">
+                            <button type="submit" class="btn btn-primary"
+                                style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; flex: 1; padding: 12px;">
                                 <i class="fas fa-plus"></i> Create Student
                             </button>
-                            <button type="reset" class="btn btn-secondary" style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px;">
+                            <button type="reset" class="btn btn-secondary"
+                                style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px;">
                                 <i class="fas fa-times"></i> Clear
                             </button>
                         </div>
@@ -509,29 +545,69 @@
                 </div>
             </div>
 
-            <!-- Reports Section -->
+            <!-- Statistics Section -->
             <div id="reports" class="section">
-                <div class="card">
-                    <div class="card-header">
-                        <h2><i class="fas fa-chart-bar"></i> System Reports</h2>
+                <!-- KPI Cards -->
+                <div
+                    style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-bottom:24px;">
+                    <div
+                        style="background:linear-gradient(135deg,#667eea,#764ba2);border-radius:14px;padding:22px 18px;color:#fff;display:flex;align-items:center;gap:16px;box-shadow:0 4px 15px rgba(102,126,234,.35);">
+                        <i class="fas fa-chalkboard-user" style="font-size:2rem;opacity:.85;"></i>
+                        <div>
+                            <p style="font-size:.8rem;opacity:.85;margin:0;">Total Teachers</p>
+                            <p style="font-size:2rem;font-weight:700;margin:0;">{{ teachers|length }}</p>
+                        </div>
                     </div>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
-                        <div style="padding: 25px; background: linear-gradient(135deg, #f5f7fa, #fff); border-radius: 12px; border-left: 4px solid #667eea; text-align: center;">
-                            <i class="fas fa-chalkboard-user" style="font-size: 2.5rem; color: #667eea; margin-bottom: 15px;"></i>
-                            <h4 style="color: #2c3e50; margin-bottom: 10px;">Teacher Report</h4>
-                            <p style="color: #999; margin-bottom: 15px;">View all teacher details</p>
-                            <button onclick="downloadTeacherReport()" class="btn-primary" style="padding: 8px 16px; border: none; border-radius: 6px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; cursor: pointer; font-family: 'Poppins', sans-serif;">
-                                Generate Report
-                            </button>
+                    <div
+                        style="background:linear-gradient(135deg,#28a745,#20c997);border-radius:14px;padding:22px 18px;color:#fff;display:flex;align-items:center;gap:16px;box-shadow:0 4px 15px rgba(40,167,69,.35);">
+                        <i class="fas fa-user-graduate" style="font-size:2rem;opacity:.85;"></i>
+                        <div>
+                            <p style="font-size:.8rem;opacity:.85;margin:0;">Total Students</p>
+                            <p style="font-size:2rem;font-weight:700;margin:0;">{{ students|length }}</p>
                         </div>
-                        <div style="padding: 25px; background: linear-gradient(135deg, #f5f7fa, #fff); border-radius: 12px; border-left: 4px solid #28a745; text-align: center;">
-                            <i class="fas fa-chart-pie" style="font-size: 2.5rem; color: #28a745; margin-bottom: 15px;"></i>
-                            <h4 style="color: #2c3e50; margin-bottom: 10px;">Statistics</h4>
-                            <p style="color: #999; margin-bottom: 15px;">System statistics overview</p>
-                            <button onclick="alert('Feature coming soon!')" class="btn-primary" style="padding: 8px 16px; border: none; border-radius: 6px; background: linear-gradient(135deg, #28a745, #20c997); color: white; cursor: pointer; font-family: 'Poppins', sans-serif;">
-                                View Stats
-                            </button>
+                    </div>
+                    <div
+                        style="background:linear-gradient(135deg,#f093fb,#f5576c);border-radius:14px;padding:22px 18px;color:#fff;display:flex;align-items:center;gap:16px;box-shadow:0 4px 15px rgba(245,87,108,.35);">
+                        <i class="fas fa-users" style="font-size:2rem;opacity:.85;"></i>
+                        <div>
+                            <p style="font-size:.8rem;opacity:.85;margin:0;">System Users</p>
+                            <p style="font-size:2rem;font-weight:700;margin:0;">{{ teachers|length + students|length + 1
+                                }}</p>
                         </div>
+                    </div>
+                    <div
+                        style="background:linear-gradient(135deg,#ffc107,#ff8800);border-radius:14px;padding:22px 18px;color:#fff;display:flex;align-items:center;gap:16px;box-shadow:0 4px 15px rgba(255,193,7,.35);">
+                        <i class="fas fa-layer-group" style="font-size:2rem;opacity:.85;"></i>
+                        <div>
+                            <p style="font-size:.8rem;opacity:.85;margin:0;">Total Classes</p>
+                            <p style="font-size:2rem;font-weight:700;margin:0;" id="stat-total-classes">—</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Branch Breakdown -->
+                <div class="card" style="margin-bottom:24px;">
+                    <div class="card-header">
+                        <h2><i class="fas fa-sitemap"></i> Branch &amp; Semester Breakdown</h2>
+                    </div>
+                    <div id="stats-branch-grid"
+                        style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:16px;">
+                        <p id="stats-loading" style="color:#999;padding:20px;"><i class="fas fa-spinner fa-spin"></i>
+                            Loading stats…</p>
+                    </div>
+                </div>
+                <!-- Distribution Bars -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-chalkboard-user"></i> Teachers per Branch</h2>
+                        </div>
+                        <div id="teacher-dist" style="margin-top:14px;"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-user-graduate"></i> Students per Branch</h2>
+                        </div>
+                        <div id="student-dist" style="margin-top:14px;"></div>
                     </div>
                 </div>
             </div>
@@ -545,24 +621,63 @@
                     <div style="margin-top: 20px;">
                         <div style="padding: 20px; background: #f8f9fa; border-radius: 8px; margin-bottom: 15px;">
                             <h4 style="color: #2c3e50; margin-bottom: 10px;">System Information</h4>
-                            <p style="color: #666; margin-bottom: 8px;"><strong>Application:</strong> Attendance Management System</p>
-                            <p style="color: #666; margin-bottom: 8px;"><strong>Version:</strong> 1.0</p>
-                            <p style="color: #666; margin-bottom: 8px;"><strong>Admin Email:</strong> {{ session.admin_email }}</p>
-                            <p style="color: #666;"><strong>Total Teachers:</strong> {{ teachers|length }}</p>
+                            <p style="color: #666; margin-bottom: 8px;"><strong>Application:</strong> Attendance
+                                Management System</p>
+                            <p style="color: #666; margin-bottom: 8px;"><strong>Admin Email:</strong> {{
+                                session.admin_email }}</p>
+                            <p style="color: #666; margin-bottom: 8px;"><strong>Total Teachers:</strong> {{
+                                teachers|length }}</p>
+                            <p style="color: #666;"><strong>Total Students:</strong> {{ students|length }}</p>
                         </div>
                         <div style="padding: 20px; background: #f8f9fa; border-radius: 8px;">
                             <h4 style="color: #2c3e50; margin-bottom: 15px;">Admin Actions</h4>
-                            <button onclick="changeAdminPassword()" class="btn-primary" style="padding: 10px 20px; border: none; border-radius: 6px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; cursor: pointer; font-family: 'Poppins', sans-serif; margin-bottom: 10px; margin-right: 10px;">
+                            <button onclick="openChangePasswordModal()" class="btn-primary"
+                                style="padding: 10px 20px; border: none; border-radius: 6px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; cursor: pointer; font-family: 'Poppins', sans-serif; margin-bottom: 10px; margin-right: 10px;">
                                 <i class="fas fa-key"></i> Change Admin Password
-                            </button>
-                            <button onclick="alert('Backup feature coming soon!')" class="btn-secondary" style="padding: 10px 20px; border: none; border-radius: 6px; background: #e9ecef; color: #2c3e50; cursor: pointer; font-family: 'Poppins', sans-serif;">
-                                <i class="fas fa-database"></i> Backup System
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
+    </div>
+
+    <!-- Change Admin Password Modal -->
+    <div id="changeAdminPasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-key"></i> Change Admin Password</h3>
+                <button class="close-modal" onclick="closeChangePasswordModal()">&times;</button>
+            </div>
+            <p id="adminPwdError"
+                style="display:none;color:#e74c3c;background:#ffeaea;padding:10px 14px;border-radius:6px;margin-bottom:12px;font-size:.9rem;">
+            </p>
+            <form id="changeAdminPwdForm">
+                <div class="form-group">
+                    <label for="adminOldPwd"><i class="fas fa-lock"></i> Current Password</label>
+                    <input type="password" id="adminOldPwd" placeholder="Enter current password" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminNewPwd"><i class="fas fa-lock"></i> New Password</label>
+                    <input type="password" id="adminNewPwd" placeholder="Enter new password (min 6 chars)" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminConfirmPwd"><i class="fas fa-lock"></i> Confirm New Password</label>
+                    <input type="password" id="adminConfirmPwd" placeholder="Confirm new password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary"
+                        style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;flex:1;padding:12px;border:none;border-radius:6px;font-family:'Poppins',sans-serif;cursor:pointer;">
+                        <i class="fas fa-save"></i> Update Password
+                    </button>
+                    <button type="button" class="btn btn-secondary"
+                        style="background:#e9ecef;color:#2c3e50;flex:1;padding:12px;border:none;border-radius:6px;font-family:'Poppins',sans-serif;cursor:pointer;margin-left:10px;"
+                        onclick="closeChangePasswordModal()">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- Reset Password Modal (Teacher) -->
@@ -577,21 +692,26 @@
                 <input type="hidden" id="teacherSemester" name="semester">
                 <div class="form-group">
                     <label>Teacher Name</label>
-                    <input type="text" id="teacherName" placeholder="Teacher Name" disabled style="background: #f0f0f0;">
+                    <input type="text" id="teacherName" placeholder="Teacher Name" disabled
+                        style="background: #f0f0f0;">
                 </div>
                 <div class="form-group">
                     <label for="new-password"><i class="fas fa-lock"></i> New Password</label>
-                    <input type="password" id="new-password" name="new-password" placeholder="Enter new password" required>
+                    <input type="password" id="new-password" name="new-password" placeholder="Enter new password"
+                        required>
                 </div>
                 <div class="form-group">
                     <label for="confirm-password"><i class="fas fa-lock"></i> Confirm Password</label>
                     <input type="password" id="confirm-password" placeholder="Confirm password" required>
                 </div>
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary" style="background: linear-gradient(135deg, #28a745, #20c997); color: white; flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; cursor: pointer;">
+                    <button type="submit" class="btn btn-primary"
+                        style="background: linear-gradient(135deg, #28a745, #20c997); color: white; flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; cursor: pointer;">
                         <i class="fas fa-save"></i> Reset Password
                     </button>
-                    <button type="button" class="btn btn-secondary" style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; cursor: pointer; margin-left: 10px;" onclick="closeResetPasswordModal()">
+                    <button type="button" class="btn btn-secondary"
+                        style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; cursor: pointer; margin-left: 10px;"
+                        onclick="closeResetPasswordModal()">
                         Cancel
                     </button>
                 </div>
@@ -611,21 +731,26 @@
                 <input type="hidden" id="studentSemester" name="semester">
                 <div class="form-group">
                     <label>Student Name</label>
-                    <input type="text" id="studentName" placeholder="Student Name" disabled style="background: #f0f0f0;">
+                    <input type="text" id="studentName" placeholder="Student Name" disabled
+                        style="background: #f0f0f0;">
                 </div>
                 <div class="form-group">
                     <label for="new-student-password"><i class="fas fa-lock"></i> New Password</label>
-                    <input type="password" id="new-student-password" name="new-password" placeholder="Enter new password" required>
+                    <input type="password" id="new-student-password" name="new-password"
+                        placeholder="Enter new password" required>
                 </div>
                 <div class="form-group">
                     <label for="confirm-student-password"><i class="fas fa-lock"></i> Confirm Password</label>
                     <input type="password" id="confirm-student-password" placeholder="Confirm password" required>
                 </div>
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-primary" style="background: linear-gradient(135deg, #28a745, #20c997); color: white; flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; cursor: pointer;">
+                    <button type="submit" class="btn btn-primary"
+                        style="background: linear-gradient(135deg, #28a745, #20c997); color: white; flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; cursor: pointer;">
                         <i class="fas fa-save"></i> Reset Password
                     </button>
-                    <button type="button" class="btn btn-secondary" style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; cursor: pointer; margin-left: 10px;" onclick="closeResetStudentPasswordModal()">
+                    <button type="button" class="btn btn-secondary"
+                        style="background: #e9ecef; color: #2c3e50; flex: 1; padding: 12px; border: none; border-radius: 6px; font-family: 'Poppins', sans-serif; cursor: pointer; margin-left: 10px;"
+                        onclick="closeResetStudentPasswordModal()">
                         Cancel
                     </button>
                 </div>
@@ -697,9 +822,9 @@
             currentTeacherSemester = null;
         }
 
-        document.getElementById('resetPasswordForm').addEventListener('submit', function(e) {
+        document.getElementById('resetPasswordForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const newPassword = document.getElementById('new-password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
 
@@ -717,12 +842,12 @@
             const form = document.createElement('form');
             form.method = 'POST';
             form.action = `/admin-reset-password/${currentTeacherId}?branch=${encodeURIComponent(currentTeacherBranch)}&semester=${encodeURIComponent(currentTeacherSemester)}`;
-            
+
             const input = document.createElement('input');
             input.type = 'hidden';
             input.name = 'new-password';
             input.value = newPassword;
-            
+
             form.appendChild(input);
             document.body.appendChild(form);
             form.submit();
@@ -751,7 +876,7 @@
             currentStudentSemester = null;
         }
 
-        document.getElementById('resetStudentPasswordForm').addEventListener('submit', function(e) {
+        document.getElementById('resetStudentPasswordForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
             const newPassword = document.getElementById('new-student-password').value;
@@ -781,24 +906,95 @@
             form.submit();
         });
 
-        function downloadTeacherReport() {
-            alert('Report download feature coming soon!');
+        // ── Change Admin Password Modal ──────────────────────────────
+        function openChangePasswordModal() {
+            ['adminOldPwd', 'adminNewPwd', 'adminConfirmPwd'].forEach(id => document.getElementById(id).value = '');
+            document.getElementById('adminPwdError').style.display = 'none';
+            document.getElementById('changeAdminPasswordModal').classList.add('show');
         }
+        function closeChangePasswordModal() {
+            document.getElementById('changeAdminPasswordModal').classList.remove('show');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('changeAdminPwdForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const oldPwd = document.getElementById('adminOldPwd').value;
+                const newPwd = document.getElementById('adminNewPwd').value;
+                const confirmPwd = document.getElementById('adminConfirmPwd').value;
+                const errEl = document.getElementById('adminPwdError');
+                if (newPwd !== confirmPwd) { errEl.textContent = 'New passwords do not match!'; errEl.style.display = 'block'; return; }
+                if (newPwd.length < 6) { errEl.textContent = 'Password must be at least 6 characters!'; errEl.style.display = 'block'; return; }
+                errEl.style.display = 'none';
+                const form = document.createElement('form');
+                form.method = 'POST'; form.action = '/admin-change-password';
+                [['old-password', oldPwd], ['new-password', newPwd]].forEach(([name, val]) => {
+                    const inp = document.createElement('input'); inp.type = 'hidden'; inp.name = name; inp.value = val; form.appendChild(inp);
+                });
+                document.body.appendChild(form); form.submit();
+            });
+            buildStats();
+        });
 
-        function changeAdminPassword() {
-            alert('Admin password change feature coming soon!');
+        // ── Statistics Builder ───────────────────────────────────────
+        function buildStats() {
+            const branchMap = {};
+            function addToMap(rows, role) {
+                rows.forEach(row => {
+                    (row.dataset.branch || '').split(',').map(x => x.trim()).filter(x => x).forEach(b => {
+                        if (!branchMap[b]) branchMap[b] = { semesters: new Set(), teachers: 0, students: 0 };
+                        (row.dataset.semester || '').split(',').map(x => x.trim()).filter(x => x).forEach(s => branchMap[b].semesters.add(s));
+                        branchMap[b][role]++;
+                    });
+                });
+            }
+            addToMap(document.querySelectorAll('.teacher-row'), 'teachers');
+            addToMap(document.querySelectorAll('.student-row'), 'students');
+            const branches = Object.keys(branchMap).sort();
+            document.getElementById('stat-total-classes').textContent = branches.length;
+            const grid = document.getElementById('stats-branch-grid');
+            const loadEl = document.getElementById('stats-loading');
+            if (loadEl) loadEl.remove();
+            if (!branches.length) { grid.innerHTML = '<p style="color:#999;padding:20px;">No data yet.</p>'; }
+            else {
+                const maxStu = Math.max(...branches.map(b => branchMap[b].students), 1);
+                branches.forEach(branch => {
+                    const d = branchMap[branch];
+                    const sems = Array.from(d.semesters).sort((a, b) => parseInt(a) - parseInt(b));
+                    const pct = Math.min(Math.round((d.students / maxStu) * 100), 100);
+                    const card = document.createElement('div');
+                    card.style.cssText = 'background:#f8f9fa;border-radius:12px;padding:18px;border-left:4px solid #667eea;';
+                    card.innerHTML = `<h4 style="color:#2c3e50;margin:0 0 10px;font-size:1rem;">${branch}</h4>
+                        <div style="display:flex;gap:16px;margin-bottom:10px;">
+                            <span style="font-size:.85rem;color:#667eea;"><i class="fas fa-chalkboard-user"></i> ${d.teachers} Teacher${d.teachers !== 1 ? 's' : ''}</span>
+                            <span style="font-size:.85rem;color:#28a745;"><i class="fas fa-user-graduate"></i> ${d.students} Student${d.students !== 1 ? 's' : ''}</span>
+                        </div>
+                        <div style="font-size:.8rem;color:#666;"><i class="fas fa-book"></i> Semesters: ${sems.map(s => 'Sem ' + s).join(', ') || 'N/A'}</div>
+                        <div style="margin-top:10px;"><div style="height:6px;background:#e9ecef;border-radius:3px;overflow:hidden;">
+                            <div style="height:100%;width:${pct}%;background:linear-gradient(90deg,#667eea,#764ba2);border-radius:3px;"></div></div>
+                            <p style="font-size:.75rem;color:#999;margin-top:4px;">Student share</p></div>`;
+                    grid.appendChild(card);
+                });
+            }
+            buildDistBar('teacher-dist', branchMap, 'teachers', '#667eea');
+            buildDistBar('student-dist', branchMap, 'students', '#28a745');
+        }
+        function buildDistBar(cId, bMap, role, color) {
+            const el = document.getElementById(cId);
+            const brs = Object.keys(bMap).sort();
+            if (!brs.length) { el.innerHTML = '<p style="color:#999;font-size:.9rem;">No data.</p>'; return; }
+            const maxV = Math.max(...brs.map(b => bMap[b][role]), 1);
+            el.innerHTML = brs.map(b => {
+                const v = bMap[b][role], pct = Math.round((v / maxV) * 100);
+                return `<div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:.85rem;color:#555;margin-bottom:4px;"><span>${b}</span><span style="font-weight:600;color:${color};">${v}</span></div><div style="height:8px;background:#e9ecef;border-radius:4px;overflow:hidden;"><div style="height:100%;width:${pct}%;background:${color};border-radius:4px;transition:width .6s ease;"></div></div></div>`;
+            }).join('');
         }
 
         // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('resetPasswordModal');
-            const studentModal = document.getElementById('resetStudentPasswordModal');
-            if (event.target == modal) {
-                modal.classList.remove('show');
-            }
-            if (event.target == studentModal) {
-                studentModal.classList.remove('show');
-            }
+        window.onclick = function (event) {
+            ['resetPasswordModal', 'resetStudentPasswordModal', 'changeAdminPasswordModal'].forEach(id => {
+                const el = document.getElementById(id);
+                if (event.target === el) el.classList.remove('show');
+            });
         }
 
         // Toggle Sidebar Slide Animation
@@ -806,12 +1002,12 @@
             if (event) {
                 event.stopPropagation();
             }
-            
+
             const sidebar = document.querySelector('.sidebar');
             const backdrop = document.querySelector('.sidebar-backdrop');
             const mainContent = document.querySelector('.main-content');
             const toggleBtn = document.querySelector('.sidebar-collapse-btn');
-            
+
             sidebar.classList.toggle('collapsed');
             backdrop.classList.toggle('active');
             mainContent.classList.toggle('sidebar-hidden');
@@ -823,19 +1019,19 @@
         // ============================================
         // JavaScript for Dynamic Branch / Semester Filters
         // ============================================
-        
+
         function initFilters() {
             initSectionFilters('teacher');
             initSectionFilters('student');
         }
-        
+
         function initSectionFilters(type) {
             const rows = document.querySelectorAll(`.${type}-row`);
             if (!rows.length) return;
-            
+
             // Collect unique branches and semesters for each branch
-            const filterMap = {}; 
-            
+            const filterMap = {};
+
             rows.forEach(row => {
                 const bStr = row.getAttribute('data-branch') || "";
                 const sStr = row.getAttribute('data-semester') || "";
@@ -847,7 +1043,7 @@
                     semesters.forEach(s => filterMap[b].add(s));
                 });
             });
-            
+
             // Build Branch UI
             const branchContainer = document.getElementById(`${type}-branch-boxes`);
             if (!branchContainer) return;
@@ -859,7 +1055,7 @@
                 box.onclick = () => filterData(type, branch, null);
                 branchContainer.appendChild(box);
             });
-            
+
             // Attach map to container for later
             branchContainer.dataset.map = JSON.stringify(
                 Object.fromEntries(
@@ -886,7 +1082,7 @@
             const semesterContainerWrapper = document.getElementById(`${type}-semester-container`);
             const semesterContainer = document.getElementById(`${type}-semester-boxes`);
             const rows = document.querySelectorAll(`.${type}-row`);
-            
+
             // If ALl branches
             if (branch === 'all') {
                 if (semesterContainerWrapper) semesterContainerWrapper.style.display = 'none';
@@ -898,11 +1094,11 @@
             if (!semester) {
                 if (semesterContainerWrapper) semesterContainerWrapper.style.display = 'block';
                 semesterContainer.innerHTML = '';
-                
+
                 const mapStr = document.getElementById(`${type}-branch-boxes`).dataset.map;
                 const filterMap = JSON.parse(mapStr);
-                const sems = (filterMap[branch] || []).sort((a,b) => parseInt(a) - parseInt(b));
-                
+                const sems = (filterMap[branch] || []).sort((a, b) => parseInt(a) - parseInt(b));
+
                 // Add "All Semesters" button
                 const allSemBtn = document.createElement('div');
                 allSemBtn.className = 'filter-box all-data active';
@@ -926,7 +1122,7 @@
                     };
                     semesterContainer.appendChild(box);
                 });
-                
+
                 // Automatically display all for this branch
                 rows.forEach(r => {
                     const rbStr = r.getAttribute('data-branch') || "";
@@ -942,7 +1138,7 @@
                 const rsStr = r.getAttribute('data-semester') || "";
                 const rbs = rbStr.split(',').map(x => x.trim());
                 const rss = rsStr.split(',').map(x => x.trim());
-                
+
                 if (semester === 'all') {
                     r.style.display = (rbs.includes(branch)) ? '' : 'none';
                 } else {
@@ -956,4 +1152,5 @@
 
     </script>
 </body>
+
 </html>

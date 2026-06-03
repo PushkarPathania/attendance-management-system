@@ -555,6 +555,34 @@ def admin_reset_student_password(student_id):
     return redirect(url_for("admin_dashboard"))
 
 
+@web_bp.post("/admin-change-password", endpoint="admin_change_password")
+def admin_change_password():
+    """Allow the logged-in admin to change their own password (in-memory for session lifetime)."""
+    if not _require_admin_session():
+        flash("Please login as admin first.", "error")
+        return redirect(url_for("admin_login"))
+
+    old_password = (request.form.get("old-password") or "").strip()
+    new_password = (request.form.get("new-password") or "").strip()
+
+    if not old_password or not new_password:
+        flash("All password fields are required.", "error")
+        return redirect(url_for("admin_dashboard"))
+
+    if len(new_password) < 6:
+        flash("New password must be at least 6 characters.", "error")
+        return redirect(url_for("admin_dashboard"))
+
+    global ADMIN_PASSWORD
+    if old_password != ADMIN_PASSWORD:
+        flash("Current password is incorrect.", "error")
+        return redirect(url_for("admin_dashboard"))
+
+    ADMIN_PASSWORD = new_password
+    flash("Admin password updated successfully!", "success")
+    return redirect(url_for("admin_dashboard"))
+
+
 # ---------------------------------------------------------------------------
 # Student Routes
 # ---------------------------------------------------------------------------
