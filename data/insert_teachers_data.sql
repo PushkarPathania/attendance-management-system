@@ -21,9 +21,9 @@ VALUES
   
   -- B) COMPUTER ENGINEERING
   ('N.K. Sapehia',      'nareshshkumarsapehia@gmail.com', '9418479027', 'HOD',           'MCA',           'Computer Engineering', false),
-  ('Talvinder Singh',   'Talvinder.mr@gmail.com',         '9418115042', 'Sr. Lecturer',  'M.Tech.',       'Computer Engineering', false),
+  ('Talvinder Singh',   'Talvinder.m@gmail.com',         '9418115042', 'Sr. Lecturer',  'M.Tech.',       'Computer Engineering', false),
   ('Surbhi Sharma',     'Surbhisharma.jmi@gmail.com',     '7380178778', 'Lecturer',      'B.Tech.',       'Computer Engineering', false),
-  ('Avinash Sharma',    'Avinash.acet@yahoo.com',         '8091251140', 'Lecturer',      'M.Tech.',       'Computer Engineering', false),
+  ('Avinash Sharma',    'avinash@example.com',            '8091251140', 'Lecturer',      'M.Tech.',       'Computer Engineering', false),
   ('Rajeev Kumar',      'Rajeev.kumar357@gmail.com',      '9298286002', 'Lecturer',      'B.Tech.',       'Computer Engineering', false),
   ('Tamanna Chitra',    'Er.tamanna14@gmail.com',         '8894943678', 'Lecturer',      'B.Tech.',       'Computer Engineering', false),
   ('Aashima Sharma',    'aashimasharma@gmail.com',        null,         'Lecturer',      'B.Tech.',       'Computer Engineering', false),
